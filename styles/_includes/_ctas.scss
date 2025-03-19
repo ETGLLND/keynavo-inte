@@ -1,0 +1,81 @@
+// CTAs
+a {
+  text-decoration: none;
+}
+
+.cta-primary,
+.cta-secondary {
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  &::before {
+    content: "";
+    width: 16px;
+    height: 14px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.cta-primary {
+  color: $color8;
+  background-color: $color5;
+  border-radius: 5rem;
+  padding: 1rem 1.5rem 1rem 1.2rem;
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='17' viewBox='0 0 15 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5975 6.51984C12.7944 4.17128 10.7593 2.49784 8.28607 2.15118L8.28641 2.15236C4.9195 1.68326 1.71869 3.90531 0.999497 7.21117C0.62138 8.94735 0.956403 10.7186 1.94297 12.1989C2.93008 13.6792 4.43892 14.6768 6.19152 15.0072C8.40858 15.4251 10.6514 14.6941 12.1916 13.0523C13.0268 12.0477 14.4773 9.33466 13.5975 6.51984Z' stroke='white' stroke-miterlimit='10'/%3E%3Cpath d='M6.70127 12.0507C4.80497 11.6932 3.55277 9.8592 3.91026 7.96291C4.26776 6.06661 6.10179 4.81441 7.99809 5.1719C9.89438 5.5294 11.1466 7.36343 10.7891 9.25973C10.4316 11.156 8.59756 12.4082 6.70127 12.0507Z' fill='white'/%3E%3C/svg%3E");
+  }
+  &:hover {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='15' height='17' viewBox='0 0 15 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6054 6.51593C12.8022 4.16737 10.7671 2.49393 8.29389 2.14727L8.29423 2.14846C4.92731 1.67936 1.72651 3.90141 1.00731 7.20726C0.629192 8.94345 0.964215 10.7147 1.95078 12.1949C2.93789 13.6753 4.44673 14.6729 6.19934 15.0033C8.41639 15.4212 10.6593 14.6902 12.1994 13.0484C13.0346 12.0438 14.4851 9.33075 13.6054 6.51593Z' stroke='white' stroke-miterlimit='10'/%3E%3Cpath d='M6.12283 15.1557C2.51228 14.475 0.128079 10.983 0.808752 7.37247C1.48943 3.76192 4.98143 1.37772 8.59198 2.05839C12.2025 2.73907 14.5867 6.23107 13.9061 9.84162C13.2254 13.4522 9.73337 15.8364 6.12283 15.1557Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+  }
+  &.sm {
+    padding: 0.5rem 1.5rem 0.5rem 1.2rem;
+  }
+}
+
+.cta-secondary {
+  color: $color5;
+  &::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5975 6.51984C13.7944 4.17128 11.7593 2.49784 9.28607 2.15118L9.28641 2.15236C5.9195 1.68326 2.71869 3.90531 1.9995 7.21117C1.62138 8.94735 1.9564 10.7186 2.94297 12.1989C3.93008 13.6792 5.43892 14.6768 7.19152 15.0072C9.40858 15.4251 11.6514 14.6941 13.1916 13.0523C14.0268 12.0477 15.4773 9.33466 14.5975 6.51984Z' stroke='%23FF7348' stroke-miterlimit='10'/%3E%3Cpath d='M7.70127 12.0507C5.80497 11.6932 4.55277 9.8592 4.91026 7.96291C5.26776 6.06661 7.10179 4.81441 8.99809 5.1719C10.8944 5.5294 12.1466 7.36343 11.7891 9.25973C11.4316 11.156 9.59756 12.4082 7.70127 12.0507Z' fill='%23FF7348'/%3E%3C/svg%3E");
+  }
+  &:hover {
+    &::before {
+      background-image: url("data:image/svg+xml,%3Csvg width='15' height='17' viewBox='0 0 15 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6054 6.51593C12.8022 4.16737 10.7671 2.49393 8.29389 2.14727L8.29423 2.14846C4.92731 1.67936 1.72651 3.90141 1.00731 7.20726C0.629192 8.94345 0.964215 10.7147 1.95078 12.1949C2.93789 13.6753 4.44673 14.6729 6.19934 15.0033C8.41639 15.4212 10.6593 14.6902 12.1994 13.0484C13.0346 12.0438 14.4851 9.33075 13.6054 6.51593Z' stroke='%23FF7348' stroke-miterlimit='10'/%3E%3Cpath d='M6.12283 15.1557C2.51228 14.475 0.128079 10.983 0.808752 7.37247C1.48943 3.76192 4.98143 1.37772 8.59198 2.05839C12.2025 2.73907 14.5867 6.23107 13.9061 9.84162C13.2254 13.4522 9.73337 15.8364 6.12283 15.1557Z' fill='%23FF7348'/%3E%3C/svg%3E");
+    }
+  }
+  &.alt {
+    color: $color8;
+  }
+}
+
+.cta-link {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  color: $color5;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 0%;
+    background-color: $color5;
+    transition: width 0.3s ease;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}

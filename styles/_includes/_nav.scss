@@ -1,0 +1,108 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color9;
+  border-radius: 0 0 3rem 3rem;
+  border-bottom: solid 1px $color4;
+  border-left: solid 1px $color4;
+  border-right: solid 1px $color4;
+  padding: 0 46px;
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 15px 0;
+      .menu-item-container {
+        position: relative;
+        .sub-items {
+          position: absolute;
+          left: 0;
+          background-color: $color8;
+          list-style: none;
+          padding: 1rem;
+          box-shadow: 0px 0px 24px 0px rgba(198, 182, 169, 0.5);
+          border-radius: 0.5rem;
+          margin-top: 1rem;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          width: 100%;
+          .sub-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            &::before {
+              content: "";
+              display: block;
+              height: 29px;
+              width: 29px;
+              background-color: $color4;
+              border-radius: 0.4rem;
+              flex-shrink: 0;
+            }
+            &:hover {
+              .item-link {
+                color: $color5;
+              }
+              &::before {
+                background-color: $color7;
+              }
+            }
+          }
+          .item-link {
+            font-size: 1.6rem;
+            color: $color1;
+            font-weight: 500;
+          }
+        }
+      }
+      .menu-item {
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 100%;
+        padding: 0.7rem 1.5rem;
+        border-radius: 2rem;
+        border: solid 1px;
+        margin: 0;
+        &.select,
+        &.link {
+          color: $color1;
+          border-color: $color4;
+          &:hover {
+            color: $color5;
+            background-color: $color7;
+            border-color: $color7;
+          }
+        }
+        &.select {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 0.2rem;
+          cursor: pointer;
+          &:after {
+            content: "";
+            position: relative;
+            top: 1px;
+            height: 15px;
+            width: 15px;
+            background-position: bottom;
+            background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.54275 9.28206C2.27328 9.07996 2.27668 8.67465 2.54949 8.47709L3.03071 8.12863C3.20819 8.00011 3.44866 8.00212 3.62396 8.1336L5.78333 9.75313C6.11295 10.0003 6.58333 9.76515 6.58333 9.35313L6.58333 2.5C6.58333 2.22386 6.80719 2 7.08333 2L7.91667 2C8.19281 2 8.41667 2.22386 8.41667 2.5L8.41667 9.35313C8.41667 9.76515 8.88705 10.0003 9.21667 9.75313L11.376 8.1336C11.5513 8.00212 11.7918 8.00011 11.9693 8.12863L12.4505 8.47709C12.7233 8.67465 12.7267 9.07996 12.4573 9.28206L7.8 12.775C7.62222 12.9083 7.37778 12.9083 7.2 12.775L2.54275 9.28206Z' fill='%23046053'/%3E%3C/svg%3E");
+          }
+          &:hover {
+            &::after {
+              background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.54275 9.28206C2.27328 9.07996 2.27668 8.67465 2.54949 8.47709L3.03071 8.12863C3.20819 8.00011 3.44866 8.00212 3.62396 8.1336L5.78333 9.75313C6.11295 10.0003 6.58333 9.76515 6.58333 9.35313L6.58333 2.5C6.58333 2.22386 6.80719 2 7.08333 2L7.91667 2C8.19281 2 8.41667 2.22386 8.41667 2.5L8.41667 9.35313C8.41667 9.76515 8.88705 10.0003 9.21667 9.75313L11.376 8.1336C11.5513 8.00212 11.7918 8.00011 11.9693 8.12863L12.4505 8.47709C12.7233 8.67465 12.7267 9.07996 12.4573 9.28206L7.8 12.775C7.62222 12.9083 7.37778 12.9083 7.2 12.775L2.54275 9.28206Z' fill='%23FF7348'/%3E%3C/svg%3E");
+            }
+          }
+        }
+      }
+    }
+  }
+}

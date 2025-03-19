@@ -1,0 +1,88 @@
+// TEXT STYLE
+html {
+  font-size: 62.5%;
+}
+
+$desktopBreakpoint: 769px;
+
+* {
+  font-family: "Neue Haas Grotesk Display Pro";
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-weight: 700;
+  color: $color1;
+}
+
+.h1 {
+  font-size: 4rem;
+  line-height: 4.7rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 5.5rem;
+    line-height: 6.5rem;
+  }
+}
+
+.h2 {
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+  }
+}
+
+.h3 {
+  font-size: 2.1rem;
+  line-height: 2.5rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+  }
+}
+
+.h4 {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+.h5 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+  }
+}
+
+.p,
+.p-sm {
+  font-weight: 400;
+  color: $color1;
+}
+
+.p {
+  font-size: 1.7rem;
+  line-height: 2.3rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+}
+
+.p-sm {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  @media screen and (min-width: $desktopBreakpoint) {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+  }
+}

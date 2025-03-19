@@ -1,3 +1,6 @@
-html {
-  background-color: red;
+@import "basis.scss";
+
+.faq-bloc {
+  display: flex;
+  justify-content: space-between;
 }
