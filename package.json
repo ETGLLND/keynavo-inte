@@ -1,0 +1,11 @@
+{
+  "name": "keynavo",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch .\\styles\\style.scss .\\styles\\style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
