@@ -21,6 +21,7 @@ a {
     background-repeat: no-repeat;
     background-position: center;
   }
+  margin-bottom: 20px;
 }
 
 .cta-primary {
@@ -62,6 +63,7 @@ a {
   line-height: 2.5rem;
   color: $color5;
   position: relative;
+  margin-bottom: 20px;
   &::after {
     content: "";
     position: absolute;
