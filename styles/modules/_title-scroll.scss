@@ -1,0 +1,19 @@
+.title-scroll {
+  padding: 200px 0;
+  background: url(../../assets/img/background.jpg);
+  position: relative;
+  overflow: hidden;
+  .content {
+    font-weight: 700;
+    font-size: 25rem;
+    color: #fff;
+    -webkit-text-fill-color: rgba($color: #000000, $alpha: 0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    display: block;
+    white-space: nowrap;
+  }
+}
