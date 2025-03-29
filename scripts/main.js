@@ -45,3 +45,26 @@ if (titleRoot) {
     scrub: true,
   });
 }
+
+// FAQ BLOC
+const faqRoot = document.querySelector(".faq-bloc");
+
+if (faqRoot) {
+  const faqBlocs = document.querySelectorAll(".question-bloc");
+  faqBlocs.forEach((el) => {
+    const question = el.querySelector(".question");
+    el.style.maxHeight = `${question.scrollHeight + 20}px`;
+    let opened = false;
+    el.addEventListener("click", (e) => {
+      if (!opened) {
+        el.classList.add("open");
+        el.style.maxHeight = `${el.scrollHeight}px`;
+        opened = true;
+      } else {
+        el.style.maxHeight = `${question.scrollHeight + 20}px`;
+        el.classList.remove("open");
+        opened = false;
+      }
+    });
+  });
+}
