@@ -7,6 +7,7 @@
 @import "./_includes/_ctas.scss";
 @import "./_includes/_nav.scss";
 @import "./_includes/containers";
+@import "./_includes/sizes";
 
 p,
 ul {
@@ -15,4 +16,8 @@ ul {
 
 body {
   background-color: $color9;
+}
+
+* {
+  box-sizing: border-box;
 }
