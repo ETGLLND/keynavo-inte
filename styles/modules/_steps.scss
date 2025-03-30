@@ -1,0 +1,120 @@
+.steps-bloc {
+  margin: 105px 0;
+  position: relative;
+  .title {
+    text-align: center;
+  }
+  .titles-list {
+    padding-left: 0;
+    list-style: none;
+    position: relative;
+    margin-bottom: 3rem;
+    &::before {
+      content: "";
+      position: absolute;
+      height: calc(100% - 5px);
+      width: 1px;
+      background-color: $color4;
+      top: 3px;
+      left: 24px;
+    }
+    .title-item {
+      margin-bottom: 1rem;
+      counter-increment: my-counter;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      cursor: pointer;
+      color: $color4;
+      position: relative;
+      &::before {
+        content: counter(my-counter);
+        flex-shrink: 0;
+        display: grid;
+        place-items: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        border: solid 1px $color4;
+        background-color: $color9;
+        z-index: 3;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        border: solid 1px $color6;
+        opacity: 0;
+        background-color: $color9;
+        z-index: 1;
+      }
+      &.open {
+        color: $color1;
+        &::before {
+          color: $color9;
+          background-color: $color6;
+          width: 37px;
+          height: 37px;
+          border: none;
+          margin-left: 5px;
+        }
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0 2rem; // Ajoute du padding global au conteneur
+    .flickity-slider {
+      transform: translateX(
+        2rem
+      ) !important; // Force Flickity à prendre en compte le padding
+    }
+    .slider-item {
+      border-radius: 1.5rem;
+      position: relative;
+      height: 36rem;
+      width: 100%;
+      margin-right: 2rem; // Ajoute un espacement entre les slides
+      .illustration {
+        height: 80%;
+        width: 70%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 1;
+        border-radius: 1.5rem;
+      }
+      .content {
+        position: absolute;
+        z-index: 3;
+        padding: 1rem 1rem 1rem 3rem;
+        background-color: #fff;
+        border-radius: 1rem;
+        width: 90%;
+        bottom: 0;
+        right: 0;
+        &::before {
+          content: "";
+          background-image: url("data:image/svg+xml,%3Csvg width='45' height='48' viewBox='0 0 45 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_944_14790)'%3E%3Cpath d='M14.859 11.7657C16.1153 6.71688 16.7425 4.19272 18.5704 3.69701C20.3983 3.2013 22.2148 5.06277 25.8497 8.78519L26.7907 9.74851C27.8237 10.807 28.3402 11.3363 28.9922 11.6009C29.6442 11.8655 30.3611 11.8348 31.795 11.7733L33.098 11.7184C38.1379 11.5059 40.6557 11.3992 41.7139 13.0622C42.7695 14.7238 41.6655 17.0561 39.455 21.7192L38.8827 22.9251C38.2555 24.2494 37.9402 24.9131 37.9137 25.6331C37.8878 26.355 38.152 27.0543 38.6799 28.4508L39.1617 29.7231C41.02 34.6422 41.9498 37.1005 40.7754 38.623C39.601 40.1455 37.0999 39.7254 32.1016 38.8843L30.8058 38.6679C29.3854 38.4273 28.6757 38.3089 28.0059 38.4906C27.3361 38.6722 26.7834 39.1329 25.6791 40.0582L24.6721 40.8991C20.7817 44.1507 18.8355 45.7768 17.0552 45.0576C15.2701 44.3357 14.8305 41.7444 13.949 36.5604L13.7225 35.2209C13.472 33.7471 13.3468 33.0102 12.9582 32.4027C12.573 31.7922 11.9657 31.3788 10.7558 30.5547L9.65219 29.8013C5.38919 26.8958 3.25813 25.4408 3.32918 23.4715C3.40023 21.5023 5.6303 20.3194 10.0876 17.9584L11.2399 17.3476C12.5064 16.6767 13.1387 16.3415 13.5696 15.7833C14.0005 15.225 14.1769 14.5078 14.5337 13.0724L14.859 11.7657Z' stroke='%234F9087' stroke-width='5.33333' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_944_14790' x='0.660156' y='0.949219' width='44.125' height='48.2786' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='1.33333'/%3E%3CfeGaussianBlur stdDeviation='2.13333'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_944_14790'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+          width: 45px;
+          height: 48px;
+          position: absolute;
+          top: 45px;
+          left: -25px;
+        }
+        .p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

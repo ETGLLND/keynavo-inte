@@ -68,3 +68,45 @@ if (faqRoot) {
     });
   });
 }
+
+// STEPS
+const stepsRoot = document.querySelector(".steps-bloc");
+
+if (stepsRoot) {
+  const flkty = new Flickity(stepsRoot.querySelector(".slider"), {
+    cellAlign: "left",
+    contain: true,
+    // wrapAround: true,
+    pageDots: false,
+    groupCells: true,
+  });
+
+  const buttons = stepsRoot.querySelectorAll(".title-item");
+  buttons.forEach((el, id) => {
+    el.addEventListener("click", () => {
+      // goToSlide(id);
+      flkty.select(id);
+    });
+  });
+
+  // const slider = stepsRoot.querySelector(".slider");
+  // const items = stepsRoot.querySelectorAll(".slider-item");
+  // const totalItems = items.length;
+  // let currentIndex = 0;
+
+  // function goToSlide(index) {
+  //   if (index < 0 || index >= totalItems) return;
+  //   currentIndex = index;
+  //   const offset = -index * 100; // Déplacement en pourcentage
+  //   slider.style.transform = `translateX(${offset}%)`;
+  //   slider.style.transition = "transform 0.5s ease-in-out";
+  // }
+
+  // // Ajout d'écouteurs d'événements sur les boutons
+  // const buttons = stepsRoot.querySelectorAll(".title-item");
+  // buttons.forEach((el, id) => {
+  //   el.addEventListener("click", () => {
+  //     goToSlide(id);
+  //   });
+  // });
+}
