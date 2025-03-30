@@ -1339,4 +1339,89 @@ body {
   margin: 0;
 }
 
+.packs {
+  padding: 105px 0;
+}
+@media screen and (min-width: 768px) {
+  .packs {
+    padding: 170px 0;
+  }
+}
+.packs .title {
+  text-align: center;
+}
+.packs .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6.5rem;
+}
+@media screen and (min-width: 768px) {
+  .packs .content-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+.packs .content-wrapper .content {
+  background-color: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 0 24px rgba(198, 182, 169, 0.5019607843);
+}
+@media screen and (min-width: 768px) {
+  .packs .content-wrapper .content {
+    flex-direction: row;
+    width: 41.6666666667%;
+  }
+}
+.packs .content-wrapper .content .content-title {
+  text-align: center;
+}
+.packs .content-wrapper .content .price {
+  background-color: #f9bb44;
+  border-radius: 0.5rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+}
+.packs .content-wrapper .content .text-content {
+  padding: 2rem 0;
+  border-top: solid 1px #b4cfcb;
+  border-bottom: solid 1px #b4cfcb;
+}
+.packs .content-wrapper .content .cta {
+  margin: 2rem auto 0;
+}
+.packs.alt .content-wrapper .content .price {
+  background-color: #b4cfcb;
+}
+.packs.alt .highlight {
+  background-color: #046053;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+.packs.alt .highlight::after {
+  content: "";
+  right: 0;
+  top: 50%;
+  position: absolute;
+  transform: translate(50%, -50%);
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='15' cy='15' r='15' fill='%23FF8F6D'/%3E%3Cpath d='M13.4779 17.7033C13.4779 17.1429 13.5179 16.6692 13.598 16.2822C13.6914 15.8819 13.8515 15.5349 14.0784 15.2413C14.3186 14.9344 14.5254 14.7076 14.6989 14.5608C14.8724 14.414 15.1593 14.1938 15.5596 13.9003C15.9733 13.6067 16.2535 13.3999 16.4003 13.2798C16.5604 13.1463 16.7272 12.9261 16.9007 12.6192C17.0875 12.3123 17.1809 11.9654 17.1809 11.5784C17.1809 10.9779 16.9807 10.5042 16.5804 10.1572C16.1934 9.79694 15.6864 9.6168 15.0592 9.6168C14.3119 9.6168 13.7114 9.84364 13.2577 10.2973C12.804 10.7377 12.5705 11.3449 12.5572 12.1188H9.97508C10.0018 10.731 10.4555 9.58344 11.3362 8.67603C12.2302 7.76863 13.4646 7.31493 15.0392 7.31493C16.5337 7.31493 17.7147 7.70859 18.582 8.49589C19.4628 9.28319 19.9031 10.284 19.9031 11.4983C19.9031 11.9654 19.8497 12.3857 19.743 12.7593C19.6362 13.133 19.4694 13.4599 19.2426 13.7401C19.0291 14.0204 18.8422 14.2339 18.6821 14.3806C18.522 14.5274 18.2951 14.7143 18.0016 14.9411C17.8681 15.0479 17.6746 15.1946 17.4211 15.3815C17.1809 15.5549 17.0141 15.675 16.9207 15.7417C16.8406 15.8085 16.7205 15.9152 16.5604 16.062C16.4003 16.1954 16.2935 16.3089 16.2401 16.4023C16.2001 16.4823 16.1467 16.5958 16.08 16.7426C16.0133 16.876 15.9666 17.0228 15.9399 17.1829C15.9266 17.3297 15.9199 17.5032 15.9199 17.7033H13.4779ZM13.2377 21.8867V18.9844H16.1601V21.8867H13.2377Z' fill='white'/%3E%3C/svg%3E");
+  height: 3rem;
+  width: 3rem;
+  background-size: contain;
+}
+.packs.alt .highlight em {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.packs.alt .highlight p {
+  margin: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
