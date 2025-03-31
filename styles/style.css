@@ -446,6 +446,10 @@ html {
   color: #fff;
 }
 
+.center {
+  text-align: center;
+}
+
 a {
   text-decoration: none;
 }
@@ -1422,6 +1426,89 @@ body {
 }
 .packs.alt .highlight p {
   margin: 0;
+}
+
+.calculator-v1 {
+  background: url(../../assets/img/background.jpg);
+  padding: 75px 0;
+}
+@media screen and (min-width: 768px) {
+  .calculator-v1 {
+    padding: 105px 0;
+  }
+}
+.calculator-v1 .heading {
+  margin-bottom: 4.5rem;
+}
+.calculator-v1 .heading .cta {
+  margin: 0 auto;
+}
+.calculator-v1 .calculator-bloc {
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+.calculator-v1 .calculator-bloc .input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.calculator-v1 .calculator-bloc .input-wrapper .input {
+  border: solid 1px #b4cfcb;
+  border-radius: 0.5rem;
+  text-align: center;
+  max-width: 14rem;
+}
+.calculator-v1 .calculator-bloc .results-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .calculator-v1 .calculator-bloc .results-wrapper {
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: space-between;
+  }
+}
+.calculator-v1 .calculator-bloc .results-wrapper .result-container {
+  background-color: #f7f0ea;
+  border-radius: 1rem;
+  width: 100%;
+}
+.calculator-v1 .calculator-bloc .results-wrapper .result-container .title {
+  margin: 1rem 0;
+}
+.calculator-v1 .calculator-bloc .results-wrapper .result-container .result-lines {
+  padding: 1.5rem 0;
+  margin: 0 1.5rem;
+  position: relative;
+  border-top: solid 1px #b4cfcb;
+}
+.calculator-v1 .calculator-bloc .results-wrapper .result-container .label,
+.calculator-v1 .calculator-bloc .results-wrapper .result-container .price {
+  margin: 0;
+}
+.calculator-v1 .calculator-bloc .results-wrapper .result-container .line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calculator-v1 .calculator-bloc .results-wrapper .result-container .final-result {
+  border-radius: 1rem;
+  background-color: #f9bb44;
+  padding: 4.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calculator-v1 .infos {
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .calculator-v1 .infos {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
