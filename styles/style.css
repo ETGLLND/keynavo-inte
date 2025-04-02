@@ -1668,4 +1668,67 @@ body {
   object-fit: cover;
 }
 
+.two-columns {
+  margin: 10.5rem 0;
+}
+.two-columns .content-container {
+  background: url(../../assets/img/background.jpg);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .two-columns .content-container {
+    display: flex;
+  }
+}
+.two-columns .content-container .text-content {
+  padding: 4.5rem 2rem;
+}
+@media screen and (min-width: 768px) {
+  .two-columns .content-container .text-content {
+    width: 58.3333333333%;
+    flex-shrink: 0;
+    padding: 6rem 14.2857142857%;
+  }
+}
+.two-columns .content-container .text {
+  margin: 0;
+}
+.two-columns .content-container .slider {
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .two-columns .content-container .slider .slide {
+    height: 100%;
+  }
+}
+.two-columns .content-container .slider .illustration {
+  width: 100%;
+  aspect-ratio: 375/236;
+  border-radius: 2rem;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  top: 3px;
+}
+@media screen and (min-width: 768px) {
+  .two-columns .content-container .slider .illustration {
+    top: 0;
+    aspect-ratio: unset;
+    height: 100%;
+  }
+}
+.two-columns .content-container .slider .illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.two-columns .content-container .slider .buttons {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  z-index: 3;
+  margin: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
