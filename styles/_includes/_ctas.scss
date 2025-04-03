@@ -104,3 +104,71 @@ a {
     background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.4365 16.2407C12.0323 16.7796 11.2216 16.7728 10.8265 16.2272L10.515 15.797C10.2579 15.442 10.262 14.9611 10.5249 14.6105L12.7868 11.5946C13.2812 10.9354 12.8108 9.99465 11.9868 9.99465H1.625C1.07272 9.99465 0.625 9.54693 0.625 8.99465V8.06202C0.625 7.50974 1.07272 7.06203 1.625 7.06203H11.9868C12.8108 7.06203 13.2812 6.12126 12.7868 5.46203L10.5249 2.44621C10.262 2.09561 10.2579 1.61466 10.515 1.2597L10.8265 0.829456C11.2216 0.283828 12.0323 0.277036 12.4365 0.815967L17.7707 7.92834C18.0374 8.28389 18.0374 8.77278 17.7707 9.12834L12.4365 16.2407Z' fill='%23B4CFCB'/%3E%3C/svg%3E%0A");
   }
 }
+
+.dots-container {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  // Barre derrière
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $color4;
+    position: absolute;
+    top: 50%;
+    left: 0;
+  }
+  .step {
+    margin: 0;
+    counter-increment: my-counter;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    color: $color4;
+    position: relative;
+    &::before {
+      content: counter(my-counter);
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      border: solid 1px $color4;
+      background-color: $color9;
+      z-index: 3;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 100%;
+      border: solid 1px $color6;
+      opacity: 0;
+      // background: url(../../assets/img/background.jpg);
+      z-index: 1;
+    }
+    &.open {
+      color: $color1;
+      &::before {
+        color: $color9;
+        background-color: $color6;
+        width: 37px;
+        height: 37px;
+        border: none;
+        margin-left: 5px;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
