@@ -8,31 +8,16 @@
   .title {
     text-align: center;
   }
-  // .controls {
-  //   display: flex;
-  //   justify-content: center;
-  //   gap: 1rem;
-  //   margin-bottom: 3rem;
-  //   .left,
-  //   .right {
-  //     height: 4.5rem;
-  //     width: 4.5rem;
-  //     border-radius: 100%;
-  //     border: solid 1px $color4;
-  //     background-repeat: no-repeat;
-  //     background-position: center;
-  //     cursor: pointer;
-  //   }
-  //   .left {
-  //     background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.56355 0.755384C5.96774 0.216453 6.77838 0.223247 7.17349 0.768875L7.48504 1.19912C7.74208 1.55408 7.73805 2.03503 7.4751 2.38563L5.21324 5.40144C4.71881 6.06068 5.1892 7.00144 6.01324 7.00144L16.375 7.00145C16.9273 7.00145 17.375 7.44916 17.375 8.00145L17.375 8.93407C17.375 9.48635 16.9273 9.93407 16.375 9.93407L6.01324 9.93406C5.1892 9.93406 4.71881 10.8748 5.21324 11.5341L7.4751 14.5499C7.73805 14.9005 7.74208 15.3814 7.48504 15.7364L7.17349 16.1666C6.77838 16.7123 5.96774 16.7191 5.56355 16.1801L0.229269 9.06775C-0.0373991 8.7122 -0.0373972 8.22331 0.229269 7.86775L5.56355 0.755384Z' fill='%23B4CFCB'/%3E%3C/svg%3E");
-  //   }
-  //   .right {
-  //     background-image: url("data:image/svg+xml,%3Csvg width='18' height='17' viewBox='0 0 18 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.4365 16.2407C12.0323 16.7796 11.2216 16.7728 10.8265 16.2272L10.515 15.797C10.2579 15.442 10.262 14.9611 10.5249 14.6105L12.7868 11.5946C13.2812 10.9354 12.8108 9.99465 11.9868 9.99465H1.625C1.07272 9.99465 0.625 9.54693 0.625 8.99465V8.06202C0.625 7.50974 1.07272 7.06203 1.625 7.06203H11.9868C12.8108 7.06203 13.2812 6.12126 12.7868 5.46203L10.5249 2.44621C10.262 2.09561 10.2579 1.61466 10.515 1.2597L10.8265 0.829456C11.2216 0.283828 12.0323 0.277036 12.4365 0.815967L17.7707 7.92834C18.0374 8.28389 18.0374 8.77278 17.7707 9.12834L12.4365 16.2407Z' fill='%23B4CFCB'/%3E%3C/svg%3E%0A");
-  //   }
-  // }
   .reviews-container {
     .review-item {
       max-width: 270px;
+      transition: opacity transform 0.3s ease;
+      transform: scale(1);
+      opacity: 1;
+      &:not(.swiper-slide-active) {
+        transform: scale(0.75);
+        opacity: 0.7;
+      }
       .content {
         font-size: 1.8rem;
         font-weight: 700;

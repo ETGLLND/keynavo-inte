@@ -3,25 +3,38 @@ import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const reviewsRoot = document.querySelector(
-  ".reviews-bloc > .reviews-container"
-);
-const prevBtn = document.querySelector(".controls > .left");
-const nextBtn = document.querySelector(".controls > .right");
+// REVIEWS BLOC
+const reviewsRoot = document.querySelector(".reviews-bloc");
 
 if (reviewsRoot) {
-  const flkty = new Flickity(reviewsRoot, {
-    prevNextButtons: false,
-    pageDots: false,
-    gap,
-  });
-  prevBtn.addEventListener("click", () => {
-    console.log("previous");
-    flkty.previous();
-  });
-  nextBtn.addEventListener("click", () => {
-    console.log("next");
-    flkty.next();
+  const prevBtn = reviewsRoot.querySelector(".controls > .left");
+  const nextBtn = reviewsRoot.querySelector(".controls > .right");
+  // const flkty = new Flickity(reviewsRoot.querySelector(".reviews-container"), {
+  //   prevNextButtons: false,
+  //   pageDots: false,
+  //   gap: 45,
+  // });
+  // console.log(flkty);
+  // prevBtn.addEventListener("click", () => {
+  //   flkty.previous();
+  // });
+  // nextBtn.addEventListener("click", () => {
+  //   flkty.next();
+  // });
+  // var splide = new Splide("#reviews-splide", {
+  //   gap: "7rem",
+  // });
+  // splide.mount();
+  const swiper = new Swiper(".swiper", {
+    // Navigation arrows
+    navigation: {
+      prevEl: ".controls > .left",
+      nextEl: ".controls > .right",
+    },
+    slidesPerView: "auto", // Ajuste la largeur des slides
+    centeredSlides: true, // Centre le groupe de slides
+    loop: true,
+    spaceBetween: 70,
   });
 }
 
@@ -109,4 +122,24 @@ if (stepsRoot) {
   //     goToSlide(id);
   //   });
   // });
+}
+
+// ADVANTAGES BLOG
+const advantagesRoot = document.querySelector(".advantages");
+
+if (advantagesRoot) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const items = advantagesRoot.querySelectorAll(".item");
+  items.forEach((el) => {
+    observer.observe(el);
+  });
 }
