@@ -92,11 +92,13 @@ const reviewsRoot = document.querySelector(".reviews-bloc");
 if (reviewsRoot) {
   const prevBtn = reviewsRoot.querySelector(".controls > .left");
   const nextBtn = reviewsRoot.querySelector(".controls > .right");
-  const swiper = new Swiper(".swiper", {
+  const swiperContainer = reviewsRoot.querySelector(".swiper");
+
+  const swiper = new Swiper(swiperContainer, {
     // Navigation arrows
     navigation: {
-      prevEl: ".controls > .left",
-      nextEl: ".controls > .right",
+      prevEl: prevBtn,
+      nextEl: nextBtn,
     },
     slidesPerView: "auto", // Ajuste la largeur des slides
     centeredSlides: true, // Centre le groupe de slides
@@ -212,4 +214,21 @@ if (navRoot) {
   }
   // const firstSub = navRoot.querySelector(".sub-item");
   // console.log(firstSub.scrollWidth);
+}
+
+// TWO COLUMNS
+const twoRoot = document.querySelector(".two-columns");
+
+if (twoRoot) {
+  const prevBtn = twoRoot.querySelector(".controls > .left");
+  const nextBtn = twoRoot.querySelector(".controls > .right");
+  const swiperContainer = twoRoot.querySelector(".slider");
+  const swiper = new Swiper(swiperContainer, {
+    slidesPerView: "auto", // Ajuste la largeur des slides
+    navigation: {
+      prevEl: prevBtn,
+      nextEl: nextBtn,
+    },
+    loop: true,
+  });
 }

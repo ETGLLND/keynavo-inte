@@ -1,5 +1,10 @@
 .two-columns {
   margin: 10.5rem 0;
+  &.alt .content-container {
+    @media screen and (min-width: $medium) {
+      flex-direction: row-reverse;
+    }
+  }
   .content-container {
     background: url(../../assets/img/background.jpg);
     border-radius: 2rem;

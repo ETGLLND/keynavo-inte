@@ -1653,6 +1653,11 @@ body {
 .two-columns {
   margin: 10.5rem 0;
 }
+@media screen and (min-width: 768px) {
+  .two-columns.alt .content-container {
+    flex-direction: row-reverse;
+  }
+}
 .two-columns .content-container {
   background: url(../../assets/img/background.jpg);
   border-radius: 2rem;
@@ -2064,6 +2069,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 20;
 }
 @media screen and (min-width: 992px) {
   .navigation {
