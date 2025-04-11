@@ -3,28 +3,95 @@ import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// FUNCTIONS
+// function measureFullHeight(el) {
+//   const hiddenElements = [];
+
+//   // Trouver tous les descendants cachés
+//   el.querySelectorAll("*").forEach((child) => {
+//     const style = window.getComputedStyle(child);
+//     if (style.display === "none") {
+//       hiddenElements.push({
+//         element: child,
+//         originalDisplay: child.style.display,
+//       });
+//       child.style.display = "block";
+//     }
+//   });
+
+//   // Forcer reflow et mesurer
+//   const height = el.scrollHeight;
+
+//   // Restaurer les états initiaux
+//   hiddenElements.forEach(({ element, originalDisplay }) => {
+//     element.style.display = originalDisplay || "";
+//   });
+
+//   return height;
+// }
+
+// const createOpenAnimation = (
+//   container,
+//   basisClass,
+//   adjustment = 0,
+//   target = container
+// ) => {
+//   const basis = container.querySelector(basisClass);
+//   let opened = false;
+
+//   container.style.overflow = "hidden";
+//   container.style.transition = "max-height 0.3s ease";
+//   container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
+
+//   target.addEventListener("click", (e) => {
+//     if (!opened) {
+//       // Mesurer la hauteur maximale potentielle même avec des enfants cachés
+//       const fullHeight = measureFullHeight(container) + adjustment;
+
+//       // Forcer reflow si nécessaire
+//       void container.offsetHeight;
+
+//       container.classList.add("open");
+//       container.style.maxHeight = `${fullHeight}px`;
+//       opened = true;
+//     } else {
+//       container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
+//       container.classList.remove("open");
+//       opened = false;
+//     }
+//   });
+// };
+
+const createOpenAnimation = (
+  container,
+  basisClass,
+  adjustment = 0,
+  target = container
+) => {
+  const basis = container.querySelector(basisClass);
+  container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
+  let opened = false;
+  target.addEventListener("click", (e) => {
+    if (!opened) {
+      container.classList.add("open");
+      container.style.maxHeight = `${
+        container.scrollHeight + adjustment + 100
+      }px`;
+      opened = true;
+    } else {
+      container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
+      container.classList.remove("open");
+      opened = false;
+    }
+  });
+};
+
 // REVIEWS BLOC
 const reviewsRoot = document.querySelector(".reviews-bloc");
 
 if (reviewsRoot) {
   const prevBtn = reviewsRoot.querySelector(".controls > .left");
   const nextBtn = reviewsRoot.querySelector(".controls > .right");
-  // const flkty = new Flickity(reviewsRoot.querySelector(".reviews-container"), {
-  //   prevNextButtons: false,
-  //   pageDots: false,
-  //   gap: 45,
-  // });
-  // console.log(flkty);
-  // prevBtn.addEventListener("click", () => {
-  //   flkty.previous();
-  // });
-  // nextBtn.addEventListener("click", () => {
-  //   flkty.next();
-  // });
-  // var splide = new Splide("#reviews-splide", {
-  //   gap: "7rem",
-  // });
-  // splide.mount();
   const swiper = new Swiper(".swiper", {
     // Navigation arrows
     navigation: {
@@ -65,20 +132,7 @@ const faqRoot = document.querySelector(".faq-bloc");
 if (faqRoot) {
   const faqBlocs = document.querySelectorAll(".question-bloc");
   faqBlocs.forEach((el) => {
-    const question = el.querySelector(".question");
-    el.style.maxHeight = `${question.scrollHeight + 20}px`;
-    let opened = false;
-    el.addEventListener("click", (e) => {
-      if (!opened) {
-        el.classList.add("open");
-        el.style.maxHeight = `${el.scrollHeight}px`;
-        opened = true;
-      } else {
-        el.style.maxHeight = `${question.scrollHeight + 20}px`;
-        el.classList.remove("open");
-        opened = false;
-      }
-    });
+    createOpenAnimation(el, ".question", 20);
   });
 }
 
@@ -142,4 +196,20 @@ if (advantagesRoot) {
   items.forEach((el) => {
     observer.observe(el);
   });
+}
+
+// NAV
+const navRoot = document.querySelector("nav.navigation");
+
+if (navRoot) {
+  if (window.innerWidth < 992) {
+    // Animation of the subelements of menu
+    const selects = navRoot.querySelectorAll(".menu-item-container");
+    selects.forEach((el) => createOpenAnimation(el, ".menu-item", 2));
+    // Open animation of the menu with burger
+    const burger = navRoot.querySelector(".burger");
+    createOpenAnimation(navRoot, ".top", 0, burger);
+  }
+  // const firstSub = navRoot.querySelector(".sub-item");
+  // console.log(firstSub.scrollWidth);
 }

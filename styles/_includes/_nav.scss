@@ -8,11 +8,28 @@
   border-left: solid 1px $color4;
   border-right: solid 1px $color4;
   padding: 0 46px;
+  @media screen and (max-width: $small) {
+    padding: 0;
+    position: relative;
+  }
+  .logo-container {
+    height: 57px;
+    width: 91px;
+    margin: 1.5rem 0;
+  }
+
   .menu-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
+    @media screen and (max-width: $small) {
+      position: absolute;
+      width: 100%;
+      background-color: aquamarine;
+      top: 100%;
+      padding: 4.5rem 2rem;
+    }
     .menu {
       display: flex;
       justify-content: space-between;
@@ -20,7 +37,17 @@
       gap: 1rem;
       padding: 15px 0;
       position: relative;
+      @media screen and (max-width: $small) {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+      }
       .menu-item-container {
+        transition: all 0.3s ease;
+        @media screen and (max-width: $small) {
+          //   overflow: hidden;
+        }
         &:hover {
           .sub-items {
             display: flex;
@@ -34,10 +61,18 @@
           padding: 1rem;
           box-shadow: 0px 0px 24px 0px rgba(198, 182, 169, 0.5);
           border-radius: 0.5rem;
-          margin-top: 1rem;
-          display: none;
           flex-direction: column;
           gap: 0.5rem;
+          margin-top: 1rem;
+          display: none;
+          @media screen and (max-width: $small) {
+            position: static;
+            box-shadow: unset;
+            border-radius: unset;
+            background-color: unset;
+            align-items: center;
+            display: block;
+          }
           &::before {
             content: "";
             display: block;
@@ -53,6 +88,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+
             &::before {
               content: "";
               display: block;
@@ -61,6 +97,9 @@
               background-color: $color4;
               border-radius: 0.4rem;
               flex-shrink: 0;
+              @media screen and (max-width: $small) {
+                content: unset;
+              }
             }
             &:hover {
               .item-link {
@@ -86,6 +125,10 @@
         border-radius: 2rem;
         border: solid 1px;
         margin: 0;
+        @media screen and (max-width: $small) {
+          width: fit-content;
+          margin: 0 auto;
+        }
         &.select,
         &.link {
           color: $color1;
@@ -117,6 +160,9 @@
             }
           }
         }
+      }
+      .contact {
+        margin-bottom: 0;
       }
     }
   }
