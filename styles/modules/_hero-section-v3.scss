@@ -1,0 +1,52 @@
+.hero-section-v3 {
+  padding: 11.5rem 0 2rem;
+  background: url(../../assets/img/gradient-orange.png);
+  background-size: cover;
+  gap: 3rem;
+  @media screen and (min-width: $small) {
+    padding: 19.5rem 0 10.5rem;
+  }
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    @media screen and (min-width: $small) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .text-content {
+      @media screen and (min-width: $small) {
+        width: calc(100% / 12 * 6);
+      }
+    }
+    .illustration {
+      width: 100%;
+      aspect-ratio: 334/269;
+      position: relative;
+      @media screen and (min-width: $small) {
+        width: calc(100% / 12 * 5);
+      }
+      img {
+        border-radius: 1.5rem;
+      }
+      &::before {
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='36' height='43' viewBox='0 0 36 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_1350_17264)'%3E%3Cpath d='M33.0698 32.1779L32.9364 14.3198C32.9344 14.04 32.869 13.7636 32.7456 13.5122C32.6222 13.2608 32.4441 13.0412 32.2252 12.8708C32.0064 12.7004 31.7527 12.5838 31.4842 12.5301C31.2158 12.4764 30.9398 12.4871 30.678 12.5614L20.9569 15.3067C20.8175 15.3461 20.6708 15.3525 20.5277 15.3256C20.3846 15.2987 20.2487 15.2391 20.1302 15.1513C20.0117 15.0634 19.9137 14.9496 19.8434 14.8183C19.773 14.6869 19.7323 14.5415 19.7241 14.3927L19.6144 12.3855C19.5132 10.5444 19.1339 8.72538 18.4908 6.99499L18.1411 6.05483C17.7662 5.04618 17.0568 4.20096 16.1389 3.66933C15.2992 3.18328 14.3109 3.05588 13.391 3.31509L13.1878 3.37249C12.6315 3.5296 12.2069 3.98482 12.079 4.56158L11.0062 9.37147C10.5255 11.5286 9.45526 13.4918 7.91992 15.0325L3.17542 19.7914C2.95053 20.0172 2.7901 20.302 2.71104 20.6157C2.63197 20.9294 2.63719 21.2605 2.72615 21.5742L7.60678 38.8565C7.73745 39.3192 8.0412 39.7125 8.4512 39.95C8.86121 40.1875 9.34388 40.2497 9.79304 40.1228L31.7984 33.9084C32.1672 33.8041 32.4908 33.5787 32.7201 33.2664C32.9494 32.9542 33.0727 32.5718 33.0698 32.1779Z' stroke='%23B4CFCB' stroke-width='4.80383' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_1350_17264' x='0.253906' y='0.78125' width='35.2188' height='43.0096' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='1.20096'/%3E%3CfeGaussianBlur stdDeviation='1.92153'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_1350_17264'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+        width: 3.6rem;
+        height: 4.3rem;
+        position: absolute;
+        top: 4rem;
+        left: -1rem;
+      }
+      &::after {
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg width='38' height='40' viewBox='0 0 38 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_1350_17225)'%3E%3Cpath d='M16.7651 6.93889C19.8765 3.91943 21.4314 2.40946 22.9431 2.86334C24.4547 3.31723 24.9206 5.43399 25.854 9.66798L26.0958 10.7638C26.3608 11.9675 26.4933 12.5694 26.8381 13.0436C27.183 13.5178 27.7038 13.8117 28.7454 14.3994L29.6916 14.9341C33.3513 17.0023 35.1798 18.0351 35.1965 19.6776C35.2121 21.318 33.4042 22.4823 29.7874 24.8089L28.8517 25.4101C27.8249 26.0711 27.3097 26.4019 26.974 26.8998C26.6378 27.3992 26.517 28.0103 26.2758 29.2308L26.0567 30.3431C25.2062 34.6418 24.7819 36.7906 23.2808 37.3509C21.7796 37.9112 20.1948 36.513 17.0283 33.7176L16.2067 32.9941C15.3075 32.1986 14.8575 31.8024 14.3036 31.6361C13.7497 31.4698 13.1558 31.5525 11.9671 31.7211L10.8845 31.8729C6.7003 32.4611 4.60742 32.755 3.66431 31.4625C2.71896 30.1658 3.54861 28.1388 5.2068 24.0826L5.63616 23.0352C6.10769 21.882 6.34346 21.3055 6.33595 20.7046C6.33211 20.1031 6.08434 19.5432 5.59103 18.4275L5.14176 17.4086C3.40434 13.4761 2.5369 11.5085 3.45402 10.1464C4.37115 8.78426 6.46982 8.92891 10.663 9.22044L11.7472 9.2954C12.9387 9.37822 13.5337 9.41939 14.0843 9.21406C14.6349 9.00874 15.0755 8.57893 15.9598 7.72029L16.7651 6.93889Z' stroke='%23B4CFCB' stroke-width='4.6044' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_1350_17225' x='0.78125' y='0.480469' width='36.7168' height='40.448' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='1.1511'/%3E%3CfeGaussianBlur stdDeviation='1.84176'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_1350_17225'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+        width: 3.8rem;
+        height: 4rem;
+        position: absolute;
+        bottom: 4rem;
+        right: -1rem;
+      }
+    }
+  }
+}

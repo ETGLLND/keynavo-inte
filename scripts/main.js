@@ -112,20 +112,27 @@ if (reviewsRoot) {
 const titleRoot = document.querySelector(".title-scroll");
 
 if (titleRoot) {
-  const text = titleRoot.querySelector(".content");
-  const length = text.clientWidth;
-  console.log({ length });
-  gsap.to(".title-scroll>.content", {
-    scrollTrigger: {
-      trigger: ".title-scroll",
-      scrub: 1,
-      markers: true,
-      start: "top 50%",
-      end: "bottom 50%",
-    },
-    left: `-${length}px`,
-    scrub: true,
+  const title = titleRoot.querySelector(".content");
+
+  window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
   });
+  console.log(title.scrollWidth);
+  // const logoWidth = logos[0].offsetWidth + 100;
+  // const totalOriginalLogos = logos.length / 2; // car on a dupliqué
+  // const loopWidth = logoWidth * totalOriginalLogos;
+  // let scrollOffset = 0;
+  // window.addEventListener("scroll", () => {
+  //   const speed = 0.5;
+  //   scrollOffset = window.scrollY * speed;
+  //   // Boucle infinie : reset dès qu'on dépasse la moitié
+  //   const translateX = scrollOffset % loopWidth;
+  //   // track.style.transform = `translateX(-${translateX}px)`;
+  //   // track.style.transform = `translateX(${translateX}px)`;
+  //   track.style.transform = direction
+  //     ? `translateX(-${translateX}px)`
+  //     : `translateX(${translateX}px)`;
+  // });
 }
 
 // FAQ BLOC
@@ -142,42 +149,6 @@ if (faqRoot) {
 const stepsRoot = document.querySelector(".steps-bloc");
 
 if (stepsRoot) {
-  const flkty = new Flickity(stepsRoot.querySelector(".slider"), {
-    cellAlign: "left",
-    contain: true,
-    // wrapAround: true,
-    pageDots: false,
-    groupCells: true,
-  });
-
-  const buttons = stepsRoot.querySelectorAll(".title-item");
-  buttons.forEach((el, id) => {
-    el.addEventListener("click", () => {
-      // goToSlide(id);
-      flkty.select(id);
-    });
-  });
-
-  // const slider = stepsRoot.querySelector(".slider");
-  // const items = stepsRoot.querySelectorAll(".slider-item");
-  // const totalItems = items.length;
-  // let currentIndex = 0;
-
-  // function goToSlide(index) {
-  //   if (index < 0 || index >= totalItems) return;
-  //   currentIndex = index;
-  //   const offset = -index * 100; // Déplacement en pourcentage
-  //   slider.style.transform = `translateX(${offset}%)`;
-  //   slider.style.transition = "transform 0.5s ease-in-out";
-  // }
-
-  // // Ajout d'écouteurs d'événements sur les boutons
-  // const buttons = stepsRoot.querySelectorAll(".title-item");
-  // buttons.forEach((el, id) => {
-  //   el.addEventListener("click", () => {
-  //     goToSlide(id);
-  //   });
-  // });
 }
 
 // ADVANTAGES BLOG
@@ -212,8 +183,6 @@ if (navRoot) {
     const burger = navRoot.querySelector(".burger");
     createOpenAnimation(navRoot, ".top", 0, burger);
   }
-  // const firstSub = navRoot.querySelector(".sub-item");
-  // console.log(firstSub.scrollWidth);
 }
 
 // TWO COLUMNS
@@ -231,4 +200,44 @@ if (twoRoot) {
     },
     loop: true,
   });
+}
+
+// PARTNERS
+const partnersRoot = document.querySelector(".partners");
+
+if (partnersRoot) {
+  // First line
+  const createTrackSlide = (track, logos, direction = true) => {
+    logos.forEach((el) => {
+      const clone = el.cloneNode(true);
+      direction ? track.appendChild(clone) : track.prepend(clone);
+    });
+    const logoWidth = logos[0].offsetWidth + 100;
+
+    const totalOriginalLogos = logos.length / 2; // car on a dupliqué
+    const loopWidth = logoWidth * totalOriginalLogos;
+
+    let scrollOffset = 0;
+
+    window.addEventListener("scroll", () => {
+      const speed = 0.5;
+      scrollOffset = window.scrollY * speed;
+
+      // Boucle infinie : reset dès qu'on dépasse la moitié
+      const translateX = scrollOffset % loopWidth;
+      // track.style.transform = `translateX(-${translateX}px)`;
+      // track.style.transform = `translateX(${translateX}px)`;
+      track.style.transform = direction
+        ? `translateX(-${translateX}px)`
+        : `translateX(${translateX}px)`;
+    });
+  };
+
+  const firstTrack = partnersRoot.querySelector(".logos-line.first");
+  const secondTrack = partnersRoot.querySelector(".logos-line.second");
+  const firstLogos = firstTrack.querySelectorAll(".logo-item");
+  const secondLogos = secondTrack.querySelectorAll(".logo-item");
+
+  createTrackSlide(firstTrack, firstLogos, true);
+  createTrackSlide(secondTrack, secondLogos, false);
 }
