@@ -1,5 +1,8 @@
 .hero-section-v1 {
   background: url(../../assets/img/background.jpg);
+  @media screen and (min-width: $medium) {
+    padding-bottom: 40rem;
+  }
   .content {
     background-color: $color9;
     border-radius: 0 0 20px 20px;

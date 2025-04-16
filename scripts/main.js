@@ -86,6 +86,14 @@ const createOpenAnimation = (
   });
 };
 
+const changeSwiperDots = (swiper, dots) => {
+  const currentNumber = swiper.realIndex;
+  dots.forEach((el, index) => {
+    el.classList.remove("open");
+    if (index === currentNumber) el.classList.add("open");
+  });
+};
+
 // REVIEWS BLOC
 const reviewsRoot = document.querySelector(".reviews-bloc");
 
@@ -240,4 +248,36 @@ if (partnersRoot) {
 
   createTrackSlide(firstTrack, firstLogos, true);
   createTrackSlide(secondTrack, secondLogos, false);
+}
+
+// TIMELINE
+const timelineRoot = document.querySelector(".timeline");
+
+if (timelineRoot) {
+  const prevBtn = timelineRoot.querySelector(".controls > .left");
+  const nextBtn = timelineRoot.querySelector(".controls > .right");
+  const swiperContainer = timelineRoot.querySelector(".slider");
+  const triggers = timelineRoot.querySelectorAll(".step");
+  const swiper = new Swiper(swiperContainer, {
+    slidesPerView: "auto", // Ajuste la largeur des slides
+    centeredSlides: true, // Centre le groupe de slides
+    navigation: {
+      prevEl: prevBtn,
+      nextEl: nextBtn,
+    },
+  });
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      triggers.forEach((el) => el.classList.remove("open"));
+      trigger.classList.add("open");
+      const slideIndex = parseInt(trigger.dataset.slide, 10);
+      swiper.slideTo(slideIndex);
+    });
+  });
+  prevBtn.addEventListener("click", (e) => {
+    changeSwiperDots(swiper, triggers);
+  });
+  nextBtn.addEventListener("click", (e) => {
+    changeSwiperDots(swiper, triggers);
+  });
 }

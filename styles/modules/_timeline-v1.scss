@@ -1,0 +1,67 @@
+.timeline-v1 {
+  margin: 10.5rem 0;
+  .content {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+    border-radius: 2rem;
+  }
+  .buttons-container {
+    margin: 3rem auto;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: $small) {
+      flex-direction: row;
+      width: fit-content;
+    }
+    .button {
+      font-size: 1.7rem;
+      font-weight: 700;
+      width: fit-content;
+      color: $color1;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2rem;
+      opacity: 0.4;
+      background-color: $color10;
+      cursor: pointer;
+      &.open {
+        opacity: 1;
+      }
+    }
+  }
+  .cta {
+    margin: 0 auto 4.5rem;
+  }
+  .slider {
+    overflow: hidden;
+    @media screen and (min-width: $small) {
+      margin-top: 5rem;
+    }
+    .slide {
+      display: flex;
+      flex-direction: column;
+      @media screen and (min-width: $small) {
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: center;
+      }
+      .text-content {
+        @media screen and (min-width: $small) {
+          width: calc(100% / 7 * 4);
+        }
+      }
+      .illustration {
+        width: 100%;
+        aspect-ratio: 334/193;
+        @media screen and (min-width: $small) {
+          width: calc(100% / 7 * 3);
+          aspect-ratio: 360/211;
+        }
+        img {
+          border-radius: 1.5rem;
+        }
+      }
+    }
+  }
+}
