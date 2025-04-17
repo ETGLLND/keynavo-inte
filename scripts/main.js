@@ -281,3 +281,23 @@ if (timelineRoot) {
     changeSwiperDots(swiper, triggers);
   });
 }
+
+// HERO SECTION V1
+const heroRoot = document.querySelector(".hero-section-v1");
+
+if (heroRoot) {
+  const sliderContainer = heroRoot.querySelector(".solutions-slider");
+  if (sliderContainer) {
+    const leftButton = heroRoot.querySelector(".controls > .left");
+    const rightButton = heroRoot.querySelector(".controls > .right");
+    const swiper = new Swiper(sliderContainer, {
+      slidesPerView: "auto", // Ajuste la largeur des slides
+      centeredSlides: true, // Centre le groupe de slides
+      spaceBetween: 20,
+      navigation: {
+        prevEl: leftButton,
+        nextEl: rightButton,
+      },
+    });
+  }
+}
