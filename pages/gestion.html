@@ -59,97 +59,640 @@
         </div>
       </div>
     </nav>
-    <div class="hero-section-v1">
-      <div class="content container">
+
+    <div class="packs">
+      <div class="container">
+        <h2 class="h2 title">
+          Nos deux packs de gestion locative : Le Smart et le Zen
+        </h2>
+        <div class="content-wrapper">
+          <div class="content">
+            <h3 class="h3 content-title">Pack Smart</h3>
+            <p class="price h4">
+              Gestion locative à 24,90€/mois ou 19,90€/mois (abonnement annuel)
+            </p>
+            <div class="text-content">
+              <ul class="p">
+                <li>Transfert ou création du mandat de gestion</li>
+                <li>Encaissement et versement flexible des loyers à J+5</li>
+                <li>Émission des quittances de loyer mensuels</li>
+                <li>
+                  Gestion proactive des impayés (relance amiable jusqu'à la mise
+                  en demeure)
+                </li>
+                <li>
+                  Gestion des interventions, travaux et maintenance courante
+                </li>
+                <li>
+                  Assistance téléphonique pour les locataires et bailleurs
+                </li>
+                <li>Reddition des comptes locatifs pour déclaration fiscale</li>
+                <li>
+                  Votre locataire part ? Nous trouvons un remplaçant fiable et
+                  solvable en un temps record
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="cta-primary cta">Je fonce !</a>
+          </div>
+          <div class="content">
+            <h3 class="h3 content-title">Pack Zen</h3>
+            <p class="price h4">
+              Gestion locative + Garantie Loyers Impayés à 24.90€ + 2.5% du
+              loyer / mois
+            </p>
+            <div class="text-content">
+              <ul class="p">
+                <li>Pack Smart</li>
+                <li>Gestion des impayés, on s’occupe de tout</li>
+                <li>
+                  Une protection complète avec la GLI Keynavo
+                  <ul class="p">
+                    <li>La garantie “loyer impayés”</li>
+                    <li>La garantie “détérioration immobilière”</li>
+                    <li>La garantie “protection juridique”</li>
+                    <li>La garantie “squat”</li>
+                  </ul>
+                </li>
+                <li>Option : garantie vacance locative</li>
+              </ul>
+            </div>
+            <a href="#" class="cta-primary cta">Je fonce</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="calculator-v1">
+      <div class="container">
         <div class="heading">
-          <h1 class="h1 title">
-            La gestion locative repensée: simple, flexible et adaptée à mes
-            besoins
-          </h1>
-          <p class="subtitle p">
-            Des solutions personnalisées à mon profil, des outils performants et
-            une équipe disponible pour m’accompagner à chaque étape.
+          <h2 class="h2 title center white">
+            Bénéficiez de la gestion locative la plus claire et abordable du
+            marché
+          </h2>
+          <p class="p subtitle center white">
+            Comparez les tarifs* Keynavo avec ceux des agences traditionnelles
+            et digitales sur 1 an.. Vous allez économiser !
           </p>
+          <a href="#" class="cta-primary cta">Je fonce !</a>
         </div>
-        <div class="solutions-slider">
-          <div class="solution">
-            <div class="head">
-              <h4 class="h4 solution-title">Gestion locative</h4>
-              <p class="price h3">19,90€/mois</p>
-            </div>
-            <figure class="illustration">
-              <img src="./assets/img/portrait.jpg" alt="" />
-            </figure>
-            <div class="available white">Disponible partout en France</div>
+        <div class="calculator-bloc">
+          <div class="input-wrapper">
+            <label class="label h4" for="price"
+              >Le montant du loyer charges comprises s’élève à :</label
+            >
+            <input class="input h4" id="price" type="number" />
           </div>
-          <div class="solution">
-            <div class="head">
-              <h4 class="h4 solution-title">Gestion locative</h4>
-              <p class="price h3">19,90€/mois</p>
+          <div class="results-wrapper">
+            <div class="result-container">
+              <h3 class="h3 center title">Pack Smart</h3>
+              <div class="result-lines">
+                <div class="line">
+                  <p class="label p">Agence traditionnelle (10%)</p>
+                  <div id="smart-trad" class="price h4">960€</div>
+                </div>
+                <div class="line">
+                  <p class="label p">Agence digitale (5%)</p>
+                  <div id="smart-digit" class="price h4">480€</div>
+                </div>
+                <div class="line">
+                  <p class="label p">Keynavo (19,90€/mois)</p>
+                  <div id="smart-keynavo" class="price h4">298€</div>
+                </div>
+              </div>
+              <div class="final-result">
+                <div class="label p">Économies réalisées</div>
+                <p id="smart-result" class="price h4">180€ à 662€ / an</p>
+              </div>
             </div>
-            <figure class="illustration">
-              <img src="./assets/img/portrait.jpg" alt="" />
-            </figure>
-            <div class="available white">Disponible partout en France</div>
-          </div>
-          <div class="solution">
-            <div class="head">
-              <h4 class="h4 solution-title">Gestion locative</h4>
-              <p class="price h3">19,90€/mois</p>
+            <div class="result-container">
+              <h3 class="h3 center title">Pack Smart</h3>
+              <div class="result-lines">
+                <div class="line">
+                  <p class="label p">Agence traditionnelle (10%)</p>
+                  <div id="zen-trad" class="price h4">1200€</div>
+                </div>
+                <div class="line">
+                  <p class="label p">Agence digitale (5%)</p>
+                  <div id="zen-digit" class="price h4">720€</div>
+                </div>
+                <div class="line">
+                  <p class="label p">Keynavo (19.90€ + 2.5% du loyer / mois)</p>
+                  <div id="zen-keynavo" class="price h4">468€</div>
+                </div>
+              </div>
+              <div class="final-result">
+                <div class="label p">Économies réalisées</div>
+                <p id="zen-result" class="price h4">252€ à 732€ / an</p>
+              </div>
             </div>
-            <figure class="illustration">
-              <img src="./assets/img/portrait.jpg" alt="" />
-            </figure>
-            <div class="available white">Disponible partout en France</div>
-          </div>
-          <div class="solution">
-            <div class="head">
-              <h4 class="h4 solution-title">Gestion locative</h4>
-              <p class="price h3">19,90€/mois</p>
-            </div>
-            <figure class="illustration">
-              <img src="./assets/img/portrait.jpg" alt="" />
-            </figure>
-            <div class="available white">Disponible partout en France</div>
           </div>
         </div>
-        <div class="solutions-container">
+        <p class="infos p white">
+          *Les économies affichées sont calculées à partir des tarifs médians
+          pratiqués par les agences immobilières traditionnelles et digitales.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-v1 timeline">
+      <div class="content container background">
+        <h2 class="h2 white center">
+          Découvrez en détail le fonctionnement de nos packs de gestion locative
+        </h2>
+        <p class="p subtitle white center">
+          Sollicitudin quam nulla in ut tempus nam pulvinar vitae. Ut elementum
+          odio arcu .
+        </p>
+        <div class="buttons-container">
+          <div id="smart-btn" class="button open">Pack Smart</div>
+          <div id="zen-btn" class="button">Pack Zen</div>
+        </div>
+        <div class="zenSlider none overall">
+          <h3 class="h3 white center">
+            Pack Smart + GLI à 2.5% du loyer / mois
+          </h3>
+          <a href="#" class="cta-primary cta">Call to action</a>
+          <div class="controls">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <div class="dots-container">
+            <div data-slide="0" class="step open"></div>
+            <div data-slide="1" class="step"></div>
+            <div data-slide="2" class="step"></div>
+            <div data-slide="3" class="step"></div>
+          </div>
+          <div class="slider container">
+            <div class="swiper-wrapper">
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Tous les services du pack Smart, avec encore plus de
+                    sérénité
+                  </h4>
+                  <p class="p white">
+                    Le pack Zen inclut l’ensemble de nos services de gestion
+                    locative, complétés par des garanties exclusives grâce à
+                    notre partenariat avec un assureur spécialisé.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Gestion des impayés, on s’occupe de tout
+                  </h4>
+                  <p class="p white">
+                    Si votre locataire ne paie plus son loyer, nous prenons en
+                    charge toutes les démarches administratives et légales pour
+                    vous. Concrètement, nous assurons :
+                  </p>
+                  <ul class="p">
+                    <li class="white">
+                      L’intervention d’un commissaire de justice
+                    </li>
+                    <li class="white">
+                      La déclaration du sinistre auprès de l’assureur
+                    </li>
+                    <li class="white">
+                      La désignation d’un avocat si nécessaire
+                    </li>
+                    <li class="white">
+                      Le suivi du dossier jusqu’à l’indemnisation
+                    </li>
+                  </ul>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Une protection complète avec la GLI Keynavo
+                  </h4>
+                  <p class="p white">
+                    Notre pack Zen ne se limite pas à une simple garantie loyer
+                    impayé. Grâce à notre partenaire, vous bénéficiez de
+                    protections renforcées :
+                  </p>
+                  <ul class="p">
+                    <li class="white">Garantie loyers impayés</li>
+                    <li class="white">Garantie détériorations immobilières</li>
+                    <li class="white">Garantie protection juridique</li>
+                    <li class="white">Garantie contre les squatteurs</li>
+                  </ul>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    En option : garantie vacance locative
+                  </h4>
+                  <p class="p white">
+                    Pour une tranquillité absolue, vous pouvez souscrire en
+                    option à la garantie vacance locative, qui vous assure un
+                    revenu même lorsque votre bien est inoccupé.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="smartSlider overall">
+          <h3 class="h3 white center">Pack gestion locative à 24,90€/mois</h3>
+          <a href="#" class="cta-primary cta">Call to action</a>
+          <div class="controls">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <div class="dots-container">
+            <div data-slide="0" class="step open"></div>
+            <div data-slide="1" class="step"></div>
+            <div data-slide="2" class="step"></div>
+            <div data-slide="3" class="step"></div>
+            <div data-slide="4" class="step"></div>
+            <div data-slide="5" class="step"></div>
+            <div data-slide="6" class="step"></div>
+          </div>
+          <div class="slider container">
+            <div class="swiper-wrapper">
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Transfert ou création du mandat de gestion
+                  </h4>
+                  <p class="p white">
+                    Que vous souhaitiez créer un nouveau mandat ou transférer
+                    votre gestion locative, nous nous occupons de tout. Et si
+                    vous êtes déjà engagé avec une autre agence, nous résilions
+                    gratuitement votre contrat pour vous faciliter la tâche.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Encaissement et versement des loyers à J+5
+                  </h4>
+                  <p class="p white">
+                    Nous encaissons les loyers et vous les versons sous 5 jours
+                    ouvrés. Pour garantir des paiements réguliers et limiter les
+                    impayés, nous privilégions la mise en place d‘un prélèvement
+                    automatique mensuel auprès des locataires.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">Émission des quittances de loyer</h4>
+                  <p class="p white">
+                    Chaque mois, nous envoyons automatiquement une quittance de
+                    loyer à vos locataires, respectant la législation en
+                    vigueur.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">Gestion proactive des impayés</h4>
+                  <p class="p white">
+                    En cas d’impayé, nous déclenchons un processus de relance
+                    automatique amiable aux échéances préalablement définies
+                    (J+5 / J+15 / J+30). Au-delà, et si nécessaire, nous
+                    mandatons un commissaire de justice pour faciliter le
+                    recouvrement. Les frais restent à votre charge, sauf si vous
+                    avez souscrit à une GLI ou à notre pack Zen.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Coordination et suivi des travaux de maintenance
+                  </h4>
+                  <p class="p white">
+                    Avec notre pack Smart, votre bien bénéficie d’un contrat de
+                    maintenance courante et petits travaux. Un numéro dédié
+                    permet aux locataires de signaler leurs demandes, et nous
+                    coordonnons les réparations rapidement. Pour les montants
+                    supérieurs à 300€ TTC, les interventions sont soumises à
+                    devis pour validation.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Assistance téléphonique (locataire et bailleur)
+                  </h4>
+                  <p class="p white">
+                    Une question ? Un souci ? Notre assistance téléphonique et
+                    notre expertise dédiée sont là pour vous et votre locataire,
+                    du lundi au samedi avec une hotline d’urgence le dimanche en
+                    cas de besoin.
+                  </p>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+              <div class="slide swiper-slide">
+                <div class="text-content">
+                  <h4 class="h4 white">
+                    Votre locataire dépose son préavis ? Keynavo gère la suite
+                  </h4>
+                  <p class="p white">
+                    Dès qu’un locataire donne son préavis, Keynavo publie,
+                    booste l’annonce et pré-sélectionne gratuitement les
+                    meilleurs candidats pour vous.<br />Ensuite, deux options
+                    possibles :
+                  </p>
+                  <ul class="p">
+                    <li class="white">
+                      Vous réalisez les visites et état des lieux en toute
+                      autonomie avec l’aide des supports digitaux. Une fois le
+                      locataire final sélectionné, Keynavo reprend en main la
+                      gestion administrative (bail, caution…). La solution
+                      flexible et rentable pour économiser les frais de mise en
+                      location !
+                    </li>
+                    <li class="white">
+                      Vous déléguez la totalité de la mise en location (forfait
+                      proposé selon la localisation du bien).
+                    </li>
+                  </ul>
+                </div>
+                <figure class="illustration fit-contain">
+                  <img src="../assets/img/portrait.jpg" alt="" />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="advantages">
+      <div class="container">
+        <div class="title-bloc">
+          <h2 class="h2 white center">
+            Les avantages de la gestion locative avec Keynavo
+          </h2>
+          <a href="#" class="link cta-secondary white"
+            >Contactez Keynavo dès maintenant</a
+          >
+        </div>
+        <div class="content-bloc">
+          <figure class="illustration fit-cover">
+            <img src="./assets/img/portrait.jpg" alt="" />
+          </figure>
+          <ul class="items-list">
+            <li class="item h4 house">
+              Des tarifs fixes et transparents aux meilleurs prix
+            </li>
+            <li class="item h4 thumb">
+              Une gestion administrative et opérationnelle confiée à des experts
+            </li>
+            <li class="item h4 speak">Vos revenus locatifs sécurisés</li>
+            <li class="item h4 person">
+              Une relocation flexible et économique
+            </li>
+            <li class="item h4 people">
+              Vos petits travaux et maintenances courantes gérés efficacement
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="reviews-bloc background">
+        <h2 class="h2 white title">Ils nous font confiance !</h2>
+        <div class="controls">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <div class="swiper">
+          <div class="reviews-container swiper-wrapper">
+            <div class="review-item swiper-slide">
+              <p class="content white">
+                “Un service fluide et réactif ! Les loyers tombent sans souci et
+                toute la gestion administrative est prise en charge. Je
+                recommande vivement !”
+              </p>
+              <div class="id">
+                <figure class="picture">
+                  <img src="./assets/img/portrait.jpg" alt="" />
+                </figure>
+                <p class="description white p-sm">Tatiana D, Vezin-le-Coquet</p>
+              </div>
+            </div>
+            <div class="review-item swiper-slide">
+              <p class="content white">
+                “Un vrai soulagement au quotidien ! Plus besoin de courir après
+                les locataires ni de gérer les impayés, Keynavo s’occupe de
+                tout. Et pour moins de 20€ par mois, c’est imbattable !”
+              </p>
+              <div class="id">
+                <figure class="picture">
+                  <img src="./assets/img/portrait.jpg" alt="" />
+                </figure>
+                <p class="description white p-sm">Jérôme L, Rennes</p>
+              </div>
+            </div>
+            <div class="review-item swiper-slide">
+              <p class="content white">
+                “Grâce au Pack Zen, plus aucun stress en cas d’impayé. Tout est
+                pris en charge, et l’équipe est ultra réactive.”
+              </p>
+              <div class="id">
+                <figure class="picture">
+                  <img src="./assets/img/portrait.jpg" alt="" />
+                </figure>
+                <p class="description white p-sm">Sophie M, Le Rheu</p>
+              </div>
+            </div>
+            <div class="review-item swiper-slide">
+              <p class="content white">
+                “Une gestion simplifiée qui me fait gagner du temps ! Keynavo
+                s’occupe de tout, de l’encaissement des loyers aux éventuels
+                travaux.”
+              </p>
+              <div class="id">
+                <figure class="picture">
+                  <img src="./assets/img/portrait.jpg" alt="" />
+                </figure>
+                <p class="description white p-sm">Lucas T, Vern-sur-Seich</p>
+              </div>
+            </div>
+            <div class="review-item swiper-slide">
+              <p class="content white">
+                “Fini le stress des impayés ! Mon loyer est sécurisé et en cas
+                de souci, Keynavo prend immédiatement le relais. Une vraie
+                tranquillité d’esprit.”
+              </p>
+              <div class="id">
+                <figure class="picture">
+                  <img src="./assets/img/portrait.jpg" alt="" />
+                </figure>
+                <p class="description white p-sm">Isabelle P, Chantepie</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-bloc">
+      <div class="container">
+        <div class="content-wrapper">
           <div class="left">
-            <div class="available h4 white">Disponible partout en France</div>
-            <div class="solutions-wrapper">
-              <div class="solution">
-                <h4 class="h4 solution-title">Gestion locative</h4>
-                <p class="price">19,90€/mois</p>
-                <figure class="illustration">
-                  <img src="./assets/img/portrait.jpg" alt="" />
-                </figure>
-              </div>
-              <div class="solution">
-                <h4 class="h4 solution-title">Gestion locative</h4>
-                <p class="price">19,90€/mois</p>
-                <figure class="illustration">
-                  <img src="./assets/img/portrait.jpg" alt="" />
-                </figure>
-              </div>
-            </div>
+            <h2 class="h2 white">Vos questions, nos réponses</h2>
+            <p class="subtitle p white">
+              Découvrez les réponses aux questions les plus courantes sur notre
+              service de gestion locative.
+            </p>
+            <a href="#" class="cta-primary">Contactez-nous</a>
           </div>
           <div class="right">
-            <div class="available h4 white">Disponible partout en France</div>
-            <div class="solutions-wrapper">
-              <div class="solution">
-                <h4 class="h4 solution-title">Gestion locative</h4>
-                <p class="price">19,90€/mois</p>
-                <figure class="illustration">
-                  <img src="./assets/img/portrait.jpg" alt="" />
-                </figure>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                Que se passe-t-il si mon locataire ne paye pas son loyer à temps
+                ?
+              </h3>
+              <p class="answer p-sm">
+                Nous avons mis en place un processus proactif pour gérer les
+                impayés. Si votre locataire ne règle pas son loyer à temps, nous
+                déclenchons des relances automatiques aux échéances définies. En
+                cas de non-paiement persistant, nous missionnons un commissaire
+                de justice ou activons la garantie loyers impayés (GLI) si vous
+                y avez souscrit. Notre objectif : sécuriser vos revenus locatifs
+                avec une gestion rapide et efficace.
+              </p>
+            </div>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                Quelles sont les conditions de résiliation de mon contrat avec
+                Keynavo ?
+              </h3>
+              <p class="answer p-sm">
+                Vous pouvez résilier votre contrat avec Keynavo à tout moment en
+                respectant un préavis de 30 jours.
+              </p>
+            </div>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                Comment fonctionne l’encaissement et le versement des loyers
+                avec Keynavo ?
+              </h3>
+              <p class="answer p-sm">
+                Nous privilégions un prélèvement automatique mensuel avec le
+                locataire pour réduire les risques d’impayés et garantir la
+                régularité des paiements.<br />
+                Après réception des loyers, nous vous reversons sous 5 jours
+                ouvrés le montant préalablement déterminé.<br />
+                Conformément au mandat de gestion locative vous avez la
+                possibilité de choisir le montant et la périodicité des
+                versements. Vous pouvez choisir de verser toute ou partie du
+                montant de vos loyers sur votre compte bancaire en choisissant
+                de maintenir ou non un niveau de provision sur votre compte de
+                gestion.
+              </p>
+            </div>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                Comment garantir la bonne sélection des locataires ?
+              </h3>
+              <p class="answer p-sm">
+                Nous garantissons la sélection des locataires grâce à notre
+                partenariat avec le dispositif Dossier Facile, une solution
+                officielle du gouvernement. Ce système nous permet de vérifier
+                100% de la solvabilité des candidats, en nous assurant que
+                chaque dossier est conforme avant de valider le choix du
+                locataire. Cela réduit significativement les risques de loyers
+                impayés et vous assure un locataire fiable.
+              </p>
+            </div>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                Comment savoir qui prend en charge les travaux entre un
+                locataire et un propriétaire ?
+              </h3>
+              <p class="answer p-sm">
+                La répartition des travaux entre locataire et propriétaire
+                dépend de la réglementation en vigueur. Keynavo s’appuie sur ces
+                règles officielles pour orienter chaque devis vers la bonne
+                partie prenante : locataire ou bailleur. Ainsi, vous n’êtes
+                sollicité que lorsque cela vous concerne réellement. Pour plus
+                de détails sur la répartition des charges, consultez le site
+                officiel :
+                <a href="https://service-public.fr">service-public.fr</a>
+              </p>
+            </div>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                ’ai un contrat de gestion locative en cours et un de mes
+                locataires dépose son préavis. Que se passe-t-il ?
+              </h3>
+              <div class="answer p-sm">
+                <p class="p-sm">
+                  Pas d’inquiétude, nous prenons le relais ! Dès réception du
+                  préavis de votre locataire, nous lançons le processus de
+                  relocation. Nous rédigeons et diffusons une annonce sur les
+                  plateformes immobilières, effectuons une présélection
+                  rigoureuse des candidats et vous transmettons les meilleurs
+                  profils.<br />Vous avez ensuite deux options :
+                </p>
+                <ol class="p-sm">
+                  <li>
+                    Gérer vous-même la mise en location (organisation des
+                    visites et réalisation de l’état des lieux).
+                  </li>
+                  <li>Déléguer entièrement la mise en location à Keynavo.</li>
+                </ol>
+                <p class="p-sm">
+                  Une fois le locataire sélectionné et en place, nous nous
+                  occupons de toute la partie administrative : rédaction du
+                  bail, formalités légales…
+                </p>
               </div>
-              <div class="solution">
-                <h4 class="h4 solution-title">Gestion locative</h4>
-                <p class="price">19,90€/mois</p>
-                <figure class="illustration">
-                  <img src="./assets/img/portrait.jpg" alt="" />
-                </figure>
-              </div>
+            </div>
+            <div class="question-bloc">
+              <h3 class="question h4">
+                Quelles zones géographiques couvrez-vous ?
+              </h3>
+              <p class="answer p-sm">
+                Nos services de gestion locative (packs SMART et ZEN) couvrent
+                toute la France. Pour les services opérationnels de mise en
+                location et pour les interventions techniques à la demande, la
+                disponibilité dépend de notre réseau de prestataires.
+              </p>
             </div>
           </div>
         </div>

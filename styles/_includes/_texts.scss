@@ -72,7 +72,8 @@ $desktopBreakpoint: 769px;
   margin-bottom: 20px;
 }
 
-.p {
+.p,
+ul.p > li {
   font-size: 1.7rem;
   line-height: 2.3rem;
   @media screen and (min-width: $desktopBreakpoint) {
@@ -81,7 +82,14 @@ $desktopBreakpoint: 769px;
   }
 }
 
-.p-sm {
+ul.p > li,
+ul.p-sm > li {
+  font-weight: 400;
+  color: $color1;
+}
+
+.p-sm,
+ul.p-sm > li {
   font-size: 1.4rem;
   line-height: 1.8rem;
   @media screen and (min-width: $desktopBreakpoint) {

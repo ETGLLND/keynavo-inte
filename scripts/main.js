@@ -94,6 +94,17 @@ const changeSwiperDots = (swiper, dots) => {
   });
 };
 
+const activateSliderDots = (triggers, swiper) => {
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      triggers.forEach((el) => el.classList.remove("open"));
+      trigger.classList.add("open");
+      const slideIndex = parseInt(trigger.dataset.slide, 10);
+      swiper.slideTo(slideIndex);
+    });
+  });
+};
+
 // REVIEWS BLOC
 const reviewsRoot = document.querySelector(".reviews-bloc");
 
@@ -254,31 +265,53 @@ if (partnersRoot) {
 const timelineRoot = document.querySelector(".timeline");
 
 if (timelineRoot) {
-  const prevBtn = timelineRoot.querySelector(".controls > .left");
-  const nextBtn = timelineRoot.querySelector(".controls > .right");
-  const swiperContainer = timelineRoot.querySelector(".slider");
-  const triggers = timelineRoot.querySelectorAll(".step");
-  const swiper = new Swiper(swiperContainer, {
-    slidesPerView: "auto", // Ajuste la largeur des slides
-    centeredSlides: true, // Centre le groupe de slides
-    navigation: {
-      prevEl: prevBtn,
-      nextEl: nextBtn,
-    },
-  });
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      triggers.forEach((el) => el.classList.remove("open"));
-      trigger.classList.add("open");
-      const slideIndex = parseInt(trigger.dataset.slide, 10);
-      swiper.slideTo(slideIndex);
+  const zenBtn = timelineRoot.querySelector("#zen-btn");
+  const smartBtn = timelineRoot.querySelector("#smart-btn");
+  const zenSlider = timelineRoot.querySelector(".zenSlider");
+  const smartSlider = timelineRoot.querySelector(".smartSlider");
+  const overall = timelineRoot.querySelectorAll(".overall");
+  overall.forEach((swiperContainer) => {
+    const prevBtn = swiperContainer.querySelector(".controls > .left");
+    const nextBtn = swiperContainer.querySelector(".controls > .right");
+    const triggers = swiperContainer.querySelectorAll(".step");
+    const sliderContainer = swiperContainer.querySelector(".slider");
+
+    const swiper = new Swiper(sliderContainer, {
+      slidesPerView: "auto", // Ajuste la largeur des slides
+      centeredSlides: true, // Centre le groupe de slides
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn,
+      },
+    });
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
+        triggers.forEach((el) => el.classList.remove("open"));
+        trigger.classList.add("open");
+        const slideIndex = parseInt(trigger.dataset.slide, 10);
+        swiper.slideTo(slideIndex);
+      });
+    });
+    prevBtn.addEventListener("click", (e) => {
+      changeSwiperDots(swiper, triggers);
+    });
+    nextBtn.addEventListener("click", (e) => {
+      changeSwiperDots(swiper, triggers);
     });
   });
-  prevBtn.addEventListener("click", (e) => {
-    changeSwiperDots(swiper, triggers);
+
+  zenBtn.addEventListener("click", (e) => {
+    zenBtn.classList.add("open");
+    smartBtn.classList.remove("open");
+    zenSlider.classList.remove("none");
+    smartSlider.classList.add("none");
   });
-  nextBtn.addEventListener("click", (e) => {
-    changeSwiperDots(swiper, triggers);
+  smartBtn.addEventListener("click", (e) => {
+    smartBtn.classList.add("open");
+    zenBtn.classList.remove("open");
+    smartSlider.classList.remove("none");
+    zenSlider.classList.add("none");
   });
 }
 
@@ -300,4 +333,59 @@ if (heroRoot) {
       },
     });
   }
+}
+
+// NESTED BLOCKS
+const nestedBlocks = document.querySelectorAll(".nested-blocks");
+
+if (nestedBlocks) {
+  nestedBlocks?.forEach((block) => {
+    const sliderContainer = block.querySelector(".slider");
+    const swiper = new Swiper(sliderContainer, {
+      slidesPerView: "auto",
+      centeredSlides: true,
+    });
+    const triggers = block.querySelectorAll(".step");
+    activateSliderDots(triggers, swiper);
+  });
+}
+
+// CALCULATOR
+const calculatorRoot = document.querySelector(".calculator-v1");
+
+if (calculatorRoot) {
+  const input = calculatorRoot.querySelector("#price");
+  const smartTrad = calculatorRoot.querySelector("#smart-trad");
+  const smartDigit = calculatorRoot.querySelector("#smart-digit");
+  const smartKeynavo = calculatorRoot.querySelector("#smart-keynavo");
+  const smartResult = calculatorRoot.querySelector("#smart-result");
+  const zenTrad = calculatorRoot.querySelector("#zen-trad");
+  const zenDigit = calculatorRoot.querySelector("#zen-digit");
+  const zenKeynavo = calculatorRoot.querySelector("#zen-keynavo");
+  const zenResult = calculatorRoot.querySelector("#zen-result");
+
+  const changeValues = (price) => {
+    // Smart
+    const smartTradValue = (price * 0.1 * 12).toFixed(1);
+    smartTrad.innerHTML = `${smartTradValue}€`;
+    const smartDigitValue = (price * 0.05 * 12).toFixed(1);
+    smartDigit.innerHTML = `${smartDigitValue}€`;
+    const smartKeynavoValue = (19.9 * 12).toFixed(1);
+    smartKeynavo.innerHTML = `${smartKeynavoValue}€`;
+    smartResult.innerHTML = `${(smartDigitValue - smartKeynavoValue).toFixed(
+      1
+    )}€ à ${(smartTradValue - smartKeynavoValue).toFixed(1)}€ / an`;
+
+    // Zen
+    zenTrad.innerHTML = `${smartTradValue}€`;
+    zenDigit.innerHTML = `${smartDigitValue}€`;
+    const zenKeynavoValue = `${19.9 * 12 + price * 0.025 * 12}`;
+    zenKeynavo.innerHTML = `${zenKeynavoValue}€`;
+    zenResult.innerHTML = `${(smartDigitValue - zenKeynavoValue).toFixed(
+      1
+    )}€ à ${(smartTradValue - zenKeynavoValue).toFixed(1)}€ / an`;
+  };
+  input.addEventListener("change", (e) => {
+    changeValues(parseInt(e.target.value, 10));
+  });
 }

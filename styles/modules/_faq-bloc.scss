@@ -1,5 +1,12 @@
 .faq-bloc {
   padding: 105px 0;
+  background: url(../../assets/img/background.jpg);
+  background-size: 1280px 905px;
+  &.alt {
+    background: url(../../assets/img/gradient-violet.png);
+    background-size: cover;
+    background-position: bottom;
+  }
   .content-wrapper {
     @media screen and (min-width: $medium) {
       display: flex;
