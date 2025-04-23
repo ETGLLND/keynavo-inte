@@ -4,63 +4,6 @@ import { ScrollTrigger } from "https://cdn.skypack.dev/gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // FUNCTIONS
-// function measureFullHeight(el) {
-//   const hiddenElements = [];
-
-//   // Trouver tous les descendants cachés
-//   el.querySelectorAll("*").forEach((child) => {
-//     const style = window.getComputedStyle(child);
-//     if (style.display === "none") {
-//       hiddenElements.push({
-//         element: child,
-//         originalDisplay: child.style.display,
-//       });
-//       child.style.display = "block";
-//     }
-//   });
-
-//   // Forcer reflow et mesurer
-//   const height = el.scrollHeight;
-
-//   // Restaurer les états initiaux
-//   hiddenElements.forEach(({ element, originalDisplay }) => {
-//     element.style.display = originalDisplay || "";
-//   });
-
-//   return height;
-// }
-
-// const createOpenAnimation = (
-//   container,
-//   basisClass,
-//   adjustment = 0,
-//   target = container
-// ) => {
-//   const basis = container.querySelector(basisClass);
-//   let opened = false;
-
-//   container.style.overflow = "hidden";
-//   container.style.transition = "max-height 0.3s ease";
-//   container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
-
-//   target.addEventListener("click", (e) => {
-//     if (!opened) {
-//       // Mesurer la hauteur maximale potentielle même avec des enfants cachés
-//       const fullHeight = measureFullHeight(container) + adjustment;
-
-//       // Forcer reflow si nécessaire
-//       void container.offsetHeight;
-
-//       container.classList.add("open");
-//       container.style.maxHeight = `${fullHeight}px`;
-//       opened = true;
-//     } else {
-//       container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
-//       container.classList.remove("open");
-//       opened = false;
-//     }
-//   });
-// };
 
 const createOpenAnimation = (
   container,
@@ -133,25 +76,22 @@ const titleRoot = document.querySelector(".title-scroll");
 if (titleRoot) {
   const title = titleRoot.querySelector(".content");
 
-  window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
-  });
-  console.log(title.scrollWidth);
-  // const logoWidth = logos[0].offsetWidth + 100;
-  // const totalOriginalLogos = logos.length / 2; // car on a dupliqué
-  // const loopWidth = logoWidth * totalOriginalLogos;
-  // let scrollOffset = 0;
-  // window.addEventListener("scroll", () => {
-  //   const speed = 0.5;
-  //   scrollOffset = window.scrollY * speed;
-  //   // Boucle infinie : reset dès qu'on dépasse la moitié
-  //   const translateX = scrollOffset % loopWidth;
-  //   // track.style.transform = `translateX(-${translateX}px)`;
-  //   // track.style.transform = `translateX(${translateX}px)`;
-  //   track.style.transform = direction
-  //     ? `translateX(-${translateX}px)`
-  //     : `translateX(${translateX}px)`;
-  // });
+  const titleWidth = title.offsetWidth;
+
+  gsap.fromTo(
+    title,
+    {
+      x: -titleWidth,
+    },
+    {
+      x: titleWidth,
+      scrollTrigger: {
+        trigger: titleRoot,
+        scrub: 1,
+        start: 500,
+      },
+    }
+  );
 }
 
 // FAQ BLOC
@@ -168,6 +108,13 @@ if (faqRoot) {
 const stepsRoot = document.querySelector(".steps-bloc");
 
 if (stepsRoot) {
+  const sliderContainer = stepsRoot.querySelector(".slider");
+  const dots = stepsRoot.querySelectorAll(".title-item");
+  const swiper = new Swiper(sliderContainer, {
+    slidesPerView: "auto",
+    centeredSlides: true,
+  });
+  activateSliderDots(dots, swiper);
 }
 
 // ADVANTAGES BLOG
@@ -177,6 +124,7 @@ if (advantagesRoot) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        console.log("show!");
         entry.target.classList.add("show");
       } else {
         entry.target.classList.remove("show");
@@ -202,22 +150,38 @@ if (navRoot) {
     const burger = navRoot.querySelector(".burger");
     createOpenAnimation(navRoot, ".top", 0, burger);
   }
+
+  const logo = navRoot.querySelector(".logo-container > img");
+
+  document.addEventListener("scroll", (e) => {
+    if (window.scrollY > 0) {
+      Object.assign(logo.style, {
+        transform: "scale(1.55) translateX(-12px)",
+      });
+    } else {
+      Object.assign(logo.style, {
+        transform: "unset",
+      });
+    }
+  });
 }
 
 // TWO COLUMNS
-const twoRoot = document.querySelector(".two-columns");
+const twoRoots = document.querySelectorAll(".two-columns");
 
-if (twoRoot) {
-  const prevBtn = twoRoot.querySelector(".controls > .left");
-  const nextBtn = twoRoot.querySelector(".controls > .right");
-  const swiperContainer = twoRoot.querySelector(".slider");
-  const swiper = new Swiper(swiperContainer, {
-    slidesPerView: "auto", // Ajuste la largeur des slides
-    navigation: {
-      prevEl: prevBtn,
-      nextEl: nextBtn,
-    },
-    loop: true,
+if (twoRoots) {
+  twoRoots.forEach((twoRoot) => {
+    const prevBtn = twoRoot.querySelector(".controls > .left");
+    const nextBtn = twoRoot.querySelector(".controls > .right");
+    const swiperContainer = twoRoot.querySelector(".slider");
+    const swiper = new Swiper(swiperContainer, {
+      slidesPerView: "auto", // Ajuste la largeur des slides
+      navigation: {
+        prevEl: prevBtn,
+        nextEl: nextBtn,
+      },
+      loop: true,
+    });
   });
 }
 
@@ -225,44 +189,118 @@ if (twoRoot) {
 const partnersRoot = document.querySelector(".partners");
 
 if (partnersRoot) {
-  // First line
-  const createTrackSlide = (track, logos, direction = true) => {
-    logos.forEach((el) => {
-      const clone = el.cloneNode(true);
-      direction ? track.appendChild(clone) : track.prepend(clone);
-    });
-    const logoWidth = logos[0].offsetWidth + 100;
-
-    const totalOriginalLogos = logos.length / 2; // car on a dupliqué
-    const loopWidth = logoWidth * totalOriginalLogos;
-
-    let scrollOffset = 0;
-
-    window.addEventListener("scroll", () => {
-      const speed = 0.5;
-      scrollOffset = window.scrollY * speed;
-
-      // Boucle infinie : reset dès qu'on dépasse la moitié
-      const translateX = scrollOffset % loopWidth;
-      // track.style.transform = `translateX(-${translateX}px)`;
-      // track.style.transform = `translateX(${translateX}px)`;
-      track.style.transform = direction
-        ? `translateX(-${translateX}px)`
-        : `translateX(${translateX}px)`;
-    });
-  };
-
   const firstTrack = partnersRoot.querySelector(".logos-line.first");
   const secondTrack = partnersRoot.querySelector(".logos-line.second");
   const firstLogos = firstTrack.querySelectorAll(".logo-item");
   const secondLogos = secondTrack.querySelectorAll(".logo-item");
+  const title = partnersRoot.querySelector(".text");
 
-  createTrackSlide(firstTrack, firstLogos, true);
-  createTrackSlide(secondTrack, secondLogos, false);
+  const duplicateElements = (elems, container) => {
+    elems.forEach((elem, id) => {
+      const clone = elem.cloneNode(true);
+      const refChild = container.children[id];
+      container.insertBefore(clone, refChild);
+    });
+
+    elems.forEach((elem, id) => {
+      const clone = elem.cloneNode(true);
+      container.appendChild(clone);
+    });
+  };
+
+  if (window.innerWidth > 1120) {
+    duplicateElements(firstLogos, firstTrack);
+    duplicateElements(secondLogos, secondTrack);
+    gsap.fromTo(
+      title,
+      {
+        x: -title.offsetWidth,
+      },
+      {
+        x: title.offsetWidth + window.innerWidth,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 70%",
+        },
+      }
+    );
+    gsap.fromTo(
+      firstTrack,
+      {
+        x: -300,
+      },
+      {
+        x: 0,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 70%",
+        },
+      }
+    );
+    gsap.fromTo(
+      secondTrack,
+      {
+        x: 0,
+      },
+      {
+        x: -200,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 70%",
+        },
+      }
+    );
+  } else {
+    gsap.fromTo(
+      title,
+      {
+        x: -title.offsetWidth,
+      },
+      {
+        x: title.offsetWidth + window.innerWidth,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 40%",
+        },
+      }
+    );
+    gsap.fromTo(
+      firstTrack,
+      {
+        x: -300,
+      },
+      {
+        x: 0,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 70%",
+        },
+      }
+    );
+    gsap.fromTo(
+      secondTrack,
+      {
+        x: 0,
+      },
+      {
+        x: -secondTrack.offsetWidth,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 30%",
+        },
+      }
+    );
+  }
 }
 
-// TIMELINE
-const timelineRoot = document.querySelector(".timeline");
+// TIMELINE V1 ALT
+const timelineRoot = document.querySelector(".timeline-v1-alt");
 
 if (timelineRoot) {
   const zenBtn = timelineRoot.querySelector("#zen-btn");
@@ -313,6 +351,26 @@ if (timelineRoot) {
     smartSlider.classList.remove("none");
     zenSlider.classList.add("none");
   });
+}
+
+const timelineV1 = document.querySelector(".timeline-v1");
+
+if (timelineV1) {
+  const prevBtn = timelineV1.querySelector(".controls > .left");
+  const nextBtn = timelineV1.querySelector(".controls > .right");
+  const triggers = timelineV1.querySelectorAll(".step");
+  const sliderContainer = timelineV1.querySelector(".slider");
+
+  const swiper = new Swiper(sliderContainer, {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    navigation: {
+      prevEl: prevBtn,
+      nextEl: nextBtn,
+    },
+  });
+
+  activateSliderDots(triggers, swiper);
 }
 
 // HERO SECTION V1
@@ -388,4 +446,24 @@ if (calculatorRoot) {
   input.addEventListener("change", (e) => {
     changeValues(parseInt(e.target.value, 10));
   });
+}
+
+// FOOTER
+const footer = document.querySelector("footer.footer");
+
+if (footer) {
+  gsap.fromTo(
+    footer,
+    {
+      maxHeight: 0,
+    },
+    {
+      maxHeight: footer.offsetHeight,
+      scrollTrigger: {
+        trigger: footer,
+        scrub: 1,
+        end: "bottom bottom",
+      },
+    }
+  );
 }

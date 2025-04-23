@@ -31,9 +31,16 @@
   .logo-container {
     width: 7.5rem;
     height: 4.7rem;
+    overflow: hidden;
+    position: relative;
     @media screen and (min-width: $large) {
       width: 9.1rem;
       height: 5.7rem;
+    }
+    img {
+      transition: all 0.3s ease;
+      transform-origin: top left;
+      // transform: scale(1.55) translateX(-12px);
     }
   }
   .burger {

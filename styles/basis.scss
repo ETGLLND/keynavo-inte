@@ -20,8 +20,13 @@ html {
 
 body {
   background-color: $color9;
+  position: relative;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.before-footer {
+  padding-bottom: 50rem !important;
 }

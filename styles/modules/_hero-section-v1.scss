@@ -1,21 +1,23 @@
 .hero-section-v1 {
   background: url(../../assets/img/background.jpg);
   overflow: hidden;
-  @media screen and (min-width: $medium) {
+  @media screen and (min-width: $large) {
     padding-bottom: 40rem;
   }
   .content {
-    background-color: $color9;
+    background: url(../../assets/img/home-bg.jpg);
+    background-size: cover;
     border-radius: 0 0 20px 20px;
     position: relative;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       padding: 0 6rem 0;
+      max-height: 70rem;
     }
     .heading {
       max-width: 1020px;
       margin: 0 auto 12rem;
       padding: 120px 20px 0;
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         padding-bottom: 7.5rem;
         margin-bottom: 0;
       }
@@ -28,7 +30,7 @@
     }
     .solutions-container {
       display: none;
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         display: flex;
         justify-content: space-between;
         gap: 3rem;
@@ -41,13 +43,7 @@
           border: solid 1px $color4;
           position: relative;
           padding: 4.3rem 5rem 8rem;
-          &::before {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            filter: blur(4.9rem);
-          }
+          backdrop-filter: blur(49px);
           .availability {
             display: flex;
             justify-content: center;
@@ -56,18 +52,23 @@
             border-radius: 5px;
             padding: 1.3rem 2rem;
             margin: 0 auto;
-            background-color: $color1;
+            background-color: #fff;
             width: fit-content;
             position: absolute;
-            // top: -7rem;
             left: 50%;
             top: 0;
             transform: translate(-50%, -50%);
+            white-space: nowrap;
+            &.local:before {
+              background-image: url("data:image/svg+xml,%3Csvg width='23' height='28' viewBox='0 0 23 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_1547_947)'%3E%3Cpath d='M11.8876 1.69727C6.55771 1.69727 2.22105 6.0918 2.22105 11.4867C2.186 19.3782 11.5203 25.9217 11.8876 26.1862C11.8876 26.1862 21.5892 19.3782 21.5542 11.4928C21.5542 6.0918 17.2175 1.69727 11.8876 1.69727ZM11.8876 16.3906C9.21722 16.3906 7.05433 14.1988 7.05433 11.4928C7.05433 8.7868 9.21722 6.59504 11.8876 6.59504C14.558 6.59504 16.7209 8.7868 16.7209 11.4928C16.7209 14.1988 14.558 16.3906 11.8876 16.3906Z' stroke='%23B4CFCB' stroke-width='2.69767' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_1547_947' x='0.87207' y='0.347656' width='22.031' height='27.8619' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='0.674419'/%3E%3CfeGaussianBlur stdDeviation='1.07907'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_1547_947'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+            }
+            &.all:before {
+              background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_648_27099)'%3E%3Cpath d='M13.6446 2.48047C13.501 2.48047 12.2447 2.71057 12.2447 2.71057C12.1864 4.59165 10.8808 6.25844 8.19332 6.54776L7.61903 5.50483L6.49288 5.61694L6.99987 8.33345L1.89453 8.11193L2.4419 9.98803C7.94206 11.7737 7.69081 16.8821 6.49288 21.4481C8.6016 23.844 12.8549 23.609 14.838 23.3965C14.9771 20.5846 17.189 20.4806 20.9354 21.9408C21.4423 21.1452 21.7788 20.3134 22.9364 19.6488L20.8456 13.3424L19.6118 13.6227C20.1053 12.6688 21.0565 11.3668 21.8731 10.7566L22.573 6.82805C18.5978 6.54324 16.0045 4.73224 13.6446 2.48047Z' stroke='%23B4CFCB' stroke-width='2.33798' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_648_27099' x='0.725586' y='1.31055' width='23.3799' height='23.9654' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='0.584496'/%3E%3CfeGaussianBlur stdDeviation='0.935194'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_648_27099'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+            }
             &::before {
               content: "";
               height: 3rem;
               width: 3rem;
-              background-image: url("data:image/svg+xml,%3Csvg width='26' height='26' viewBox='0 0 26 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_i_648_27099)'%3E%3Cpath d='M13.6446 2.48047C13.501 2.48047 12.2447 2.71057 12.2447 2.71057C12.1864 4.59165 10.8808 6.25844 8.19332 6.54776L7.61903 5.50483L6.49288 5.61694L6.99987 8.33345L1.89453 8.11193L2.4419 9.98803C7.94206 11.7737 7.69081 16.8821 6.49288 21.4481C8.6016 23.844 12.8549 23.609 14.838 23.3965C14.9771 20.5846 17.189 20.4806 20.9354 21.9408C21.4423 21.1452 21.7788 20.3134 22.9364 19.6488L20.8456 13.3424L19.6118 13.6227C20.1053 12.6688 21.0565 11.3668 21.8731 10.7566L22.573 6.82805C18.5978 6.54324 16.0045 4.73224 13.6446 2.48047Z' stroke='%23B4CFCB' stroke-width='2.33798' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_648_27099' x='0.725586' y='1.31055' width='23.3799' height='23.9654' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='0.584496'/%3E%3CfeGaussianBlur stdDeviation='0.935194'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_648_27099'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
               background-size: contain;
               flex-shrink: 0;
               background-repeat: no-repeat;
@@ -92,14 +93,56 @@
             padding: 1.5rem;
             text-align: center;
             overflow: hidden;
+            transition: all 0.3s ease;
+            background-color: $color9;
+            &:hover {
+              transform: translateY(-30px);
+              box-shadow: 0px 0px 27.51px 0px #06320033;
+              .illustration {
+                filter: blur(0);
+              }
+              .price,
+              .solution-title {
+                opacity: 0;
+              }
+              .undertext {
+                opacity: 1;
+              }
+            }
+
+            .solution-title {
+              margin: 0;
+              transition: opacity 0.3s ease;
+            }
+            .undertext {
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0;
+              transition: opacity 0.3s ease;
+              padding: 1.5rem;
+            }
+            .price {
+              width: 100%;
+              background-color: #fff;
+              border-radius: 0.5rem;
+              padding: 0.5rem;
+              margin: 0;
+              position: relative;
+              z-index: 3;
+              transition: opacity 0.3s ease;
+            }
             .illustration {
               position: absolute;
               bottom: -3px;
               left: 0;
               overflow: hidden;
               width: 100%;
-              height: 80%;
+              height: 75%;
               margin: 0;
+              filter: blur(40px);
+              transition: filter 0.3s ease;
               img {
                 width: 100%;
                 height: 100%;
@@ -119,7 +162,7 @@
       }
     }
     .solutions-slider {
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         display: none;
       }
       .solution-container {

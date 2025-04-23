@@ -1,6 +1,6 @@
 .advantages {
   padding: 3rem 0 7.5rem;
-  @media screen and (min-width: $small) {
+  @media screen and (min-width: $medium) {
     padding: 6rem 0 18rem;
   }
   .title-bloc {
@@ -20,7 +20,7 @@
     position: absolute;
     top: 2rem;
     right: 0;
-    @media screen and (min-width: $small) {
+    @media screen and (min-width: $medium) {
       position: relative;
       width: calc(100% / 3);
       aspect-ratio: 390/581;
@@ -31,7 +31,7 @@
   .items-list {
     padding-left: 2rem;
     list-style-type: none;
-    @media screen and (min-width: $small) {
+    @media screen and (min-width: $medium) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -48,7 +48,7 @@
       max-width: 22rem;
       position: relative;
       margin-bottom: 4rem;
-      transition: all 1s;
+      transition: all 2s;
 
       &.hidden {
         transform: scale(0.85);
@@ -61,7 +61,7 @@
       &:nth-child(even) {
         left: 2.5rem;
       }
-      @media screen and (min-width: $small) {
+      @media screen and (min-width: $medium) {
         max-width: 31rem;
         min-height: 8rem;
         display: flex;

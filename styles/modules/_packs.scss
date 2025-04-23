@@ -13,6 +13,7 @@
     @media screen and (min-width: $medium) {
       flex-direction: row;
       justify-content: center;
+      align-items: flex-start;
       gap: 3rem;
     }
     .content {

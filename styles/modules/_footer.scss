@@ -1,8 +1,34 @@
 .footer {
-  // background: url(../../assets/img/background.jpg);
   padding: 4.5rem 0;
-  border-radius: 2rem 2rem 0 0;
   position: relative;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../../assets/img/logo-bg.svg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+  &:before {
+    content: "";
+    border-radius: 2rem 2rem 0 0;
+    border-top: solid 1px $color9;
+    width: 100%;
+    height: 1.5rem;
+    background-image: url(../../assets/img/background.jpg);
+    background-size: 1280px 905px;
+    background-repeat: repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   @media screen and (min-width: $large) {
     padding: 8rem 0 3rem;
   }
@@ -53,6 +79,18 @@
       @media screen and (min-width: $large) {
         margin: 0;
       }
+    }
+    .item h5 {
+      margin-bottom: 0.5rem;
+    }
+    .item .p-sm {
+      margin-bottom: 0;
+    }
+    .sub-menu {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
   }
   .bottom-container {

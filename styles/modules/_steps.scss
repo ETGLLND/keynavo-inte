@@ -4,11 +4,23 @@
   .title {
     text-align: center;
   }
+  .content-wrapper {
+    @media screen and (min-width: $small) {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+    }
+  }
   .titles-list {
     padding-left: 0;
     list-style: none;
     position: relative;
     margin-bottom: 3rem;
+    @media screen and (min-width: $small) {
+      width: calc(100% / 12 * 6);
+      flex-shrink: 0;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -17,6 +29,9 @@
       background-color: $color4;
       top: 3px;
       left: 24px;
+      @media screen and (min-width: $small) {
+        height: calc(100% - 15px);
+      }
     }
     .title-item {
       margin-bottom: 1rem;
@@ -67,22 +82,21 @@
       }
     }
   }
+  .slider-container {
+    @media screen and (min-width: $small) {
+      width: calc(100% / 12 * 5);
+      flex-grow: 0;
+    }
+  }
   .slider {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 0 2rem; // Ajoute du padding global au conteneur
-    .flickity-slider {
-      transform: translateX(
-        2rem
-      ) !important; // Force Flickity à prendre en compte le padding
-    }
     .slider-item {
       border-radius: 1.5rem;
       position: relative;
       height: 36rem;
       width: 100%;
-      margin-right: 2rem; // Ajoute un espacement entre les slides
       .illustration {
         height: 80%;
         width: 70%;

@@ -6,11 +6,20 @@
   .subtitle {
     text-align: center;
   }
+  .heading {
+    margin-bottom: 6rem;
+  }
   .scroll-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 11rem;
     .logos-line {
       display: flex;
       align-items: center;
       gap: 10rem;
+      position: relative;
+      z-index: 2;
       .logo-item {
         flex-shrink: 0;
         padding: 1rem;
@@ -30,12 +39,15 @@
       }
     }
     .text {
-      font-size: 10rem;
+      font-size: 25rem;
       font-weight: 700;
       -webkit-text-fill-color: rgba($color: #000000, $alpha: 0);
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $color1;
-      //   position: absolute;
+      white-space: nowrap;
+      position: absolute;
+      top: 0;
+      z-index: 0;
     }
   }
 }
