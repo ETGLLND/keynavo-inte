@@ -3,6 +3,10 @@
   background: url(../../assets/img/gradient-orange.png);
   background-size: cover;
   gap: 3rem;
+  &.purple {
+    background: url(../../assets/img/gradient-violet.png);
+    background-size: cover;
+  }
   @media screen and (min-width: $small) {
     padding: 19.5rem 0 10.5rem;
   }

@@ -124,7 +124,6 @@ if (advantagesRoot) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log("show!");
         entry.target.classList.add("show");
       } else {
         entry.target.classList.remove("show");
@@ -371,6 +370,12 @@ if (timelineV1) {
   });
 
   activateSliderDots(triggers, swiper);
+  prevBtn.addEventListener("click", (e) => {
+    changeSwiperDots(swiper, triggers);
+  });
+  nextBtn.addEventListener("click", (e) => {
+    changeSwiperDots(swiper, triggers);
+  });
 }
 
 // HERO SECTION V1
@@ -466,4 +471,36 @@ if (footer) {
       },
     }
   );
+}
+
+// TABS SWITCH
+const tabsSwitchRoot = document.querySelector(".tabs-switch");
+
+if (tabsSwitchRoot) {
+  const sliderContainers = tabsSwitchRoot.querySelectorAll(".swiper");
+  sliderContainers.forEach((sliderContainer) => {
+    const dots = tabsSwitchRoot.querySelectorAll(".dots-container>.step");
+    const swiper = new Swiper(sliderContainer, {
+      slidesPerView: "auto",
+      centeredSlides: true,
+    });
+    activateSliderDots(dots, swiper);
+  });
+
+  const tabs = tabsSwitchRoot.querySelectorAll(".tab");
+  const containers = tabsSwitchRoot.querySelectorAll(".content-container");
+
+  tabs.forEach((tab, id) => {
+    tab.addEventListener("click", (e) => {
+      tabs.forEach((tab) => {
+        tab.classList.remove("open");
+      });
+      tab.classList.add("open");
+      containers.forEach((container, idContainer) => {
+        id === idContainer
+          ? container.classList.add("open")
+          : container.classList.remove("open");
+      });
+    });
+  });
 }
