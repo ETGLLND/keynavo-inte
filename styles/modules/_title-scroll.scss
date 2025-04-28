@@ -1,8 +1,10 @@
 .title-scroll {
-  padding: 200px 0;
-  // background: url(../../assets/img/background.jpg);
-  position: relative;
-  overflow: hidden;
+  padding-top: 16rem;
+  .content-container {
+    height: 40rem;
+    position: relative;
+    overflow: hidden;
+  }
   .content {
     font-weight: 700;
     font-size: 25rem;

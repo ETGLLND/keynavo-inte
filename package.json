@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "sass": "sass --watch .\\styles\\style.scss .\\styles\\style.css"
+    "sass": "sass --watch .\\styles\\style.scss .\\styles\\style.css",
+    "deploy": "vercel --prod"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "gsap": "^3.12.7"
+    "gsap": "^3.12.7",
+    "vercel": "^41.6.2"
   }
 }

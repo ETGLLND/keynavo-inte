@@ -20,6 +20,9 @@
       gap: 10rem;
       position: relative;
       z-index: 2;
+      @media screen and (min-width: $small) {
+        gap: 40rem;
+      }
       .logo-item {
         flex-shrink: 0;
         padding: 1rem;

@@ -89,6 +89,7 @@ if (titleRoot) {
         trigger: titleRoot,
         scrub: 1,
         start: 500,
+        markers: true,
       },
     }
   );
@@ -121,19 +122,20 @@ if (stepsRoot) {
 const advantagesRoot = document.querySelector(".advantages");
 
 if (advantagesRoot) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  });
-
   const items = advantagesRoot.querySelectorAll(".item");
-  items.forEach((el) => {
-    observer.observe(el);
+
+  gsap.utils.toArray(items).forEach((el, i) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 50,
+      duration: 0.3,
+      // delay: i * 0.2, // Décalage progressif
+      scrollTrigger: {
+        trigger: el,
+        start: "top 80%", // quand l'élément entre dans le viewport
+        toggleActions: "play none none none",
+      },
+    });
   });
 }
 
@@ -155,7 +157,7 @@ if (navRoot) {
   document.addEventListener("scroll", (e) => {
     if (window.scrollY > 0) {
       Object.assign(logo.style, {
-        transform: "scale(1.55) translateX(-12px)",
+        transform: "scale(1.55) translateX(-13px)",
       });
     } else {
       Object.assign(logo.style, {
@@ -213,21 +215,21 @@ if (partnersRoot) {
     gsap.fromTo(
       title,
       {
-        x: -title.offsetWidth,
+        x: -title.offsetWidth - 100,
       },
       {
         x: title.offsetWidth + window.innerWidth,
         scrollTrigger: {
           trigger: partnersRoot,
           scrub: 1,
-          start: "top 70%",
+          start: "top 30%",
         },
       }
     );
     gsap.fromTo(
       firstTrack,
       {
-        x: -300,
+        x: -1500,
       },
       {
         x: 0,
@@ -244,11 +246,12 @@ if (partnersRoot) {
         x: 0,
       },
       {
-        x: -200,
+        x: -1500,
         scrollTrigger: {
           trigger: partnersRoot,
           scrub: 1,
           start: "top 70%",
+          end: "bottom",
         },
       }
     );
@@ -384,6 +387,7 @@ const heroRoot = document.querySelector(".hero-section-v1");
 if (heroRoot) {
   const sliderContainer = heroRoot.querySelector(".solutions-slider");
   if (sliderContainer) {
+    // slider
     const leftButton = heroRoot.querySelector(".controls > .left");
     const rightButton = heroRoot.querySelector(".controls > .right");
     const swiper = new Swiper(sliderContainer, {
@@ -395,6 +399,56 @@ if (heroRoot) {
         nextEl: rightButton,
       },
     });
+
+    // Opening of block
+    const container = heroRoot.querySelector(".content");
+    const computedWidth =
+      window.innerWidth > 769
+        ? window.innerWidth - 330
+        : window.innerWidth - 80;
+    const heading = heroRoot.querySelector(".heading");
+    const solutionsContainer = heroRoot.querySelector(".solutions-container");
+    const solutionsSlider = heroRoot.querySelector(".solutions-slider");
+    heading.style.width = computedWidth + "px";
+    solutionsContainer.style.maxWidth = computedWidth + "px";
+    solutionsSlider.style.maxWidth = computedWidth + "px";
+
+    if (window.innerWidth > 769) {
+      gsap.fromTo(
+        container,
+        {
+          marginRight: 0,
+          marginLeft: 0,
+        },
+        {
+          marginRight: "100px",
+          marginLeft: "100px",
+          scrollTrigger: {
+            trigger: container,
+            scrub: 1,
+            start: "top",
+          },
+        }
+      );
+    } else {
+      gsap.fromTo(
+        container,
+        {
+          marginRight: 0,
+          marginLeft: 0,
+        },
+        {
+          marginRight: "20px",
+          marginLeft: "20px",
+          scrollTrigger: {
+            trigger: container,
+            scrub: 1,
+            start: "top",
+            end: "bottom 700px",
+          },
+        }
+      );
+    }
   }
 }
 
