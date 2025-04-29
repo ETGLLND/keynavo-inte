@@ -1,7 +1,10 @@
 .partners {
-  padding: 105px 0;
+  padding: 10.5rem 0;
   position: relative;
   overflow: hidden;
+  @media screen and (min-width: $small) {
+    padding: 18rem 0;
+  }
   .title,
   .subtitle {
     text-align: center;

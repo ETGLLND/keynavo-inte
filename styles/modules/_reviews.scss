@@ -12,7 +12,7 @@
   .reviews-container {
     .review-item {
       max-width: 270px;
-      transition: opacity transform 0.3s ease;
+      transition: all 0.3s ease;
       transform: scale(1);
       opacity: 1;
       &:not(.swiper-slide-active) {
@@ -26,7 +26,7 @@
       }
       .id {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         gap: 1.7rem;
       }

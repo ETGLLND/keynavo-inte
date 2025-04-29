@@ -15,7 +15,7 @@
   }
   .left {
     @media screen and (min-width: $medium) {
-      width: calc(100% / 2);
+      width: calc(100% / 12 * 5);
     }
   }
   .right {
@@ -24,13 +24,13 @@
     flex-direction: column;
     gap: 1rem;
     @media screen and (min-width: $medium) {
-      width: calc(100% / 12 * 5);
+      width: calc(100% / 2);
       margin-top: 0;
     }
     .question-bloc {
       background: rgba(255, 255, 255, 0.2);
       border-radius: 0.5rem;
-      padding: 1rem;
+      padding: 1.5rem;
       cursor: pointer;
       transition: all 0.3s ease;
       overflow: hidden;
@@ -60,7 +60,8 @@
         .question {
           color: $color1;
           &::after {
-            transform: rotate(0.25turn);
+            transform: rotate(-0.25turn);
+            // transform-origin: center right;
           }
         }
       }

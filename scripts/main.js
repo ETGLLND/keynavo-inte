@@ -9,7 +9,8 @@ const createOpenAnimation = (
   container,
   basisClass,
   adjustment = 0,
-  target = container
+  target = container,
+  nav = false
 ) => {
   const basis = container.querySelector(basisClass);
   container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
@@ -17,9 +18,13 @@ const createOpenAnimation = (
   target.addEventListener("click", (e) => {
     if (!opened) {
       container.classList.add("open");
-      container.style.maxHeight = `${
-        container.scrollHeight + adjustment + 100
-      }px`;
+      if (nav) {
+        container.style.maxHeight = `${
+          container.scrollHeight + adjustment + 100
+        }px`;
+      } else {
+        container.style.maxHeight = `${container.scrollHeight + adjustment}px`;
+      }
       opened = true;
     } else {
       container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
@@ -46,6 +51,14 @@ const activateSliderDots = (triggers, swiper) => {
       swiper.slideTo(slideIndex);
     });
   });
+};
+
+const disableScroll = () => {
+  document.body.style.overflow = "hidden";
+};
+
+const enableScroll = () => {
+  document.body.style.overflow = "";
 };
 
 // REVIEWS BLOC
@@ -76,20 +89,24 @@ const titleRoot = document.querySelector(".title-scroll");
 if (titleRoot) {
   const title = titleRoot.querySelector(".content");
 
-  const titleWidth = title.offsetWidth;
+  // const titleWidth = title.offsetWidth - 100;
+  // const titleWidth = 900;
+  const start = -1500;
+  const end = 900;
 
   gsap.fromTo(
     title,
     {
-      x: -titleWidth,
+      // x: -titleWidth,
+      x: start,
     },
     {
-      x: titleWidth,
+      // x: titleWidth,
+      x: end,
       scrollTrigger: {
         trigger: titleRoot,
         scrub: 1,
-        start: 500,
-        markers: true,
+        start: 400,
       },
     }
   );
@@ -101,7 +118,7 @@ const faqRoot = document.querySelector(".faq-bloc");
 if (faqRoot) {
   const faqBlocs = document.querySelectorAll(".question-bloc");
   faqBlocs.forEach((el) => {
-    createOpenAnimation(el, ".question", 20);
+    createOpenAnimation(el, ".question", 30);
   });
 }
 
@@ -123,12 +140,13 @@ const advantagesRoot = document.querySelector(".advantages");
 
 if (advantagesRoot) {
   const items = advantagesRoot.querySelectorAll(".item");
+  const image = advantagesRoot.querySelector(".illustration");
 
   gsap.utils.toArray(items).forEach((el, i) => {
     gsap.from(el, {
       opacity: 0,
       y: 50,
-      duration: 0.3,
+      duration: 0.1,
       // delay: i * 0.2, // Décalage progressif
       scrollTrigger: {
         trigger: el,
@@ -137,6 +155,18 @@ if (advantagesRoot) {
       },
     });
   });
+
+  // image animation
+  if (window.innerWidth >= 768) {
+    gsap.to(image, {
+      width: 600,
+      scrollTrigger: {
+        trigger: advantagesRoot,
+        scrub: 1,
+        top: "top",
+      },
+    });
+  }
 }
 
 // NAV
@@ -146,10 +176,10 @@ if (navRoot) {
   if (window.innerWidth < 992) {
     // Animation of the subelements of menu
     const selects = navRoot.querySelectorAll(".menu-item-container");
-    selects.forEach((el) => createOpenAnimation(el, ".menu-item", 2));
+    selects.forEach((el) => createOpenAnimation(el, ".menu-item", 2, el, true));
     // Open animation of the menu with burger
     const burger = navRoot.querySelector(".burger");
-    createOpenAnimation(navRoot, ".top", 0, burger);
+    createOpenAnimation(navRoot, ".top", 0, burger, true);
   }
 
   const logo = navRoot.querySelector(".logo-container > img");
@@ -218,7 +248,8 @@ if (partnersRoot) {
         x: -title.offsetWidth - 100,
       },
       {
-        x: title.offsetWidth + window.innerWidth,
+        // x: title.offsetWidth + window.innerWidth,
+        x: window.innerWidth,
         scrollTrigger: {
           trigger: partnersRoot,
           scrub: 1,
@@ -511,6 +542,8 @@ if (calculatorRoot) {
 const footer = document.querySelector("footer.footer");
 
 if (footer) {
+  // const before = document.querySelector(".before-footer");
+
   gsap.fromTo(
     footer,
     {
@@ -520,8 +553,11 @@ if (footer) {
       maxHeight: footer.offsetHeight,
       scrollTrigger: {
         trigger: footer,
+        // trigger: before,
         scrub: 1,
+        // start: "bottom",
         end: "bottom bottom",
+        markers: true,
       },
     }
   );

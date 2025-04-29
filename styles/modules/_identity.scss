@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column-reverse;
   gap: 5.5rem;
-  margin: 10.5rem 0 0;
+  margin: 10.5rem 0 -13rem;
   @media screen and (min-width: 576px) {
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: -31rem;
   }
   .right-bloc {
     @media screen and (min-width: 576px) {
@@ -70,7 +71,7 @@
     .member-card {
       background-color: $color8;
       border-radius: 1.5rem;
-      padding: 1.5rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -86,7 +87,7 @@
       .image-container {
         border-radius: 100%;
         border: solid 1px $color4;
-        padding: calc(92px - 75px);
+        padding: 1.3rem;
         height: 9.2rem;
         width: 9.2rem;
         margin-bottom: 0.5rem;
@@ -116,7 +117,6 @@
         .linkedin {
           height: 20px;
           width: 20px;
-          background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.226562' y='0.783203' width='20.0438' height='20.0438' rx='3.45582' fill='%231D7064'/%3E%3Cpath d='M7.15791 15.5978L7.15779 9.13006L4.72928 9.13011L4.7294 15.5979L7.15791 15.5978ZM5.94383 8.24649C6.7907 8.24647 7.31782 7.74982 7.31781 7.12917C7.30202 6.49453 6.79069 6.01168 5.95986 6.01169C5.12916 6.01171 4.58595 6.49459 4.58596 7.12922C4.58597 7.7499 5.11298 8.24651 5.92798 8.24649L5.94376 8.24649L5.94383 8.24649ZM8.50209 15.5978L10.9306 15.5978L10.9305 11.9858C10.9305 11.7925 10.9463 11.5994 11.0104 11.4612C11.186 11.075 11.5856 10.675 12.2564 10.675C13.1352 10.675 13.4868 11.2681 13.4868 12.1375L13.4869 15.5977L15.9152 15.5976L15.9151 11.8891C15.9151 9.90241 14.717 8.97807 13.1192 8.9781C11.8091 8.97813 11.2339 9.62637 10.9143 10.0679L10.9305 10.0679L10.9305 9.12985L8.50202 9.1299C8.5339 9.7368 8.50214 15.5977 8.50214 15.5977L8.50209 15.5978Z' fill='%23B4CFCB'/%3E%3C/svg%3E%0A");
         }
       }
       .description {
@@ -137,7 +137,7 @@
     .card-container:nth-of-type(3) {
       top: -100px;
       @media screen and (min-width: 576px) {
-        top: -250px;
+        top: -270px;
       }
     }
   }
