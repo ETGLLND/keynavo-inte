@@ -2,10 +2,13 @@
   padding: 105px 0;
   background: url(../../assets/img/background.jpg);
   background-size: 1280px 905px;
-  &.alt {
+  &.purple {
     background: url(../../assets/img/gradient-violet.png);
-    background-size: cover;
-    background-position: bottom;
+    background-size: 100%;
+    background-position: top;
+    .question {
+      color: #fff !important;
+    }
   }
   .content-wrapper {
     @media screen and (min-width: $medium) {

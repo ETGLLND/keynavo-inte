@@ -12,12 +12,16 @@
   .reviews-container {
     .review-item {
       max-width: 270px;
-      transition: all 0.3s ease;
-      transform: scale(1);
-      opacity: 1;
       &:not(.swiper-slide-active) {
-        transform: scale(0.75);
-        opacity: 0.7;
+        .content-container {
+          transform: scale(0.75);
+          opacity: 0.7;
+        }
+      }
+      .content-container {
+        transition: all 0.3s ease;
+        transform: scale(1);
+        opacity: 1;
       }
       .content {
         font-size: 1.8rem;

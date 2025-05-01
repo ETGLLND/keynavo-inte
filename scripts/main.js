@@ -53,14 +53,6 @@ const activateSliderDots = (triggers, swiper) => {
   });
 };
 
-const disableScroll = () => {
-  document.body.style.overflow = "hidden";
-};
-
-const enableScroll = () => {
-  document.body.style.overflow = "";
-};
-
 // REVIEWS BLOC
 const reviewsRoot = document.querySelector(".reviews-bloc");
 
@@ -422,6 +414,7 @@ if (heroRoot) {
     const leftButton = heroRoot.querySelector(".controls > .left");
     const rightButton = heroRoot.querySelector(".controls > .right");
     const swiper = new Swiper(sliderContainer, {
+      initialSlide: 1,
       slidesPerView: "auto", // Ajuste la largeur des slides
       centeredSlides: true, // Centre le groupe de slides
       spaceBetween: 20,
@@ -557,7 +550,7 @@ if (footer) {
         scrub: 1,
         // start: "bottom",
         end: "bottom bottom",
-        markers: true,
+        // markers: true,
       },
     }
   );
@@ -593,4 +586,19 @@ if (tabsSwitchRoot) {
       });
     });
   });
+}
+
+// IDENTITY
+const identityRoot = document.querySelector(".identity");
+
+if (identityRoot) {
+  if (window.innerWidth <= 576) {
+    const cards = identityRoot.querySelectorAll(".card-container");
+    cards.forEach((card) => {
+      card.addEventListener("click", (e) => {
+        cards.forEach((el) => el.classList.remove("up"));
+        card.classList.add("up");
+      });
+    });
+  }
 }

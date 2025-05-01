@@ -1,11 +1,13 @@
 .hero-section-v3 {
   padding: 11.5rem 0 2rem;
   background: url(../../assets/img/gradient-orange.png);
-  background-size: cover;
+  // background-size: cover;
+  background-size: 100% 100%;
   gap: 3rem;
   &.purple {
     background: url(../../assets/img/gradient-violet.png);
-    background-size: cover;
+    // background-size: cover;
+    background-size: 100% 100%;
   }
   @media screen and (min-width: $small) {
     padding: 19.5rem 0 10.5rem;
@@ -29,6 +31,7 @@
       position: relative;
       @media screen and (min-width: $small) {
         width: calc(100% / 12 * 5);
+        aspect-ratio: 475/380;
       }
       img {
         border-radius: 1.5rem;
@@ -41,6 +44,14 @@
         position: absolute;
         top: 4rem;
         left: -1rem;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media screen and (min-width: $small) {
+          width: 7rem;
+          height: 7rem;
+          left: -3.5rem;
+        }
       }
       &::after {
         content: "";
@@ -50,6 +61,15 @@
         position: absolute;
         bottom: 4rem;
         right: -1rem;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @media screen and (min-width: $small) {
+          width: 7rem;
+          height: 7rem;
+          right: -4rem;
+          bottom: 7rem;
+        }
       }
     }
   }

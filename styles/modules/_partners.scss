@@ -1,9 +1,9 @@
 .partners {
-  padding: 10.5rem 0;
+  padding: 0 0 10.5rem;
   position: relative;
   overflow: hidden;
   @media screen and (min-width: $small) {
-    padding: 18rem 0;
+    padding: 0 0 18rem;
   }
   .title,
   .subtitle {
@@ -45,15 +45,19 @@
       }
     }
     .text {
-      font-size: 25rem;
+      font-size: 10rem;
       font-weight: 700;
       -webkit-text-fill-color: rgba($color: #000000, $alpha: 0);
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $color1;
       white-space: nowrap;
       position: absolute;
-      top: 0;
       z-index: 0;
+      top: 6.3rem;
+      @media screen and (min-width: $small) {
+        top: 0;
+        font-size: 25rem;
+      }
     }
   }
 }

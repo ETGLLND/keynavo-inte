@@ -1,13 +1,19 @@
 .title-scroll {
-  padding-top: 16rem;
+  padding-top: 6rem;
+  @media screen and (min-width: $medium) {
+    padding-top: 16rem;
+  }
   .content-container {
-    height: 40rem;
+    height: 20rem;
     position: relative;
     overflow: hidden;
+    @media screen and (min-width: $medium) {
+      height: 40rem;
+    }
   }
   .content {
     font-weight: 700;
-    font-size: 25rem;
+    font-size: 10rem;
     color: #fff;
     -webkit-text-fill-color: rgba($color: #000000, $alpha: 0);
     -webkit-text-stroke-width: 1px;
@@ -16,5 +22,8 @@
     top: 0;
     display: block;
     white-space: nowrap;
+    @media screen and (min-width: $medium) {
+      font-size: 25rem;
+    }
   }
 }

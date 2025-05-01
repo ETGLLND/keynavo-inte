@@ -152,12 +152,13 @@ a {
   // Barre derrière
   &::before {
     content: "";
-    width: 100%;
+    width: 77%;
     height: 1px;
     background-color: $color4;
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .step {
     margin: 0;
