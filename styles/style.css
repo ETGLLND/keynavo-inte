@@ -580,6 +580,9 @@ a {
   font-weight: 700;
   font-size: 2rem;
 }
+.dots-container.big::before {
+  width: 85%;
+}
 .dots-container.white .step:before {
   background-color: #fff;
 }
@@ -694,6 +697,21 @@ a {
   background-image: url(../../assets/img/background.jpg);
   background-size: 1280px 905px;
   background-repeat: repeat;
+}
+
+.purple {
+  background: url(../../assets/img/gradient-violet.png);
+  background-size: 100% 100%;
+}
+
+.yellow {
+  background: url(../../assets/img/gradient-jaune.png);
+  background-size: 100% 100%;
+}
+
+.orange {
+  background: url(../../assets/img/gradient-orange.png);
+  background-size: 100% 100%;
 }
 
 .house::before {
@@ -1047,7 +1065,6 @@ body {
 }
 
 .hero-section-v1 {
-  background: url(../../assets/img/background.jpg);
   overflow: hidden;
   cursor: url(../../assets/img/cursor.png);
 }
@@ -1413,14 +1430,8 @@ body {
 
 .hero-section-v3 {
   padding: 11.5rem 0 2rem;
-  background: url(../../assets/img/gradient-orange.png);
-  background-size: 100% 100%;
   gap: 3rem;
   position: relative;
-}
-.hero-section-v3.purple {
-  background: url(../../assets/img/gradient-violet.png);
-  background-size: 100% 100%;
 }
 @media screen and (min-width: 576px) {
   .hero-section-v3 {
@@ -1527,15 +1538,9 @@ body {
 
 .faq-bloc {
   padding: 105px 0;
-  background: url(../../assets/img/background.jpg);
-  background-size: 1280px 905px;
-}
-.faq-bloc.purple {
-  background: url(../../assets/img/gradient-violet.png);
-  background-size: 100%;
   background-position: top;
 }
-.faq-bloc.purple .question {
+.faq-bloc.purple .question, .faq-bloc.yellow .question, .faq-bloc.orange .question {
   color: #fff !important;
 }
 @media screen and (min-width: 768px) {

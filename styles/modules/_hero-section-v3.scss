@@ -1,13 +1,10 @@
 .hero-section-v3 {
   padding: 11.5rem 0 2rem;
-  background: url(../../assets/img/gradient-orange.png);
-  background-size: 100% 100%;
+  // background: url(../../assets/img/gradient-orange.png);
+  // background-size: 100% 100%;
   gap: 3rem;
   position: relative;
-  &.purple {
-    background: url(../../assets/img/gradient-violet.png);
-    background-size: 100% 100%;
-  }
+
   @media screen and (min-width: $small) {
     padding: 19.5rem 0 10.5rem;
   }

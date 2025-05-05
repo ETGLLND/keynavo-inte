@@ -22,6 +22,19 @@
   background-repeat: repeat;
 }
 
+.purple {
+  background: url(../../assets/img/gradient-violet.png);
+  background-size: 100% 100%;
+}
+.yellow {
+  background: url(../../assets/img/gradient-jaune.png);
+  background-size: 100% 100%;
+}
+.orange {
+  background: url(../../assets/img/gradient-orange.png);
+  background-size: 100% 100%;
+}
+
 .house::before {
   background-image: url("data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='42' height='42' rx='6.42857' fill='%23B4CFCB'/%3E%3Cg filter='url(%23filter0_i_648_27028)'%3E%3Cpath d='M30.9999 20.2004V30.8294C30.9999 31.0643 30.909 31.2896 30.7471 31.4557C30.5853 31.6218 30.3657 31.7151 30.1368 31.7151H24.0952C23.8663 31.7151 23.6467 31.6218 23.4849 31.4557C23.323 31.2896 23.2321 31.0643 23.2321 30.8294V25.072C23.2321 24.9546 23.1866 24.8419 23.1057 24.7589C23.0247 24.6758 22.915 24.6291 22.8005 24.6291H18.485C18.3706 24.6291 18.2608 24.6758 18.1799 24.7589C18.099 24.8419 18.0535 24.9546 18.0535 25.072V30.8294C18.0535 31.0643 17.9626 31.2896 17.8007 31.4557C17.6388 31.6218 17.4193 31.7151 17.1904 31.7151H11.1487C10.9198 31.7151 10.7003 31.6218 10.5384 31.4557C10.3766 31.2896 10.2856 31.0643 10.2856 30.8294V20.2004C10.2859 19.7307 10.4679 19.2802 10.7916 18.9482L19.4226 10.0907C19.7463 9.75875 20.1852 9.57227 20.6428 9.57227C21.1004 9.57227 21.5393 9.75875 21.863 10.0907L30.4939 18.9482C30.8177 19.2802 30.9997 19.7307 30.9999 20.2004Z' stroke='%234F9087' stroke-width='2.85714' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_i_648_27028' x='8.85718' y='8.14453' width='23.5713' height='25.7143' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='0.714286'/%3E%3CfeGaussianBlur stdDeviation='1.14286'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_648_27028'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
 }

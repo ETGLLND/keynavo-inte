@@ -149,6 +149,9 @@ a {
   margin-bottom: 2rem;
   font-weight: 700;
   font-size: 2rem;
+  &.big::before {
+    width: 85%;
+  }
   &.white {
     .step:before {
       background-color: #fff;

@@ -1,11 +1,13 @@
 .faq-bloc {
   padding: 105px 0;
-  background: url(../../assets/img/background.jpg);
-  background-size: 1280px 905px;
-  &.purple {
-    background: url(../../assets/img/gradient-violet.png);
-    background-size: 100%;
-    background-position: top;
+  // background: url(../../assets/img/background.jpg);
+  // background-size: 1280px 905px;
+  background-position: top;
+  &.purple,
+  &.yellow,
+  &.orange {
+    // background: url(../../assets/img/gradient-violet.png);
+    // background-size: 100%;
     .question {
       color: #fff !important;
     }
