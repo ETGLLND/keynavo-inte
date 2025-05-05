@@ -149,6 +149,11 @@ a {
   margin-bottom: 2rem;
   font-weight: 700;
   font-size: 2rem;
+  &.white {
+    .step:before {
+      background-color: #fff;
+    }
+  }
   // Barre derrière
   &::before {
     content: "";
