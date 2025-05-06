@@ -1254,7 +1254,8 @@ body {
   left: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 1.5rem;
+  padding: 3.5rem 1.5rem;
+  margin: 0;
 }
 .hero-section-v1 .content .solution .price {
   width: 100%;
@@ -1281,6 +1282,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 .hero-section-v1 .content .solution .circle {
   position: absolute;
@@ -2460,6 +2462,7 @@ body {
   aspect-ratio: 374/362;
   border-radius: 1.5rem;
   margin-bottom: 3rem;
+  overflow: hidden;
 }
 
 .footer {

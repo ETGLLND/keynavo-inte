@@ -194,6 +194,7 @@ const twoRoots = document.querySelectorAll(".two-columns");
 
 if (twoRoots) {
   twoRoots.forEach((twoRoot) => {
+    console.log("bonjour");
     const prevBtn = twoRoot.querySelector(".controls > .left");
     const nextBtn = twoRoot.querySelector(".controls > .right");
     const swiperContainer = twoRoot.querySelector(".slider");
@@ -203,7 +204,7 @@ if (twoRoots) {
         prevEl: prevBtn,
         nextEl: nextBtn,
       },
-      loop: true,
+      // loop: true,
     });
   });
 }
