@@ -426,56 +426,104 @@ if (heroRoot) {
     });
 
     // Opening of block
-    const container = heroRoot.querySelector(".content");
-    const computedWidth =
-      window.innerWidth > 769
-        ? window.innerWidth - 330
-        : window.innerWidth - 80;
-    const heading = heroRoot.querySelector(".heading");
-    const solutionsContainer = heroRoot.querySelector(".solutions-container");
-    const solutionsSlider = heroRoot.querySelector(".solutions-slider");
-    heading.style.width = computedWidth + "px";
-    solutionsContainer.style.maxWidth = computedWidth + "px";
-    solutionsSlider.style.maxWidth = computedWidth + "px";
+    // const container = heroRoot.querySelector(".content");
+    // const computedWidth =
+    //   window.innerWidth > 769
+    //     ? window.innerWidth - 330
+    //     : window.innerWidth - 80;
+    // const heading = heroRoot.querySelector(".heading");
+    // const solutionsContainer = heroRoot.querySelector(".solutions-container");
+    // const solutionsSlider = heroRoot.querySelector(".solutions-slider");
+    // heading.style.width = computedWidth + "px";
+    // solutionsContainer.style.maxWidth = computedWidth + "px";
+    // solutionsSlider.style.maxWidth = computedWidth + "px";
 
-    if (window.innerWidth > 769) {
-      gsap.fromTo(
-        container,
-        {
-          marginRight: 0,
-          marginLeft: 0,
-        },
-        {
-          marginRight: "100px",
-          marginLeft: "100px",
-          scrollTrigger: {
-            trigger: container,
-            scrub: 1,
-            start: "top",
-          },
-        }
-      );
-    } else {
-      gsap.fromTo(
-        container,
-        {
-          marginRight: 0,
-          marginLeft: 0,
-        },
-        {
-          marginRight: "20px",
-          marginLeft: "20px",
-          scrollTrigger: {
-            trigger: container,
-            scrub: 1,
-            start: "top",
-            end: "bottom 700px",
-          },
-        }
-      );
-    }
+    // if (window.innerWidth > 769) {
+    //   gsap.fromTo(
+    //     container,
+    //     {
+    //       marginRight: 0,
+    //       marginLeft: 0,
+    //     },
+    //     {
+    //       marginRight: "100px",
+    //       marginLeft: "100px",
+    //       scrollTrigger: {
+    //         trigger: container,
+    //         scrub: 1,
+    //         start: "top",
+    //       },
+    //     }
+    //   );
+    // } else {
+    //   gsap.fromTo(
+    //     container,
+    //     {
+    //       marginRight: 0,
+    //       marginLeft: 0,
+    //     },
+    //     {
+    //       marginRight: "20px",
+    //       marginLeft: "20px",
+    //       scrollTrigger: {
+    //         trigger: container,
+    //         scrub: 1,
+    //         start: "top",
+    //         end: "bottom 700px",
+    //       },
+    //     }
+    //   );
+    // }
   }
 }
+
+// ALL HERO SECTIONS
+const heros = document.querySelectorAll(".hero-section");
+
+heros.forEach((hero) => {
+  const container = hero.querySelector(".shrink-container");
+  const computedWidth =
+    window.innerWidth > 769 ? window.innerWidth - 330 : window.innerWidth - 80;
+  const shrinked = hero.querySelectorAll(".shrink");
+  shrinked.forEach((el) => (el.style.width = computedWidth + "px"));
+
+  if (window.innerWidth > 769) {
+    gsap.fromTo(
+      container,
+      {
+        marginRight: 0,
+        marginLeft: 0,
+      },
+      {
+        marginRight: "100px",
+        marginLeft: "100px",
+        scrollTrigger: {
+          trigger: container,
+          scrub: 1,
+          start: "top",
+        },
+      }
+    );
+  } else {
+    gsap.fromTo(
+      container,
+      {
+        marginRight: 0,
+        marginLeft: 0,
+      },
+      {
+        marginRight: "20px",
+        marginLeft: "20px",
+        scrollTrigger: {
+          trigger: container,
+          scrub: 1,
+          start: "top",
+          end: "bottom 700px",
+        },
+      }
+    );
+  }
+});
 
 // NESTED BLOCKS
 const nestedBlocks = document.querySelectorAll(".nested-blocks");
