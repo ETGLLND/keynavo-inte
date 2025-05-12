@@ -1075,10 +1075,20 @@ body {
 }
 .hero-section-v1.alt .content {
   background: #f7f0ea;
-  max-height: 77rem;
+}
+@media screen and (min-width: 992px) {
+  .hero-section-v1.alt .content {
+    max-height: 77rem;
+  }
 }
 .hero-section-v1.alt .content .heading {
-  padding-bottom: 7rem;
+  margin-bottom: 0;
+  padding-bottom: 12rem;
+}
+@media screen and (min-width: 992px) {
+  .hero-section-v1.alt .content .heading {
+    padding-bottom: 7rem;
+  }
 }
 .hero-section-v1.alt .content .heading .title,
 .hero-section-v1.alt .content .heading .subtitle {
@@ -1260,7 +1270,7 @@ body {
 .hero-section-v1 .content .solution .price {
   width: 100%;
   background-color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   padding: 0.5rem;
   margin: 0;
   position: relative;
@@ -1343,6 +1353,10 @@ body {
 }
 .hero-section-v1 .content .solutions-slider .solution-container.swiper-slide-active .solution {
   transform: translateY(-6rem);
+  box-shadow: 0px 0px 27.51px 0px rgba(6, 50, 0, 0.2);
+}
+.hero-section-v1 .content .solutions-slider .solution-container.swiper-slide-active .solution .illustration {
+  filter: none;
 }
 .hero-section-v1 .content .solutions-slider .solution {
   border-radius: 1.125rem;
@@ -1368,14 +1382,14 @@ body {
 }
 .hero-section-v1 .content .solutions-slider .solution .price {
   background-color: #fff;
-  border-radius: 0.79px;
+  border-radius: 0.4rem;
   padding: 0.4rem;
   width: 100%;
   text-align: center;
 }
 .hero-section-v1 .content .solutions-slider .solution .illustration {
   width: 100%;
-  height: 24rem;
+  height: 75%;
   overflow: hidden;
   position: absolute;
   bottom: 0;
