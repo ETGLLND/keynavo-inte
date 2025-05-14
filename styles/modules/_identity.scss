@@ -32,7 +32,11 @@
           content: "";
           height: 3.5rem;
           width: 3.5rem;
-          background-size: contain;
+          background-color: $color4;
+          background-size: 2.5rem;
+          border-radius: 0.5rem;
+          background-repeat: no-repeat;
+          background-position: center;
         }
         .text {
           color: $color1;

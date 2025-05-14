@@ -151,7 +151,7 @@ if (advantagesRoot) {
   // image animation
   if (window.innerWidth >= 768) {
     gsap.to(image, {
-      width: 600,
+      width: 650,
       scrollTrigger: {
         trigger: advantagesRoot,
         scrub: 1,
@@ -584,8 +584,6 @@ if (calculatorRoot) {
 const footer = document.querySelector("footer.footer");
 
 if (footer) {
-  // const before = document.querySelector(".before-footer");
-
   gsap.fromTo(
     footer,
     {
