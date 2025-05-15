@@ -38,10 +38,12 @@
     position: relative;
     z-index: 2;
     margin: auto;
+    gap: 3rem;
     @media screen and (min-width: $small) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      gap: unset;
     }
     .text-content {
       @media screen and (min-width: $small) {

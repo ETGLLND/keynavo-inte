@@ -5,6 +5,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  border-radius: 2rem 2rem 0 0;
+  border-top: solid 1px $color9;
+
   &::after {
     content: "";
     position: absolute;
@@ -17,19 +20,19 @@
     background-repeat: no-repeat;
     pointer-events: none;
   }
-  &:before {
-    content: "";
-    border-radius: 2rem 2rem 0 0;
-    border-top: solid 1px $color9;
-    width: 100%;
-    height: 1.5rem;
-    background-image: url(../../assets/img/background.jpg);
-    background-size: 1280px 905px;
-    background-repeat: repeat;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  // &:before {
+  //   content: "";
+  //   border-radius: 2rem 2rem 0 0;
+  //   border-top: solid 1px $color9;
+  //   width: 100%;
+  //   height: 1.5rem;
+  //   background-image: url(../../assets/img/background.jpg);
+  //   background-size: 1280px 905px;
+  //   background-repeat: repeat;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  // }
 
   @media screen and (min-width: $large) {
     padding: 8rem 0 3rem;
