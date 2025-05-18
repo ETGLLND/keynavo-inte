@@ -142,7 +142,7 @@ if (advantagesRoot) {
       // delay: i * 0.2, // Décalage progressif
       scrollTrigger: {
         trigger: el,
-        start: "top 80%", // quand l'élément entre dans le viewport
+        start: "top 80%", // quand l'élément entre dans le viewport,
         toggleActions: "play none none none",
       },
     });
@@ -155,7 +155,8 @@ if (advantagesRoot) {
       scrollTrigger: {
         trigger: advantagesRoot,
         scrub: 1,
-        top: "top",
+        top: "top 40%",
+        end: "bottom bottom",
       },
     });
   }
