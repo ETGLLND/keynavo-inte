@@ -6,7 +6,9 @@
   }
   &.alt {
     // padding-bottom: 39rem;
-    overflow: visible;
+    @media screen and (min-width: $large) {
+      overflow: visible;
+    }
     .content {
       background: $color9;
       @media screen and (min-width: $large) {
@@ -23,12 +25,16 @@
           color: $color1 !important;
         }
       }
+      .sentence {
+        color: $color1 !important;
+      }
     }
     .solutions-wrapper {
       width: 100%;
       .solution {
         aspect-ratio: 235/454;
         height: unset;
+        max-height: 59rem;
       }
     }
   }
@@ -273,14 +279,16 @@
         width: calc(100% / 2);
         .sentence {
           position: absolute;
-          display: block;
+          display: grid;
+          align-content: center;
           width: 100%;
           bottom: 0;
           left: 0;
           z-index: 1;
           font-weight: 700;
           font-size: 1.7rem;
-          color: $color1;
+          color: #fff;
+          height: 6rem;
         }
         &.swiper-slide-active {
           .solution {
@@ -367,6 +375,7 @@
       }
       .controls-container {
         padding: 2rem 0 6rem;
+        margin: 0;
         .left,
         .right {
           height: 4.5rem;

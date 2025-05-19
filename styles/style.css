@@ -721,7 +721,8 @@ a {
 
 .purple,
 .yellow,
-.orange {
+.orange,
+.pink {
   background-size: cover !important;
 }
 
@@ -735,6 +736,10 @@ a {
 
 .orange {
   background: url(../../assets/img/gradient-orange.webp);
+}
+
+.pink {
+  background: url(../../assets/img/gradient-rose.webp);
 }
 
 .spark:before {
@@ -947,14 +952,14 @@ body {
   gap: 5.5rem;
   margin: 10.5rem 0 -10.5rem;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: -31rem;
   }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .right-bloc {
     width: 50%;
   }
@@ -996,7 +1001,7 @@ body {
 .identity .left-bloc {
   overflow: hidden;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc {
     width: 41.6666666667%;
     display: flex;
@@ -1005,14 +1010,14 @@ body {
     overflow: visible;
   }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc .bloc-title {
     position: relative;
     top: 122px;
     left: 50px;
   }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc .cards-container {
     display: flex;
     flex-direction: column;
@@ -1025,7 +1030,7 @@ body {
   display: flex;
   justify-content: center;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc .card-container {
     display: block;
   }
@@ -1051,7 +1056,7 @@ body {
   transition: transform ease 0.3s;
   width: 80%;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc .member-card {
     max-width: 260px;
     width: unset;
@@ -1106,7 +1111,7 @@ body {
   transform: rotate(8.29deg);
   top: -70px;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc .card-container:nth-of-type(2) {
     top: -125px;
     left: 200px;
@@ -1115,7 +1120,7 @@ body {
 .identity .left-bloc .card-container:nth-of-type(3) {
   top: -100px;
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 992px) {
   .identity .left-bloc .card-container:nth-of-type(3) {
     top: -270px;
   }
@@ -1249,8 +1254,10 @@ body {
     padding-bottom: 26rem;
   }
 }
-.hero-section-v1.alt {
-  overflow: visible;
+@media screen and (min-width: 992px) {
+  .hero-section-v1.alt {
+    overflow: visible;
+  }
 }
 .hero-section-v1.alt .content {
   background: #f7f0ea;
@@ -1273,12 +1280,16 @@ body {
 .hero-section-v1.alt .content .heading .subtitle {
   color: #046053 !important;
 }
+.hero-section-v1.alt .content .sentence {
+  color: #046053 !important;
+}
 .hero-section-v1.alt .solutions-wrapper {
   width: 100%;
 }
 .hero-section-v1.alt .solutions-wrapper .solution {
   aspect-ratio: 235/454;
   height: unset;
+  max-height: 59rem;
 }
 .hero-section-v1 .content {
   background: url(../../assets/img/home-bg.webp);
@@ -1530,14 +1541,16 @@ body {
 }
 .hero-section-v1 .content .solutions-slider .solution-container .sentence {
   position: absolute;
-  display: block;
+  display: grid;
+  align-content: center;
   width: 100%;
   bottom: 0;
   left: 0;
   z-index: 1;
   font-weight: 700;
   font-size: 1.7rem;
-  color: #046053;
+  color: #fff;
+  height: 6rem;
 }
 .hero-section-v1 .content .solutions-slider .solution-container.swiper-slide-active .solution {
   transform: translateY(-6rem);
@@ -1619,6 +1632,7 @@ body {
 }
 .hero-section-v1 .content .solutions-slider .controls-container {
   padding: 2rem 0 6rem;
+  margin: 0;
 }
 .hero-section-v1 .content .solutions-slider .controls-container .left,
 .hero-section-v1 .content .solutions-slider .controls-container .right {
@@ -2507,6 +2521,9 @@ body {
     height: 100%;
   }
 }
+.two-columns .content-container .slider .slide:hover .legend {
+  transform: translateY(0);
+}
 .two-columns .content-container .slider .illustration {
   width: 100%;
   aspect-ratio: 375/236;
@@ -2522,6 +2539,17 @@ body {
     aspect-ratio: 495/398;
     height: 100%;
   }
+}
+.two-columns .content-container .slider .illustration .legend {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 1rem;
+  background-color: #f7f0ea;
+  color: #046053;
+  font-size: 1.4rem;
+  transform: translateY(-100%);
+  transition: all 0.3s ease;
 }
 .two-columns .content-container .slider .illustration img {
   width: 100%;

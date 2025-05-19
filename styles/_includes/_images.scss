@@ -24,7 +24,8 @@
 
 .purple,
 .yellow,
-.orange {
+.orange,
+.pink {
   background-size: cover !important;
 }
 
@@ -36,6 +37,9 @@
 }
 .orange {
   background: url(../../assets/img/gradient-orange.webp);
+}
+.pink {
+  background: url(../../assets/img/gradient-rose.webp);
 }
 
 // ICONS
