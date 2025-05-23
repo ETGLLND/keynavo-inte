@@ -20,25 +20,12 @@
     background-repeat: no-repeat;
     pointer-events: none;
   }
-  // &:before {
-  //   content: "";
-  //   border-radius: 2rem 2rem 0 0;
-  //   border-top: solid 1px $color9;
-  //   width: 100%;
-  //   height: 1.5rem;
-  //   background-image: url(../../assets/img/background.jpg);
-  //   background-size: 1280px 905px;
-  //   background-repeat: repeat;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  // }
 
-  @media screen and (min-width: $large) {
+  @media screen and (min-width: $extra-large) {
     padding: 8rem 0 3rem;
   }
   .top-container {
-    @media screen and (min-width: $large) {
+    @media screen and (min-width: $extra-large) {
       display: flex;
       padding: 0;
       padding-bottom: 4.5rem;
@@ -50,8 +37,8 @@
   .description {
     padding-bottom: 3rem;
     border-bottom: solid 1px rgba($color: #fff, $alpha: 0.15);
-    width: calc(100% / 12 * 5);
-    @media screen and (min-width: $large) {
+    @media screen and (min-width: $extra-large) {
+      width: calc(100% / 12 * 5);
       border-bottom: unset;
       display: flex;
       gap: 4.5rem;
@@ -61,7 +48,7 @@
       width: 12rem;
       height: 7.2rem;
       margin-bottom: 1rem;
-      @media screen and (min-width: $large) {
+      @media screen and (min-width: $extra-large) {
         width: 16.6rem;
         height: 10rem;
       }
@@ -77,10 +64,9 @@
     gap: 1.5rem 4rem;
     padding: 0;
     margin-top: 3rem;
-    @media screen and (min-width: $large) {
+    @media screen and (min-width: $extra-large) {
       margin: unset;
       flex-shrink: 0;
-      // margin: 0 3rem;
     }
     .col {
       display: flex;
@@ -88,7 +74,7 @@
       gap: 1.5rem;
     }
     .item a {
-      @media screen and (min-width: $large) {
+      @media screen and (min-width: $extra-large) {
         margin: 0;
       }
     }
@@ -112,7 +98,7 @@
     margin: 3rem 0;
     padding-bottom: 3rem;
     border-bottom: solid 1px rgba($color: #fff, $alpha: 0.15);
-    @media screen and (min-width: $large) {
+    @media screen and (min-width: $extra-large) {
       border-bottom: unset;
       padding: 0;
       margin: 0;
@@ -152,7 +138,7 @@
     top: 4.5rem;
     right: 2rem;
     height: fit-content;
-    @media screen and (min-width: $large) {
+    @media screen and (min-width: $extra-large) {
       right: 10rem;
       top: unset;
       bottom: 3rem;

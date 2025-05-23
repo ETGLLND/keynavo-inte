@@ -1,0 +1,39 @@
+.form {
+  .unit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .side {
+    display: flex;
+    gap: 1.5rem;
+  }
+  label {
+    margin: 0;
+  }
+  input[type="text"] {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: solid 1px #fff;
+    color: $color1;
+    outline: none;
+    &::placeholder {
+      color: $color4;
+    }
+    &:focus {
+      border-color: $color6;
+    }
+  }
+  input[type="checkbox"] {
+    accent-color: $color6;
+  }
+  .two-slots {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    .unit {
+      width: 50%;
+    }
+  }
+}

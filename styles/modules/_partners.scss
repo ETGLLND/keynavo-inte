@@ -2,7 +2,7 @@
   padding: 0 0 10.5rem;
   position: relative;
   overflow: hidden;
-  @media screen and (min-width: $small) {
+  @media screen and (min-width: $medium) {
     padding: 0 0 18rem;
   }
   .title,
@@ -23,7 +23,7 @@
       gap: 10rem;
       position: relative;
       z-index: 2;
-      @media screen and (min-width: $small) {
+      @media screen and (min-width: $medium) {
         gap: 40rem;
       }
       .logo-item {
@@ -34,7 +34,7 @@
         width: calc(100% / 2);
         background-color: $color8;
         filter: drop-shadow(0 0 24px rgba(198, 182, 169, 0.5));
-        @media screen and (min-width: $small) {
+        @media screen and (min-width: $medium) {
           width: 16.5rem;
         }
         img {
@@ -54,7 +54,7 @@
       position: absolute;
       z-index: 0;
       top: 6.3rem;
-      @media screen and (min-width: $small) {
+      @media screen and (min-width: $medium) {
         top: 0;
         font-size: 25rem;
       }

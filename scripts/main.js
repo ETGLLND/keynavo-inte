@@ -236,6 +236,7 @@ if (partnersRoot) {
   if (window.innerWidth > 1120) {
     duplicateElements(firstLogos, firstTrack);
     duplicateElements(secondLogos, secondTrack);
+    // Title
     gsap.fromTo(
       title,
       {
@@ -251,20 +252,39 @@ if (partnersRoot) {
         },
       }
     );
-    gsap.fromTo(
-      firstTrack,
-      {
-        x: -1500,
-      },
-      {
-        x: 0,
-        scrollTrigger: {
-          trigger: partnersRoot,
-          scrub: 1,
-          start: "top 70%",
+    // First track
+    if (window.innerWidth <= 768) {
+      gsap.fromTo(
+        firstTrack,
+        {
+          x: -1500,
         },
-      }
-    );
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: partnersRoot,
+            scrub: 1,
+            start: "top 70%",
+          },
+        }
+      );
+    } else {
+      gsap.fromTo(
+        firstTrack,
+        {
+          x: -1500,
+        },
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: partnersRoot,
+            scrub: 1,
+            start: "top 70%",
+          },
+        }
+      );
+    }
+    // Second Track
     gsap.fromTo(
       secondTrack,
       {
@@ -649,4 +669,29 @@ if (identityRoot) {
       });
     });
   }
+}
+
+// CHOICE
+const choiceRoot = document.querySelector(".choice-form");
+
+if (choiceRoot) {
+  const sliderContainer = choiceRoot.querySelector(".choice-container");
+  const swiper = new Swiper(sliderContainer, {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 30,
+  });
+}
+
+// PACKS
+const packRoot = document.querySelector(".packs");
+
+if (packRoot) {
+  const moreBtn = packRoot.querySelector(".more");
+  const moreTxt = packRoot.querySelector(".more-text");
+
+  moreBtn.addEventListener("click", (e) => {
+    moreTxt.style.marginTop = "15px";
+    moreTxt.style.maxHeight = moreTxt.scrollHeight + "px";
+  });
 }

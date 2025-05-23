@@ -125,10 +125,12 @@
       border-radius: 0.5rem;
       text-align: center;
       width: fit-content;
-      margin: 0 auto 1.5rem;
+      margin: 0 auto;
       position: relative;
-      &::after {
-        content: "";
+      // &::after {
+      .more {
+        // content: "";
+        cursor: pointer;
         right: 0;
         top: 50%;
         position: absolute;
@@ -145,6 +147,12 @@
       p {
         margin: 0;
       }
+    }
+    .more-text {
+      max-height: 0;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      margin: 0;
     }
   }
 }

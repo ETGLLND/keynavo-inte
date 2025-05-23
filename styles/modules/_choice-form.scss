@@ -1,0 +1,71 @@
+.choice-form {
+  padding: 25rem 0 16rem;
+  .choice-container {
+    background-color: $color9;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    overflow: hidden;
+  }
+  .card {
+    background-color: #fff;
+    display: grid;
+    align-content: center;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    border: solid 1px #fff;
+    transition: all 0.3s ease;
+    &:hover,
+    &.selected {
+      border-color: $color6;
+      box-shadow: 0px 0px 24px 0px #c6b6a980;
+    }
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      //   max-width: 20rem;
+      margin: 0 auto;
+      &::before {
+        content: "";
+        height: 4.3rem;
+        width: 4.3rem;
+      }
+    }
+  }
+  .loc-first {
+    .cards-container {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 2rem;
+
+      .button {
+        width: 50%;
+        cursor: pointer;
+      }
+    }
+  }
+  .loc-second {
+    .content-wrapper {
+      display: flex;
+      gap: 4.5rem;
+      .result {
+        width: 45%;
+      }
+      .id-form {
+        width: 55%;
+      }
+    }
+  }
+  .contact-slide {
+    display: flex;
+    .card {
+      width: 50%;
+    }
+  }
+
+  .next-btn {
+    margin: 0 auto;
+    cursor: pointer;
+  }
+}
