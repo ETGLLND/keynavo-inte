@@ -503,6 +503,11 @@ if (heroRoot) {
     //   );
     // }
   }
+
+  // Calculate padding bottom
+  if (window.innerWidth > 992) {
+    heroRoot.style.paddingBottom = (245 / 1500) * window.innerWidth + "px";
+  }
 }
 
 // ALL HERO SECTIONS

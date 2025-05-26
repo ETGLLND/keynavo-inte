@@ -4,8 +4,9 @@
   @media screen and (min-width: $large) {
     padding-bottom: 26rem;
   }
-  @media screen and (min-width: $extra-large) {
+  @media screen and (min-width: $extra-extra-large) {
     padding-bottom: 52rem;
+    padding-bottom: calc(1500 / 280 * 100%);
   }
   &.alt {
     // padding-bottom: 39rem;
@@ -246,6 +247,7 @@
         border-radius: 100%;
         border: solid 1px $color1;
         top: 55%;
+        z-index: 3;
         &::before {
           content: "";
           height: 3.2rem;

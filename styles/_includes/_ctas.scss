@@ -181,8 +181,8 @@ a {
   }
   // Barre derrière
   &::before {
-    // content: "";
-    // width: 77%;
+    content: "";
+    width: 100%;
     width: calc(100% - 46.6px / 2);
     height: 1px;
     background-color: $color4;
