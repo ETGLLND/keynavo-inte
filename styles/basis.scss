@@ -32,6 +32,10 @@ body {
 
 .before-footer {
   padding-bottom: 80rem !important;
+
+  @media screen and (min-width: $medium) {
+    padding-bottom: 80rem !important;
+  }
   @media screen and (min-width: $large) {
     padding-bottom: 50rem !important;
   }
