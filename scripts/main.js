@@ -331,7 +331,6 @@ if (partnersRoot) {
           scrub: 1,
           // start: "top 0%",
           // end: "bottom 80%",
-          markers: true,
         },
       }
     );
@@ -585,24 +584,26 @@ if (calculatorRoot) {
 
   const changeValues = (price) => {
     // Smart
-    const smartTradValue = (price * 0.085 * 12).toFixed(1);
+    const smartTradValue = parseFloat((price * 0.085 * 12).toFixed(1));
     smartTrad.innerHTML = `${smartTradValue}€`;
-    const smartDigitValue = (price * 0.045 * 12).toFixed(1);
+    const smartDigitValue = parseFloat((price * 0.045 * 12).toFixed(1));
     smartDigit.innerHTML = `${smartDigitValue}€`;
-    const smartKeynavoValue = (24.9 * 12).toFixed(1);
+    const smartKeynavoValue = parseFloat((24.9 * 12).toFixed(1));
     smartKeynavo.innerHTML = `${smartKeynavoValue}€`;
-    smartResult.innerHTML = `${(smartDigitValue - smartKeynavoValue).toFixed(
-      1
-    )}€ à ${(smartTradValue - smartKeynavoValue).toFixed(1)}€ / an`;
+    smartResult.innerHTML = `${parseFloat(
+      smartDigitValue - smartKeynavoValue
+    ).toFixed(1)}€ à ${parseFloat(
+      (smartTradValue - smartKeynavoValue).toFixed(1)
+    )}€ / an`;
 
     // Zen
     zenTrad.innerHTML = `${smartTradValue}€`;
     zenDigit.innerHTML = `${smartDigitValue}€`;
     const zenKeynavoValue = `${(19.9 * 12).toFixed(1)}`;
     zenKeynavo.innerHTML = `${zenKeynavoValue}€`;
-    zenResult.innerHTML = `${(smartDigitValue - zenKeynavoValue).toFixed(
-      1
-    )}€ à ${(smartTradValue - zenKeynavoValue).toFixed(1)}€ / an`;
+    zenResult.innerHTML = `${parseFloat(
+      (smartDigitValue - zenKeynavoValue).toFixed(1)
+    )}€ à ${parseFloat((smartTradValue - zenKeynavoValue).toFixed(1))}€ / an`;
   };
   input.addEventListener("change", (e) => {
     changeValues(parseInt(e.target.value, 10));
@@ -613,20 +614,20 @@ if (calculatorRoot) {
 const footer = document.querySelector("footer.footer");
 
 if (footer) {
-  const before = document.querySelector(".before-footer");
+  // const before = document.querySelector(".before-footer");
   gsap.fromTo(
     footer,
     {
       maxHeight: 0,
     },
     {
-      maxHeight: footer.offsetHeight,
+      // maxHeight: footer.offsetHeight,
+      maxHeight: footer.scrollHeight,
       scrollTrigger: {
-        trigger: before,
+        trigger: footer,
         scrub: 1,
-        start: "start",
+        // start: "start",
         end: "bottom bottom",
-        markers: true,
       },
     }
   );
