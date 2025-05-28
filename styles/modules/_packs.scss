@@ -1,8 +1,8 @@
 .packs {
-  padding: 105px 0;
+  margin: 10.5rem 0;
   position: relative;
-  @media screen and (min-width: $medium) {
-    padding: 170px 0;
+  @media screen and (min-width: $large) {
+    margin: 10.5rem 0;
   }
   &:before {
     content: "";
@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: column;
     gap: 6.5rem;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       flex-direction: row;
       justify-content: center;
       align-items: flex-start;
@@ -36,7 +36,12 @@
       padding: 2rem;
       box-shadow: 0 0 24px #c6b6a980;
       position: relative;
-      @media screen and (min-width: $medium) {
+      &.single {
+        @media screen and (min-width: $large) {
+          width: 60%;
+        }
+      }
+      @media screen and (min-width: $large) {
         flex-direction: row;
         width: calc(100% / 12 * 5);
         padding: 3rem;
@@ -51,7 +56,7 @@
         right: 0;
         top: -3.5rem;
         background-color: #fff;
-        @media screen and (min-width: $medium) {
+        @media screen and (min-width: $large) {
           width: 16.5rem;
           height: 7rem;
           top: -4rem;
@@ -148,11 +153,14 @@
         margin: 0;
       }
     }
-    .more-text {
+    .hidden-text {
       max-height: 0;
-      transition: all 0.3s ease;
       overflow: hidden;
-      margin: 0;
+      transition: all 0.3s ease;
+      .more-text {
+        margin: 0;
+        padding-top: 1.5rem;
+      }
     }
   }
 }

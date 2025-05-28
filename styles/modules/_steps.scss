@@ -6,12 +6,12 @@
   }
   .content-wrapper {
     margin-top: 4.5rem;
-    @media screen and (min-width: $small) {
+    @media screen and (min-width: $medium) {
       display: flex;
       justify-content: space-between;
       flex-direction: row-reverse;
-      // align-items: flex-start;
       margin-top: 6rem;
+      gap: 6rem;
     }
   }
   .titles-list {
@@ -22,9 +22,10 @@
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    @media screen and (min-width: $small) {
+    @media screen and (min-width: $medium) {
       width: calc(100% / 12 * 6);
       flex-shrink: 0;
+      margin: 0;
     }
     &::before {
       content: "";
@@ -34,7 +35,7 @@
       background-color: $color4;
       top: 3px;
       left: 24px;
-      @media screen and (min-width: $small) {
+      @media screen and (min-width: $medium) {
         height: calc(100% - 15px);
       }
     }
@@ -94,39 +95,43 @@
     }
   }
   .slider-container {
-    @media screen and (min-width: $small) {
-      width: calc(100% / 12 * 5);
+    position: relative;
+    @media screen and (min-width: $medium) {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
       flex-grow: 0;
+    }
+  }
+  .illustration {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    width: 80%;
+    aspect-ratio: 315/338;
+    @media screen and (min-width: $medium) {
+      aspect-ratio: unset;
+      height: 0;
+      width: calc(100% / 5 * 3);
     }
   }
   .slider {
     width: 100%;
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    right: 0;
+    bottom: -3rem;
+    @media screen and (min-width: $medium) {
+      left: 0;
+      bottom: 5rem;
+    }
+
     .slider-item {
       border-radius: 1.5rem;
       position: relative;
       height: 36rem;
       width: 100%;
       transform: translateX(25px);
-      @media screen and (min-width: $small) {
-      }
-      .illustration {
-        height: 80%;
-        width: 70%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        border-radius: 1.5rem;
-        overflow: hidden;
-        @media screen and (min-width: $small) {
-          height: 100%;
-          width: calc(100% / 5 * 3);
-          left: unset;
-          right: 03rem;
-        }
-      }
+
       .content {
         position: absolute;
         z-index: 3;
@@ -136,7 +141,7 @@
         width: calc(100% / 5 * 4);
         bottom: 0;
         right: 3rem;
-        @media screen and (min-width: $small) {
+        @media screen and (min-width: $medium) {
           padding: 2rem 2rem 2rem 3rem;
           right: unset;
           left: 0;

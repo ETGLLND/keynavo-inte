@@ -16,7 +16,7 @@
       @media screen and (min-width: $medium) {
         width: calc(100% / 12 * 7);
         flex-shrink: 0;
-        padding: 6rem calc(100% / 7);
+        padding: 4rem calc(100% / 7);
         display: grid;
         align-content: center;
       }
@@ -46,7 +46,7 @@
         top: 3px;
         @media screen and (min-width: $medium) {
           top: 0;
-          aspect-ratio: 495/398;
+          aspect-ratio: 495/335;
           height: 100%;
         }
         .legend {

@@ -1,7 +1,7 @@
 .three-columns {
   margin: 10.5rem 0;
   @media screen and (min-width: $large) {
-    margin: 18rem 0;
+    margin: 18rem 0 10.5;
   }
   .content-wrapper {
     @media screen and (min-width: $large) {
@@ -12,6 +12,9 @@
   }
   .first {
     margin-bottom: 3rem;
+    @media screen and (min-width: $large) {
+      margin-bottom: 0;
+    }
     .testimony {
       padding: 2rem;
       border-radius: 1rem;
@@ -51,11 +54,19 @@
   }
   .second {
     margin-bottom: 6rem;
+    @media screen and (min-width: $large) {
+      margin-bottom: 0;
+    }
+    .cta {
+      margin-bottom: 0;
+    }
   }
   .third {
     .illustration {
       width: 100%;
       aspect-ratio: 374/359;
+      border-radius: 1rem;
+      overflow: hidden;
     }
   }
 }

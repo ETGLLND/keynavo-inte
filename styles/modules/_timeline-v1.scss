@@ -3,21 +3,34 @@
   @media screen and (min-width: $small) {
     margin: 18rem 0;
   }
+  &.before-padding {
+    margin: 10.5rem 0 calc(10.5rem - 6rem);
+    @media screen and (min-width: $small) {
+      margin: 18rem 0 calc(18rem - 6rem);
+    }
+  }
   &.alt {
     .content {
       background-color: #fff;
       box-shadow: 0px 0px 24px 0px #c6b6a980;
-      padding-top: 10.5rem;
+      padding-top: 8.5rem;
       position: relative;
     }
   }
   .none {
     display: none;
   }
+  .title {
+    padding: 0 4rem;
+  }
   .content {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
     border-radius: 2rem;
+    &.full {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
   }
   .free {
     padding: 1rem 2rem;
@@ -73,11 +86,15 @@
       transform: translateX(-50%);
     }
   }
+
   .slider {
     overflow: hidden;
     margin: 0 2rem;
     @media screen and (min-width: $small) {
       margin-top: 5rem;
+    }
+    .swiper-wrapper {
+      align-items: center;
     }
     .slide {
       display: flex;
@@ -87,7 +104,7 @@
         gap: 3rem;
         justify-content: center;
         padding: 0 calc(100% / 7);
-        align-items: flex-start;
+        align-items: center;
       }
       .text-content {
         @media screen and (min-width: $small) {
@@ -102,7 +119,7 @@
         max-width: 100%;
         @media screen and (min-width: $small) {
           width: calc(100% / 7 * 3);
-          aspect-ratio: 360/211;
+          aspect-ratio: 360/160;
           flex-shrink: 0;
         }
         img {

@@ -91,6 +91,13 @@
           justify-content: space-between;
           align-items: center;
         }
+        &.txt {
+          display: grid;
+          align-content: center;
+          .text-content {
+            padding: 2rem;
+          }
+        }
       }
     }
   }

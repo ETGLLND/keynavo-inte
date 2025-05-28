@@ -118,6 +118,7 @@ if (faqRoot) {
 const stepsRoot = document.querySelector(".steps-bloc");
 
 if (stepsRoot) {
+  // Slider
   const sliderContainer = stepsRoot.querySelector(".slider");
   const dots = stepsRoot.querySelectorAll(".title-item");
   const swiper = new Swiper(sliderContainer, {
@@ -125,6 +126,13 @@ if (stepsRoot) {
     centeredSlides: true,
   });
   activateSliderDots(dots, swiper);
+
+  // Set size
+  if (window.innerWidth >= 576) {
+    const image = stepsRoot.querySelector(".illustration");
+    const list = stepsRoot.querySelector(".titles-list");
+    image.style.height = list.scrollHeight + "px";
+  }
 }
 
 // ADVANTAGES BLOG
@@ -506,7 +514,7 @@ if (heroRoot) {
 
   // Calculate padding bottom
   if (window.innerWidth > 992) {
-    heroRoot.style.paddingBottom = (245 / 1500) * window.innerWidth + "px";
+    // heroRoot.style.paddingBottom = (245 / 1500) * window.innerWidth + "px";
   }
 }
 
@@ -588,17 +596,26 @@ if (calculatorRoot) {
   const zenResult = calculatorRoot.querySelector("#zen-result");
 
   const changeValues = (price) => {
+    // Agencies percentage
+    const tradRate = 0.085;
+    const digitRate = 0.05;
     // Smart
-    const smartTradValue = parseFloat((price * 0.085 * 12).toFixed(1));
+    const smartTradValue = parseFloat((price * tradRate * 12).toFixed(1));
     smartTrad.innerHTML = `${smartTradValue}€`;
-    const smartDigitValue = parseFloat((price * 0.045 * 12).toFixed(1));
+    const smartDigitValue = parseFloat((price * digitRate * 12).toFixed(1));
     smartDigit.innerHTML = `${smartDigitValue}€`;
     const smartKeynavoValue = parseFloat((24.9 * 12).toFixed(1));
     smartKeynavo.innerHTML = `${smartKeynavoValue}€`;
-    smartResult.innerHTML = `${parseFloat(
-      smartDigitValue - smartKeynavoValue
-    ).toFixed(1)}€ à ${parseFloat(
-      (smartTradValue - smartKeynavoValue).toFixed(1)
+    let finalValueMin =
+      (smartDigitValue - smartKeynavoValue).toFixed(1) > 0
+        ? (smartDigitValue - smartKeynavoValue).toFixed(1)
+        : 0;
+    let finalValueMax =
+      (smartTradValue - smartKeynavoValue).toFixed(1) > 0
+        ? (smartTradValue - smartKeynavoValue).toFixed(1)
+        : 0;
+    smartResult.innerHTML = `${parseFloat(finalValueMin)}€ à ${parseFloat(
+      finalValueMax
     )}€ / an`;
 
     // Zen
@@ -606,12 +623,26 @@ if (calculatorRoot) {
     zenDigit.innerHTML = `${smartDigitValue}€`;
     const zenKeynavoValue = `${(19.9 * 12).toFixed(1)}`;
     zenKeynavo.innerHTML = `${zenKeynavoValue}€`;
-    zenResult.innerHTML = `${parseFloat(
-      (smartDigitValue - zenKeynavoValue).toFixed(1)
-    )}€ à ${parseFloat((smartTradValue - zenKeynavoValue).toFixed(1))}€ / an`;
+    finalValueMin =
+      (smartDigitValue - zenKeynavoValue).toFixed(1) > 0
+        ? (smartDigitValue - zenKeynavoValue).toFixed(1)
+        : 0;
+    finalValueMax =
+      (smartTradValue - zenKeynavoValue).toFixed(1) > 0
+        ? (smartTradValue - zenKeynavoValue).toFixed(1)
+        : 0;
+    zenResult.innerHTML = `${parseFloat(finalValueMin)}€ à ${parseFloat(
+      finalValueMax
+    )}€ / an`;
   };
+
   input.addEventListener("change", (e) => {
-    changeValues(parseInt(e.target.value, 10));
+    let result = parseInt(e.target.value, 10);
+    if (isNaN(result) || result < 553) {
+      // result = 553;
+      // input.value = result;
+    }
+    changeValues(result);
   });
 }
 
@@ -702,10 +733,16 @@ const packRoot = document.querySelector(".packs");
 
 if (packRoot) {
   const moreBtn = packRoot.querySelector(".more");
-  const moreTxt = packRoot.querySelector(".more-text");
+  const moreTxt = packRoot.querySelector(".hidden-text");
+  let open = false;
 
   moreBtn.addEventListener("click", (e) => {
-    moreTxt.style.marginTop = "15px";
-    moreTxt.style.maxHeight = moreTxt.scrollHeight + "px";
+    if (!open) {
+      moreTxt.style.maxHeight = moreTxt.scrollHeight + "px";
+      open = true;
+    } else {
+      moreTxt.style.maxHeight = "0px";
+      open = false;
+    }
   });
 }
