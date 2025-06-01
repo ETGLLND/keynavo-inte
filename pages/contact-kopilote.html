@@ -10,18 +10,14 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="../scripts/main.js" defer></script>
-    <title>Keynavo - Rennes</title>
+    <title>Keynavo</title>
   </head>
   <body>
     <nav class="navigation">
       <div class="top">
         <a href="../">
           <figure class="logo-container fit-contain">
-            <img
-              loading="lazy"
-              src="../assets/img/logos/logo-nav.png"
-              alt="Logo Keynavo"
-            />
+            <img src="../assets/img/logos/logo-nav.png" alt="Logo Keynavo" />
           </figure>
         </a>
         <div class="burger"></div>
@@ -33,7 +29,7 @@
             <ul class="sub-items">
               <li class="sub-item pointer">
                 <a class="item-link" href="../pages/auto-gestion.html"
-                  >Kopilote auto-gestion</a
+                  >Kopilote autogestion</a
                 >
               </li>
               <li class="sub-item house">
@@ -66,8 +62,10 @@
               </li>
             </ul>
           </div>
-          <a href="#identity" class="menu-item link">Qui sommes-nous ?</a>
-          <a href="#" class="cta-primary sm contact">Nous contacter</a>
+          <a href="../#identity" class="menu-item link">Qui sommes-nous ?</a>
+          <a href="./contact.html" class="cta-primary sm contact"
+            >Nous contacter</a
+          >
         </div>
         <div class="socials">
           <a
@@ -89,33 +87,120 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="rich-text before-footer">
-        <h1 class="h2">
-          Ce service n’est pas encore disponible dans votre ville
-        </h1>
-        <p class="p">
-          Nous sommes actuellement en cours de déploiement dans plusieurs
-          nouvelles zones, dont :
-        </p>
-        <ul class="p">
-          <li><strong>Nantes</strong></li>
-          <li><strong>Angers</strong></li>
-          <li><strong>Tours</strong></li>
-        </ul>
-        <p class="p">(et bientôt d'autres !)</p>
-        <p class="p">
-          Envie d’être tenu(e) au courant ? <br />Laissez-nous vos coordonnées
-          et soyez informé(e) en avant-première du lancement de nos services
-          dans votre ville.
-        </p>
-        <p class="p">
-          En attendant, découvrez nos services accessibles partout en France,
-          comme :
-          <a href="../pages/auto-gestion.html"
-            ><br />Le Kopilote bailleur en autogestion (100 % gratuit)"</a
-          >
-        </p>
+    <div class="choice-form background before-footer">
+      <div class="container">
+        <div class="choice-container">
+          <div class="swiper-wrapper">
+            <div class="content swiper-slide loc-first">
+              <div class="cards-container">
+                <div data-city="rennes" class="card button">
+                  <p class="text-content h4 person center">
+                    Je suis client Keynavo
+                  </p>
+                </div>
+                <div data-city="other" class="card button">
+                  <p class="text-content h4 pointer center">
+                    Je ne suis pas encore client
+                  </p>
+                </div>
+              </div>
+              <div class="cta-primary next-btn disabled">Continuer</div>
+            </div>
+            <div class="content swiper-slide contact-slide">
+              <div class="content-wrapper">
+                <h2 class="title h2">
+                  Comment souhaitez-vous échanger avec nous ?
+                </h2>
+                <div class="choice-content">
+                  <h3 class="h4">Choisissez votre mode de contact préféré</h3>
+                  <div class="choices two-items">
+                    <div class="choice-item card">
+                      <p class="p text-content phone center">
+                        Je veux appeler maintenant
+                      </p>
+                      <p class="p-sm plus center">
+                        Prévoir 15 minutes d’échanges
+                      </p>
+                      <a href="tel:02 20 06 02 47" class="center popup h4"
+                        >02 20 06 02 47</a
+                      >
+                    </div>
+                    <div class="choice-item card">
+                      <p class="p text-content pen center">
+                        Je préfère être rappelé
+                      </p>
+                      <p class="p-sm plus center">
+                        1 min pour renseigner mes informations
+                      </p>
+                    </div>
+                    <div class="choice-item card">
+                      <p class="p text-content pen center">
+                        Je souhaite vous contacter par mail
+                      </p>
+                      <a
+                        href="mailto:serviceclients@keynavo.com"
+                        class="center popup h4 mail"
+                        >serviceclients@keynavo.com</a
+                      >
+                    </div>
+                    <a
+                      href="https://keynavo.odoo.com/survey/start/e276601e-b08e-4abc-b6d3-33bcfe61b430"
+                      class="choice-item card"
+                    >
+                      <p class="p text-content pen center">
+                        Je souscris au service Kopilote bailleur
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content swiper-slide contact-slide">
+              <div class="content-wrapper">
+                <h2 class="title h2">
+                  Comment souhaitez-vous échanger avec nous ?
+                </h2>
+                <div class="choice-content">
+                  <h3 class="h4">Choisissez votre mode de contact préféré</h3>
+                  <div class="choices">
+                    <div class="choice-item card">
+                      <p class="p text-content phone center">
+                        Je veux appeler maintenant
+                      </p>
+                      <p class="p-sm plus center">
+                        Prévoir 15 minutes d’échanges
+                      </p>
+                      <a href="tel:02 20 06 02 47" class="center popup h4"
+                        >02 20 06 00 06</a
+                      >
+                    </div>
+                    <a
+                      href="https://keynavo.odoo.com/survey/start/f09fb6a6-4646-422c-8e20-2a143c994552"
+                      class="choice-item card"
+                    >
+                      <p class="p text-content pen center">
+                        Je planifie un rendez-vous avec un conseiller Keynavo
+                      </p>
+                      <p class="p-sm plus center">
+                        1 min pour renseigner mes informations
+                      </p>
+                    </a>
+                    <div class="choice-item card">
+                      <p class="p text-content pen center">
+                        Je souhaite vous contacter par mail
+                      </p>
+                      <a
+                        href="mailto:serviceclients@keynavo.com"
+                        class="center popup h4"
+                        >relationsclients@keynavo.com</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -123,10 +208,9 @@
       <div class="container">
         <div class="top-container">
           <div class="description">
-            <a href="#">
+            <a href="../">
               <figure class="logo fit-contain">
                 <img
-                  loading="lazy"
                   src="../assets/img/logos/logo-blanc.webp"
                   alt="Logo Keynavo"
                 />
@@ -161,7 +245,7 @@
             </div>
             <div class="col">
               <li class="item">
-                <h5 class="h5 white">Qui sommes - nous ?</h5>
+                <a href="../#identity" class="h5 white">Qui sommes - nous ?</a>
               </li>
               <li class="item">
                 <h5 class="h5 white">Trouvez votre ville</h5>
@@ -181,14 +265,12 @@
             <div class="partners-container">
               <figure class="logo-partner fit-contain">
                 <img
-                  loading="lazy"
                   src="../assets/img/logos/logo-french-tech-blanc.webp"
                   alt="Logo la French Tech"
                 />
               </figure>
               <figure class="logo-partner fit-contain">
                 <img
-                  loading="lazy"
                   src="../assets/img/logos/logo-pool-blanc.webp"
                   alt="Logo le Poool"
                 />
@@ -199,10 +281,17 @@
         <ul class="sub-infos">
           <li class="sub-item white p-sm">© Keynavo</li>
           <li class="sub-item white p-sm">
-            <a href="#" class="white">Politique de confidentialité</a>
+            <a href="./confidentialite.html" class="white"
+              >Politique de confidentialité</a
+            >
           </li>
           <li class="sub-item p-sm">
-            <a href="#" class="white">Mentions légales</a>
+            <a href="./mentions-legales.html" class="white">Mentions légales</a>
+          </li>
+          <li class="sub-item p-sm">
+            <a href="./conditions-utilisation.html" class="white"
+              >Conditions d'utilisation</a
+            >
           </li>
           <li class="sub-item white p-sm">
             <a href="#" class="white">Paramètres de cookies</a>

@@ -3,7 +3,7 @@
   .choice-container {
     background-color: $color9;
     border-radius: 1.5rem;
-    padding: 3rem;
+    padding: 3rem 3rem 6rem;
     overflow: hidden;
   }
   .card {
@@ -33,27 +33,54 @@
       }
     }
   }
+  .swiper-wrapper {
+    align-items: stretch;
+    .swiper-slide {
+      height: auto;
+    }
+  }
+  .next-btn {
+    transition: opacity ease 0.3s;
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
   .loc-first {
+    position: relative;
     .cards-container {
       display: flex;
       gap: 3rem;
-      margin-bottom: 2rem;
+      margin-bottom: 8rem;
 
       .button {
         width: 50%;
         cursor: pointer;
+        height: 21.5rem;
       }
+    }
+    .next-btn {
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
   }
   .loc-second {
-    .content-wrapper {
-      display: flex;
-      gap: 4.5rem;
-      .result {
-        width: 45%;
-      }
-      .id-form {
-        width: 55%;
+    // .content-wrapper {
+    //   display: flex;
+    //   gap: 4.5rem;
+    //   .result {
+    //     width: 45%;
+    //   }
+    //   .id-form {
+    //     width: 55%;
+    //   }
+    // }
+    .text-content {
+      max-width: 100rem;
+      margin: 0 auto;
+      a {
+        color: $color5;
       }
     }
   }
@@ -65,16 +92,34 @@
   .contact-slide {
     .content-wrapper {
       display: flex;
+      flex-direction: column;
       gap: 3rem;
+      @media screen and (min-width: $extra-large) {
+        flex-direction: row;
+      }
       .title {
-        width: 45%;
+        @media screen and (min-width: $extra-large) {
+          width: 45%;
+        }
       }
       .choice-content {
-        width: 55%;
+        @media screen and (min-width: $extra-large) {
+          width: 55%;
+        }
         .choices {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 10rem;
+          @media screen and (min-width: $extra-large) {
+            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+          }
+          &.two-items {
+            @media screen and (min-width: $extra-large) {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 6rem 1rem;
+            }
+          }
         }
         .choice-item {
           background-color: #fff;
@@ -82,6 +127,35 @@
           border-radius: 0.5rem;
           display: grid;
           align-content: center;
+          position: relative;
+          &.selected .popup {
+            animation: appear 0.3s ease-out forwards;
+          }
+          cursor: pointer;
+          .popup {
+            color: $color5;
+            position: absolute;
+            width: 100%;
+            bottom: -6rem;
+            left: 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            &.mail {
+              font-size: 1.4rem;
+            }
+
+            @keyframes appear {
+              from {
+                opacity: 0;
+                transform: translateY(-10px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+          }
         }
         .text-content {
           margin-bottom: 1rem;

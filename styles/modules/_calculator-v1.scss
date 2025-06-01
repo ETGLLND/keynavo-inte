@@ -62,9 +62,32 @@
         background-color: $color9;
         border-radius: 1rem;
         width: 100%;
-        .title {
-          margin: 1rem 2rem;
+        .result-table {
+          padding: 1rem 1.5rem;
+          width: 100%;
+          @media screen and (min-width: $medium) {
+            padding: 1rem 2rem;
+          }
+
+          .result-title {
+            position: relative;
+
+            * {
+              padding: 0.5rem 0;
+              margin: 0;
+            }
+            .first {
+              text-align: left;
+            }
+            .second {
+              text-align: end;
+            }
+          }
+          .price {
+            text-align: end;
+          }
         }
+
         .result-lines {
           padding: 1.5rem 0 2rem;
           margin: 0 1.5rem;
@@ -74,14 +97,34 @@
           flex-direction: column;
           gap: 0.5rem;
         }
+        .result-title {
+          align-items: center;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          padding: 1.5rem;
+          gap: 2rem;
+          * {
+            padding: 0.5rem 0;
+            margin: 0;
+          }
+          .first {
+            text-align: left;
+          }
+          .second {
+            text-align: end;
+          }
+        }
         .label,
         .price {
           margin: 0;
         }
+        .price {
+          text-align: end;
+        }
         .line {
-          display: flex;
-          justify-content: space-between;
           align-items: center;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
         }
         .final-result {
           border-radius: 1rem;

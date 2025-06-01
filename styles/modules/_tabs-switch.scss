@@ -1,9 +1,9 @@
 .tabs-switch {
-  margin: 10.5rem 0;
+  margin: 5.5rem 0;
   padding: 7.5rem 0;
   @media screen and (min-width: $large) {
-    padding: 10.5rem 0;
-    padding: 18rem 0;
+    // padding: 10.5rem 0;
+    // padding: 18rem 0;
   }
   .tabs-wrapper {
     margin: 5rem 0 3rem;
@@ -15,6 +15,7 @@
       width: 100%;
       display: flex;
       @media screen and (min-width: $large) {
+        max-width: 40rem;
         width: fit-content;
         display: block;
       }

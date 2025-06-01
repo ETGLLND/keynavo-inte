@@ -1,0 +1,28 @@
+.legals {
+  .heading {
+    .all-content {
+      padding: 26rem 0 18rem;
+      border-radius: 0 0 20px 20px;
+      position: relative;
+      //   &::before {
+      //     content: "";
+      //     background-image: url(../../assets/img/background.webp);
+      //     background-size: 1280px 905px;
+      //     background-repeat: repeat;
+      //     width: 100%;
+      //     height: 100%;
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+      //     z-index: 0;
+      //   }
+    }
+    .title-content {
+      max-width: 80.5rem;
+      margin: 0 auto;
+    }
+  }
+  .content {
+    margin-top: 13.5rem;
+  }
+}

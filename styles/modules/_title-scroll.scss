@@ -1,13 +1,13 @@
 .title-scroll {
   padding-top: 6rem;
-  @media screen and (min-width: $medium) {
-    padding-top: 16rem;
+  @media screen and (min-width: $large) {
+    // padding-top: 12rem;
   }
   .content-container {
     height: 20rem;
     position: relative;
     overflow: hidden;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       height: 40rem;
     }
   }
@@ -22,7 +22,7 @@
     top: 0;
     display: block;
     white-space: nowrap;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       font-size: 25rem;
     }
   }

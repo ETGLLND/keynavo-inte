@@ -3,10 +3,12 @@
   cursor: url(../../assets/img/cursor.png);
   @media screen and (min-width: $large) {
     padding-bottom: 26rem;
+    overflow: visible;
+    padding-bottom: calc(280 / 1500 * 100%);
   }
   @media screen and (min-width: $extra-extra-large) {
-    padding-bottom: 52rem;
-    // padding-bottom: calc(1500 / 280 * 100%);
+    // padding-bottom: 52rem;
+    padding-bottom: calc(280 / 1500 * 100%);
   }
   &.alt {
     // padding-bottom: 39rem;
@@ -283,7 +285,7 @@
 
       .solution-container {
         position: relative;
-        width: 75%;
+        width: 60%;
         @media screen and (min-width: $small) {
           width: calc(100% / 2);
         }

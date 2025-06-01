@@ -174,7 +174,7 @@ if (advantagesRoot) {
 const navRoot = document.querySelector("nav.navigation");
 
 if (navRoot) {
-  if (window.innerWidth < 992) {
+  if (window.innerWidth < 1200) {
     // Animation of the subelements of menu
     const selects = navRoot.querySelectorAll(".menu-item-container");
     selects.forEach((el) => createOpenAnimation(el, ".menu-item", 2, el, true));
@@ -559,7 +559,7 @@ heros.forEach((hero) => {
           trigger: container,
           scrub: 1,
           start: "top",
-          end: "bottom 700px",
+          // end: "bottom 700px",
         },
       }
     );
@@ -588,60 +588,38 @@ if (calculatorRoot) {
   const input = calculatorRoot.querySelector("#price");
   const smartTrad = calculatorRoot.querySelector("#smart-trad");
   const smartDigit = calculatorRoot.querySelector("#smart-digit");
-  const smartKeynavo = calculatorRoot.querySelector("#smart-keynavo");
+  const smartKeynavo1 = calculatorRoot.querySelector("#smart-keynavo-1");
+  const smartKeynavo2 = calculatorRoot.querySelector("#smart-keynavo-2");
   const smartResult = calculatorRoot.querySelector("#smart-result");
-  const zenTrad = calculatorRoot.querySelector("#zen-trad");
-  const zenDigit = calculatorRoot.querySelector("#zen-digit");
-  const zenKeynavo = calculatorRoot.querySelector("#zen-keynavo");
-  const zenResult = calculatorRoot.querySelector("#zen-result");
 
   const changeValues = (price) => {
     // Agencies percentage
     const tradRate = 0.085;
     const digitRate = 0.05;
-    // Smart
+    // Results
     const smartTradValue = parseFloat((price * tradRate * 12).toFixed(1));
     smartTrad.innerHTML = `${smartTradValue}€`;
     const smartDigitValue = parseFloat((price * digitRate * 12).toFixed(1));
     smartDigit.innerHTML = `${smartDigitValue}€`;
-    const smartKeynavoValue = parseFloat((24.9 * 12).toFixed(1));
-    smartKeynavo.innerHTML = `${smartKeynavoValue}€`;
+    const smartKeynavo1Value = parseFloat((24.9 * 12).toFixed(1));
+    smartKeynavo1.innerHTML = `${smartKeynavo1Value}€`;
+    const smartKeynavo2Value = parseFloat((19.9 * 12).toFixed(1));
+    smartKeynavo2.innerHTML = `${smartKeynavo2Value}€`;
     let finalValueMin =
-      (smartDigitValue - smartKeynavoValue).toFixed(1) > 0
-        ? (smartDigitValue - smartKeynavoValue).toFixed(1)
+      (smartDigitValue - smartKeynavo2Value).toFixed(1) > 0
+        ? (smartDigitValue - smartKeynavo2Value).toFixed(1)
         : 0;
     let finalValueMax =
-      (smartTradValue - smartKeynavoValue).toFixed(1) > 0
-        ? (smartTradValue - smartKeynavoValue).toFixed(1)
+      (smartTradValue - smartKeynavo2Value).toFixed(1) > 0
+        ? (smartTradValue - smartKeynavo2Value).toFixed(1)
         : 0;
     smartResult.innerHTML = `${parseFloat(finalValueMin)}€ à ${parseFloat(
-      finalValueMax
-    )}€ / an`;
-
-    // Zen
-    zenTrad.innerHTML = `${smartTradValue}€`;
-    zenDigit.innerHTML = `${smartDigitValue}€`;
-    const zenKeynavoValue = `${(19.9 * 12).toFixed(1)}`;
-    zenKeynavo.innerHTML = `${zenKeynavoValue}€`;
-    finalValueMin =
-      (smartDigitValue - zenKeynavoValue).toFixed(1) > 0
-        ? (smartDigitValue - zenKeynavoValue).toFixed(1)
-        : 0;
-    finalValueMax =
-      (smartTradValue - zenKeynavoValue).toFixed(1) > 0
-        ? (smartTradValue - zenKeynavoValue).toFixed(1)
-        : 0;
-    zenResult.innerHTML = `${parseFloat(finalValueMin)}€ à ${parseFloat(
       finalValueMax
     )}€ / an`;
   };
 
   input.addEventListener("change", (e) => {
     let result = parseInt(e.target.value, 10);
-    if (isNaN(result) || result < 553) {
-      // result = 553;
-      // input.value = result;
-    }
     changeValues(result);
   });
 }
@@ -725,6 +703,65 @@ if (choiceRoot) {
     slidesPerView: "auto",
     centeredSlides: true,
     spaceBetween: 30,
+    // allowTouchMove: false,
+  });
+
+  // Localisation - First slide
+  const firstSlide = choiceRoot.querySelector(".loc-first");
+  const firstSlideBtns = firstSlide.querySelectorAll(".button");
+  // Determine redirect url
+  const params = new URLSearchParams(document.location.search);
+  let redirect;
+  switch (params.get("redirect")) {
+    case "location":
+      redirect = "./location.html";
+      break;
+    case "gestion":
+      redirect = "./gestion.html";
+      break;
+    case "intervention":
+      redirect = "./intervention.html";
+      break;
+
+    default:
+      redirect = "./rennes.html";
+      break;
+  }
+
+  firstSlideBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      // Style
+      firstSlideBtns.forEach((el) => el.classList.remove("selected"));
+      btn.classList.add("selected");
+
+      // Change next btn behaviour
+      const nextBtn = firstSlide.querySelector(".next-btn");
+      const nextBtnClone = nextBtn.cloneNode(true);
+      nextBtnClone.classList.remove("disabled");
+
+      if (btn.dataset.city === "rennes") {
+        nextBtnClone.addEventListener(
+          "click",
+          (e) => (document.location.href = redirect)
+        );
+      } else if (btn.dataset.city === "other") {
+        nextBtnClone.addEventListener("click", (e) => swiper.slideNext());
+      } else if (btn.dataset.city === "client") {
+        nextBtnClone.addEventListener("click", (e) => swiper.slideNext());
+      } else if (btn.dataset.city === "new") {
+        nextBtnClone.addEventListener("click", (e) => swiper.slideTo(2));
+      }
+      nextBtn.replaceWith(nextBtnClone);
+    });
+  });
+
+  // Popup appear
+  const choiceItems = choiceRoot.querySelectorAll(".choice-item");
+  choiceItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      choiceItems.forEach((el) => el.classList.remove("selected"));
+      item.classList.add("selected");
+    });
   });
 }
 

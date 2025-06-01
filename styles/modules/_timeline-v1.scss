@@ -119,7 +119,7 @@
         max-width: 100%;
         @media screen and (min-width: $small) {
           width: calc(100% / 7 * 3);
-          aspect-ratio: 360/160;
+          aspect-ratio: 360/180;
           flex-shrink: 0;
         }
         img {
