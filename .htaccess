@@ -1,0 +1,33 @@
+RewriteEngine On
+
+# Kopilote autogestion
+RewriteRule ^kopilote-autogestion$ pages/autogestion.html [L]
+RewriteRule ^kopilote-autogestion/$ pages/autogestion.html [L]
+
+# Gestion locative
+RewriteRule ^gestion-locative$ pages/gestion.html [L]
+RewriteRule ^gestion-locative/$ pages/gestion.html [L]
+
+# Mise en location
+RewriteRule ^mise-en-location$ pages/location.html [L]
+RewriteRule ^mise-en-location/$ pages/location.html [L]
+
+# Interventions à la demande
+RewriteRule ^interventions-a-la-demande$ pages/interventions.html [L]
+RewriteRule ^interventions-a-la-demande/$ pages/interventions.html [L]
+
+# Contact
+RewriteRule ^contact$ pages/contact [L]
+RewriteRule ^contact/$ pages/contact [L]
+
+# Mentions légales
+RewriteRule ^mentions-legales$ pages/mentions-legales.html [L]
+RewriteRule ^mentions-legales/$ pages/mentions-legales.html [L]
+
+# CGU
+RewriteRule ^cgu$ pages/conditions-utilisation.html [L]
+RewriteRule ^cgu/$ pages/conditions-utilisation.html [L]
+
+# Confidentialité
+RewriteRule ^confidentialite$ pages/confidentialite.html [L]
+RewriteRule ^confidentialite/$ pages/confidentialite.html [L]

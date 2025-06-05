@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Bienvenue chez Keynavo, la plateforme digitale qui simplifie la gestion immobilière à Rennes et partout en France."
+      content="Bienvenue chez Keynavo, la plateforme immobilière de services et d’interventions à la demande.
+Pensée pour les propriétaires-bailleurs qui délèguent leur gestion locative et ceux qui souhaitent piloter leur(s) logement(s) efficacement.
+Retrouvez nos services à Rennes et partout en France."
     />
     <link rel="stylesheet" href="styles/style.css" />
     <link
@@ -15,12 +17,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./scripts/main.js" defer></script>
-    <title>Keynavo – La gestion immobilière simplifiée</title>
+    <title>Keynavo - Votre interlocuteur immo’</title>
   </head>
   <body>
     <nav class="navigation">
       <div class="top">
-        <a href="./">
+        <a href="/">
           <figure class="logo-container fit-contain">
             <img
               loading="lazy"
@@ -37,22 +39,22 @@
             <p class="menu-item select">Nos services</p>
             <ul class="sub-items">
               <li class="sub-item pointer">
-                <a class="item-link" href="./pages/auto-gestion.html"
+                <a class="item-link" href="/kopilote-autogestion"
                   >Kopilote autogestion</a
                 >
               </li>
               <li class="sub-item house">
-                <a class="item-link" href="./pages/gestion.html"
+                <a class="item-link" href="/localisation?redirect=gestion"
                   >Gestion locative</a
                 >
               </li>
               <li class="sub-item keynavo">
-                <a class="item-link" href="./pages/location.html"
+                <a class="item-link" href="/localisation?redirect=location"
                   >Mise en location</a
                 >
               </li>
               <li class="sub-item tool">
-                <a class="item-link" href="./pages/intervention.html"
+                <a class="item-link" href="/localisation?redirect=intervention"
                   >Interventions à la demande</a
                 >
               </li>
@@ -62,16 +64,16 @@
             <p class="menu-item select">Trouvez votre ville</p>
             <ul class="sub-items">
               <li class="sub-item pointer">
-                <a href="./pages/rennes.html" class="item-link">Rennes</a>
+                <a href="/rennes" class="item-link">Rennes</a>
               </li>
               <li class="sub-item france">
-                <a href="./pages/localisation.html" class="item-link"
+                <a href="/localisation-ville" class="item-link"
                   >Autres villes</a
                 >
               </li>
             </ul>
           </div>
-          <a href="./#identity" class="menu-item link">Qui sommes-nous ?</a>
+          <a href="/#identity" class="menu-item link">Qui sommes-nous ?</a>
           <a href="./pages/contact.html" class="cta-primary sm contact"
             >Nous contacter</a
           >
@@ -113,7 +115,7 @@
         <div class="solutions-slider shrink">
           <div class="swiper-wrapper">
             <a
-              href="./auto-gestion.html"
+              href="/kopilote-autogestion"
               class="solution-container swiper-slide"
             >
               <div class="solution">
@@ -137,7 +139,10 @@ d’ordinateur affichant une annonce immobilière"
                 Ça vous facilite la vie et c’est gratuit !
               </p>
             </a>
-            <a href="./gestion.html" class="solution-container swiper-slide">
+            <a
+              href="/localisation?redirect=gestion"
+              class="solution-container swiper-slide"
+            >
               <div class="solution">
                 <div class="head">
                   <h4 class="h4 solution-title">Gestion locative</h4>
@@ -159,7 +164,10 @@ téléphone"
                 Simplifiez-vous la vie au meilleur prix ! 
               </p>
             </a>
-            <a href="./location.html" class="solution-container swiper-slide">
+            <a
+              href="/localisation?redirect=location"
+              class="solution-container swiper-slide"
+            >
               <div class="solution">
                 <div class="head">
                   <h4 class="h4 solution-title">Mise en location</h4>
@@ -168,7 +176,7 @@ téléphone"
                 <figure class="illustration">
                   <img
                     loading="lazy"
-                    src="./assets/img/scenes/sdv_3_thumbnail.webp"
+                    src="./assets/img/scenes/sdv_4_thumbnail.webp"
                     alt=" Technicien accroupi devant un meuble de cuisine, préparant une intervention"
                   />
                 </figure>
@@ -179,7 +187,7 @@ téléphone"
               <p class="sentence center">Trankeylou, on s’occupe de tout !</p>
             </a>
             <a
-              href="./intervention.html"
+              href="/localisation?redirect=intervention"
               class="solution-container swiper-slide"
             >
               <div class="solution">
@@ -192,7 +200,7 @@ téléphone"
                 <figure class="illustration">
                   <img
                     loading="lazy"
-                    src="./assets/img/scenes/sdv_4_thumbnail.webp"
+                    src="./assets/img/scenes/sdv_3_thumbnail.webp"
                     alt="Jeune femme portant un carton de déménagement dans un salon rose pour son
 emménagement"
                   />
@@ -215,7 +223,7 @@ emménagement"
           <div class="left-bloc">
             <div class="availability h4 all">Disponible partout en France</div>
             <div class="solutions-wrapper">
-              <a href="./pages/auto-gestion.html" class="solution">
+              <a href="/kopilote-autogestion" class="solution">
                 <p class="undertext h4 center">
                   Ça vous facilite la vie et c’est gratuit ! 
                 </p>
@@ -238,10 +246,7 @@ d’ordinateur affichant une annonce immobilière"
               Accessible dans certaines villes
             </div>
             <div class="solutions-wrapper">
-              <a
-                href="./pages/localisation.html?redirect=gestion"
-                class="solution"
-              >
+              <a href="/localisation?redirect=gestion" class="solution">
                 <p class="undertext h4 center">
                   Simplifiez-vous la vie au meilleur prix !
                 </p>
@@ -257,10 +262,7 @@ téléphone"
                 </figure>
                 <div class="circle"></div>
               </a>
-              <a
-                href="./pages/localisation.html?redirect=location"
-                class="solution"
-              >
+              <a href="/localisation?redirect=location" class="solution">
                 <p class="undertext h4 center">
                   Trankeylou, on s’occupe de tout !
                 </p>
@@ -276,10 +278,7 @@ emménagement"
                 </figure>
                 <div class="circle"></div>
               </a>
-              <a
-                href="./pages/localisation.html?redirect=intervention"
-                class="solution"
-              >
+              <a href="/localisation?redirect=intervention" class="solution">
                 <p class="undertext h4 center">
                   Un besoin, une demande, une intervention !
                 </p>
@@ -715,11 +714,10 @@ emménagement"
       <div class="container">
         <div class="top-container">
           <div class="description">
-            <a href="./">
+            <a href="../">
               <figure class="logo fit-contain">
                 <img
-                  loading="lazy"
-                  src="./assets/img/logos/logo-blanc.webp"
+                  src="../assets/img/logos/logo-blanc.webp"
                   alt="Logo Keynavo"
                 />
               </figure>
@@ -736,16 +734,16 @@ emménagement"
               <li class="item">
                 <h5 class="white h5">Nos services</h5>
                 <ul class="sub-menu">
-                  <a href="./pages/auto-gestion.html" class="p-sm white"
+                  <a href="/kopilote-autogestion" class="p-sm white"
                     >Kopilote bailleur autogestion</a
                   >
-                  <a href="./pages/gestion.html" class="p-sm white"
+                  <a href="/gestion-locative" class="p-sm white"
                     >Gestion locative</a
                   >
-                  <a href="./pages/location.html" class="p-sm white"
+                  <a href="/mise-en-location" class="p-sm white"
                     >Mise en location</a
                   >
-                  <a href="./pages/intervention.html" class="p-sm white"
+                  <a href="/interventions-a-la-demande" class="p-sm white"
                     >Interventions à la demande</a
                   >
                 </ul>
@@ -753,11 +751,13 @@ emménagement"
             </div>
             <div class="col">
               <li class="item">
-                <a href="./#identity" class="h5 white">Qui sommes - nous ?</a>
+                <a href="../#identity" class="h5 white">Qui sommes - nous ?</a>
               </li>
               <li class="item">
                 <h5 class="h5 white">Trouvez votre ville</h5>
-                <p class="p-sm white">Rennes, Ville et Métropole</p>
+                <a href="/rennes" class="p-sm white"
+                  >Rennes, Ville et Métropole</a
+                >
               </li>
               <li class="item">
                 <h5 class="h5 white">Nous contacter</h5>
@@ -773,15 +773,13 @@ emménagement"
             <div class="partners-container">
               <figure class="logo-partner fit-contain">
                 <img
-                  loading="lazy"
-                  src="./assets/img/logos/logo-french-tech-blanc.webp"
+                  src="../assets/img/logos/logo-french-tech-blanc.webp"
                   alt="Logo la French Tech"
                 />
               </figure>
               <figure class="logo-partner fit-contain">
                 <img
-                  loading="lazy"
-                  src="./assets/img/logos/logo-pool-blanc.webp"
+                  src="../assets/img/logos/logo-pool-blanc.webp"
                   alt="Logo le Poool"
                 />
               </figure>
@@ -791,19 +789,15 @@ emménagement"
         <ul class="sub-infos">
           <li class="sub-item white p-sm">© Keynavo</li>
           <li class="sub-item white p-sm">
-            <a href="./pages/confidentialite.html" class="white"
+            <a href="/confidentialite" class="white"
               >Politique de confidentialité</a
             >
           </li>
           <li class="sub-item p-sm">
-            <a href="./pages/mentions-legales.html" class="white"
-              >Mentions légales</a
-            >
+            <a href="/mentions-legales" class="white">Mentions légales</a>
           </li>
           <li class="sub-item p-sm">
-            <a href="./pages/conditions-utilisation.html" class="white"
-              >Conditions d'utilisation</a
-            >
+            <a href="/cgu" class="white">Conditions d'utilisation</a>
           </li>
           <li class="sub-item white p-sm">
             <a href="#" class="white">Paramètres de cookies</a>

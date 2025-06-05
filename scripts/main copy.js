@@ -14,8 +14,9 @@ const createOpenAnimation = (
 ) => {
   const basis = container.querySelector(basisClass);
   container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
+  let opened = false;
   target.addEventListener("click", (e) => {
-    if (!container.classList.contains("open")) {
+    if (!opened) {
       container.classList.add("open");
       if (nav) {
         container.style.maxHeight = `${
@@ -24,9 +25,11 @@ const createOpenAnimation = (
       } else {
         container.style.maxHeight = `${container.scrollHeight + adjustment}px`;
       }
+      opened = true;
     } else {
       container.style.maxHeight = `${basis.scrollHeight + adjustment}px`;
       container.classList.remove("open");
+      opened = false;
     }
   });
 };
@@ -78,19 +81,24 @@ const titleRoot = document.querySelector(".title-scroll");
 if (titleRoot) {
   const title = titleRoot.querySelector(".content");
 
-  const start = -(title.offsetWidth + window.innerWidth);
-
-  const end = window.innerWidth + 100;
+  // const titleWidth = title.offsetWidth - 100;
+  // const titleWidth = 900;
+  const start = -1500;
+  const end = 900;
 
   gsap.fromTo(
     title,
-    { x: start },
     {
+      // x: -titleWidth,
+      x: start,
+    },
+    {
+      // x: titleWidth,
       x: end,
       scrollTrigger: {
         trigger: titleRoot,
         scrub: 1,
-        start: "top center",
+        start: 400,
       },
     }
   );
@@ -162,7 +170,7 @@ if (advantagesRoot) {
   }
 }
 
-// NAVIGATION
+// NAV
 const navRoot = document.querySelector("nav.navigation");
 
 if (navRoot) {
@@ -178,7 +186,6 @@ if (navRoot) {
   const logo = navRoot.querySelector(".logo-container > img");
 
   document.addEventListener("scroll", (e) => {
-    // Zoom logo
     if (window.scrollY > 0) {
       Object.assign(logo.style, {
         transform: "scale(1.55) translateX(-13px)",
@@ -189,13 +196,6 @@ if (navRoot) {
       });
     }
   });
-
-  if (window.innerHeight <= 1200) {
-    document.addEventListener("scroll", (e) => {
-      navRoot.classList.remove("open");
-      navRoot.style.maxHeight = "57px";
-    });
-  }
 }
 
 // TWO COLUMNS
@@ -241,262 +241,124 @@ if (partnersRoot) {
     });
   };
 
-  // if (window.innerWidth > 1120) {
-  //   // Desktop
-  //   gsap.fromTo(
-  //     title,
-  //     { x: -title.offsetWidth },
-  //     {
-  //       x: title.offsetWidth + window.innerWidth,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 400px",
-  //       },
-  //     }
-  //   );
-  //   // First track
-  //   gsap.fromTo(
-  //     firstTrack,
-  //     {
-  //       x: -1500,
-  //     },
-  //     {
-  //       x: 0,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 70%",
-  //       },
-  //     }
-  //   );
-  //   if (window.innerWidth <= 768) {
-  //     gsap.fromTo(
-  //       firstTrack,
-  //       {
-  //         x: -1500,
-  //       },
-  //       {
-  //         x: 0,
-  //         scrollTrigger: {
-  //           trigger: partnersRoot,
-  //           scrub: 1,
-  //           start: "top 70%",
-  //         },
-  //       }
-  //     );
-  //   } else {
-  //     gsap.fromTo(
-  //       firstTrack,
-  //       {
-  //         x: -1500,
-  //       },
-  //       {
-  //         x: 0,
-  //         scrollTrigger: {
-  //           trigger: partnersRoot,
-  //           scrub: 1,
-  //           start: "top 70%",
-  //         },
-  //       }
-  //     );
-  //   }
-  //   // Second Track
-  //   gsap.fromTo(
-  //     secondTrack,
-  //     {
-  //       x: 0,
-  //     },
-  //     {
-  //       x: -1500,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 70%",
-  //       },
-  //     }
-  //   );
-  // } else {
-  if (true) {
-    // Mobile
+  if (window.innerWidth > 1120) {
     duplicateElements(firstLogos, firstTrack);
     duplicateElements(secondLogos, secondTrack);
     // Title
     gsap.fromTo(
       title,
-      { x: -title.offsetWidth },
+      {
+        x: -title.offsetWidth - 100,
+      },
+      {
+        // x: title.offsetWidth + window.innerWidth,
+        x: window.innerWidth,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 30%",
+        },
+      }
+    );
+    // First track
+    if (window.innerWidth <= 768) {
+      gsap.fromTo(
+        firstTrack,
+        {
+          x: -1500,
+        },
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: partnersRoot,
+            scrub: 1,
+            start: "top 70%",
+          },
+        }
+      );
+    } else {
+      gsap.fromTo(
+        firstTrack,
+        {
+          x: -1500,
+        },
+        {
+          x: 0,
+          scrollTrigger: {
+            trigger: partnersRoot,
+            scrub: 1,
+            start: "top 70%",
+          },
+        }
+      );
+    }
+    // Second Track
+    gsap.fromTo(
+      secondTrack,
+      {
+        x: 0,
+      },
+      {
+        x: -1500,
+        scrollTrigger: {
+          trigger: partnersRoot,
+          scrub: 1,
+          start: "top 70%",
+          end: "bottom",
+        },
+      }
+    );
+  } else {
+    gsap.fromTo(
+      title,
+      {
+        x: -title.offsetWidth,
+      },
       {
         x: title.offsetWidth + window.innerWidth,
         scrollTrigger: {
           trigger: partnersRoot,
           scrub: 1,
-          start: "top", // Démarre encore plus tard
+          start: "top 40%",
         },
       }
     );
-    // First track
-    let elWidth = firstTrack.scrollWidth;
-    let startX = -elWidth;
-    let endX = 0;
-    console.log(elWidth);
-
     gsap.fromTo(
       firstTrack,
-      { x: startX },
       {
-        x: endX,
+        // x: -300,
+        // x: -(firstTrack.offsetWidth + window.innerWidth),
+        x: firstTrack.scrollWidth,
+      },
+      {
+        // x: firstTrack.offsetWidth + window.innerWidth,
+        x: -(firstTrack.scrollWidth + window.innerWidth),
+
         scrollTrigger: {
           trigger: partnersRoot,
           scrub: 1,
-          start: "top 90%",
-          end: "bottom",
+          // start: "top 0%",
+          // end: "bottom 80%",
         },
       }
     );
-
-    // Second track
-    elWidth = secondTrack.scrollWidth;
-    startX = window.innerWidth;
-    endX = -elWidth;
-
     gsap.fromTo(
       secondTrack,
-      { x: startX },
       {
-        x: endX,
+        x: 0,
+      },
+      {
+        x: -secondTrack.offsetWidth,
         scrollTrigger: {
           trigger: partnersRoot,
           scrub: 1,
-          start: "top 55%",
-          end: "bottom",
+          start: "top 30%",
         },
       }
     );
+    duplicateElements(firstLogos, firstTrack);
+    duplicateElements(secondLogos, secondTrack);
   }
-
-  // if (window.innerWidth > 1120) {
-  //   // Title
-  //   gsap.fromTo(
-  //     title,
-  //     {
-  //       x: -title.offsetWidth - 100,
-  //     },
-  //     {
-  //       x: window.innerWidth,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 30%",
-  //       },
-  //     }
-  //   );
-  //   // First track
-  //   gsap.fromTo(
-  //     firstTrack,
-  //     {
-  //       x: -1500,
-  //     },
-  //     {
-  //       x: 0,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 70%",
-  //       },
-  //     }
-  //   );
-  //   // if (window.innerWidth <= 768) {
-  //   //   gsap.fromTo(
-  //   //     firstTrack,
-  //   //     {
-  //   //       x: -1500,
-  //   //     },
-  //   //     {
-  //   //       x: 0,
-  //   //       scrollTrigger: {
-  //   //         trigger: partnersRoot,
-  //   //         scrub: 1,
-  //   //         start: "top 70%",
-  //   //       },
-  //   //     }
-  //   //   );
-  //   // } else {
-  //   //   gsap.fromTo(
-  //   //     firstTrack,
-  //   //     {
-  //   //       x: -1500,
-  //   //     },
-  //   //     {
-  //   //       x: 0,
-  //   //       scrollTrigger: {
-  //   //         trigger: partnersRoot,
-  //   //         scrub: 1,
-  //   //         start: "top 70%",
-  //   //       },
-  //   //     }
-  //   //   );
-  //   // }
-  //   // Second Track
-  //   gsap.fromTo(
-  //     secondTrack,
-  //     {
-  //       x: 0,
-  //     },
-  //     {
-  //       x: -1500,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 70%",
-  //       },
-  //     }
-  //   );
-  // } else {
-  //   // Title
-  //   gsap.fromTo(
-  //     title,
-  //     {
-  //       x: -title.offsetWidth,
-  //     },
-  //     {
-  //       x: title.offsetWidth + window.innerWidth,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //       },
-  //     }
-  //   );
-  //   // First track
-  //   gsap.fromTo(
-  //     firstTrack,
-  //     {
-  //       x: firstTrack.scrollWidth,
-  //     },
-  //     {
-  //       x: -(firstTrack.scrollWidth + window.innerWidth),
-
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //       },
-  //     }
-  //   );
-  //   // Second track
-  //   gsap.fromTo(
-  //     secondTrack,
-  //     {
-  //       x: 0,
-  //     },
-  //     {
-  //       x: -secondTrack.offsetWidth,
-  //       scrollTrigger: {
-  //         trigger: partnersRoot,
-  //         scrub: 1,
-  //         start: "top 30%",
-  //       },
-  //     }
-  //   );
-  // }
 }
 
 // TIMELINE V1 ALT
@@ -598,6 +460,56 @@ if (heroRoot) {
         nextEl: rightButton,
       },
     });
+
+    // Opening of block
+    // const container = heroRoot.querySelector(".content");
+    // const computedWidth =
+    //   window.innerWidth > 769
+    //     ? window.innerWidth - 330
+    //     : window.innerWidth - 80;
+    // const heading = heroRoot.querySelector(".heading");
+    // const solutionsContainer = heroRoot.querySelector(".solutions-container");
+    // const solutionsSlider = heroRoot.querySelector(".solutions-slider");
+    // heading.style.width = computedWidth + "px";
+    // solutionsContainer.style.maxWidth = computedWidth + "px";
+    // solutionsSlider.style.maxWidth = computedWidth + "px";
+
+    // if (window.innerWidth > 769) {
+    //   gsap.fromTo(
+    //     container,
+    //     {
+    //       marginRight: 0,
+    //       marginLeft: 0,
+    //     },
+    //     {
+    //       marginRight: "100px",
+    //       marginLeft: "100px",
+    //       scrollTrigger: {
+    //         trigger: container,
+    //         scrub: 1,
+    //         start: "top",
+    //       },
+    //     }
+    //   );
+    // } else {
+    //   gsap.fromTo(
+    //     container,
+    //     {
+    //       marginRight: 0,
+    //       marginLeft: 0,
+    //     },
+    //     {
+    //       marginRight: "20px",
+    //       marginLeft: "20px",
+    //       scrollTrigger: {
+    //         trigger: container,
+    //         scrub: 1,
+    //         start: "top",
+    //         end: "bottom 700px",
+    //       },
+    //     }
+    //   );
+    // }
   }
 
   // Calculate padding bottom
@@ -802,34 +714,44 @@ if (choiceRoot) {
   let redirect;
   switch (params.get("redirect")) {
     case "location":
-      redirect = "/mise-en-location";
+      redirect = "./location.html";
       break;
     case "gestion":
-      redirect = "/gestion-locative";
+      redirect = "./gestion.html";
       break;
     case "intervention":
-      redirect = "/interventions-a-la-demande";
+      redirect = "./intervention.html";
       break;
 
     default:
-      redirect = "/rennes";
+      redirect = "./rennes.html";
       break;
   }
 
-  // Add behaviour to the button
   firstSlideBtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      switch (btn.dataset.next) {
-        case "redirect":
-          document.location.href = redirect;
-          break;
-        case "client":
-          swiper.slideNext();
-          break;
-        case "new":
-          swiper.slideTo(2);
-          break;
+      // Style
+      firstSlideBtns.forEach((el) => el.classList.remove("selected"));
+      btn.classList.add("selected");
+
+      // Change next btn behaviour
+      const nextBtn = firstSlide.querySelector(".next-btn");
+      const nextBtnClone = nextBtn.cloneNode(true);
+      nextBtnClone.classList.remove("disabled");
+
+      if (btn.dataset.city === "rennes") {
+        nextBtnClone.addEventListener(
+          "click",
+          (e) => (document.location.href = redirect)
+        );
+      } else if (btn.dataset.city === "other") {
+        nextBtnClone.addEventListener("click", (e) => swiper.slideNext());
+      } else if (btn.dataset.city === "client") {
+        nextBtnClone.addEventListener("click", (e) => swiper.slideNext());
+      } else if (btn.dataset.city === "new") {
+        nextBtnClone.addEventListener("click", (e) => swiper.slideTo(2));
       }
+      nextBtn.replaceWith(nextBtnClone);
     });
   });
 

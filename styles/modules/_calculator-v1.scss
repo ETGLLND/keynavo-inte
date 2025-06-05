@@ -137,6 +137,11 @@
         &.txt {
           display: grid;
           align-content: center;
+          flex-shrink: 0;
+          background-color: #fff;
+          @media screen and (min-width: $medium) {
+            width: 35%;
+          }
           .text-content {
             padding: 2rem;
           }

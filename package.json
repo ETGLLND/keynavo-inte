@@ -4,13 +4,15 @@
   "main": "index.html",
   "scripts": {
     "sass": "sass --watch .\\styles\\style.scss .\\styles\\style.css",
-    "deploy": "vercel --prod"
+    "deploy": "vercel --prod",
+    "build": "esbuild scripts/main.js --bundle --outfile=scripts/out.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "gsap": "^3.12.7",
+    "gsap": "^3.13.0",
+    "swiper": "^11.2.8",
     "vercel": "^41.6.2"
   }
 }

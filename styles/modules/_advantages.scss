@@ -1,9 +1,9 @@
 .advantages {
   position: relative;
+  padding: 3rem 0 7.5rem;
   &.after-title {
     padding-top: 0;
   }
-  padding: 3rem 0 7.5rem;
   &::before {
     position: absolute;
     top: 0;
@@ -16,6 +16,11 @@
     background-position: right;
     @media screen and (min-width: $large) {
       content: "";
+    }
+  }
+  &.alt {
+    .items-list {
+      align-items: end;
     }
   }
   @media screen and (min-width: $large) {
@@ -47,15 +52,15 @@
       margin: 0 auto;
     }
     img {
-      background-position: top;
+      background-position: right;
     }
   }
   .items-list {
     padding-left: 2rem;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
     @media screen and (min-width: $large) {
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       position: absolute;
       top: 0;
@@ -80,9 +85,7 @@
         transform: scale(1);
         opacity: 1;
       }
-      &:nth-child(even) {
-        left: 2.5rem;
-      }
+
       @media screen and (min-width: $large) {
         max-width: 31rem;
         min-height: 8rem;

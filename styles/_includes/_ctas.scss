@@ -171,12 +171,24 @@ a {
   margin-bottom: 2rem;
   font-weight: 700;
   font-size: 2rem;
+  height: 4.7rem;
   &.big::before {
     width: calc(100% - 46px);
   }
   &.white {
     .step:before {
       background-color: #fff;
+    }
+  }
+  &.dots-full {
+    @media screen and (max-width: 500px) {
+      gap: 6rem;
+      overflow: scroll;
+      min-width: 0;
+      min-height: 0;
+      &::before {
+        display: none;
+      }
     }
   }
   // Barre derrière
@@ -200,6 +212,12 @@ a {
     cursor: pointer;
     color: $color4;
     position: relative;
+    width: 45px;
+    height: 45px;
+    min-height: 0;
+    min-width: 0;
+    flex-shrink: 0;
+    // overflow: auto;
     &::before {
       content: counter(my-counter);
       flex-shrink: 0;
@@ -211,11 +229,15 @@ a {
       border: solid 1px $color4;
       background-color: $color9;
       z-index: 3;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
     }
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 45px;
       height: 45px;
       border-radius: 100%;
@@ -231,7 +253,6 @@ a {
         width: 37px;
         height: 37px;
         border: none;
-        margin-left: 5px;
       }
       &::after {
         opacity: 1;

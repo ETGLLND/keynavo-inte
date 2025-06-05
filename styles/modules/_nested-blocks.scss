@@ -1,23 +1,23 @@
 .nested-blocks {
   margin: 6rem 0 10.5rem;
-  @media screen and (min-width: $medium) {
+  @media screen and (min-width: $large) {
     max-width: 1049px;
     margin: 6rem auto 16rem;
   }
-  @media screen and (min-width: $medium) {
+  @media screen and (min-width: $large) {
     max-width: unset;
     margin: 6rem calc(100% / 12) 16rem;
   }
 
   &.alt {
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       .heading,
       .content-wrapper {
         flex-direction: row-reverse;
       }
     }
     .heading .title:before {
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         left: unset;
         right: 0;
         transform: translate(50%, -50%);
@@ -29,7 +29,7 @@
     display: flex;
     gap: 3rem;
     flex-direction: column;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       flex-direction: row;
     }
     .title {
@@ -40,7 +40,11 @@
       align-items: center;
       gap: 2rem;
       padding: 2rem;
-      @media screen and (min-width: $medium) {
+      @media screen and (max-width: 380px) {
+        font-size: 2.5rem;
+        line-height: 2.7rem;
+      }
+      @media screen and (min-width: $large) {
         padding: 2rem 6rem;
         position: relative;
         width: calc((100% - 3rem) / 10 * 6);
@@ -55,7 +59,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 4.571rem;
-        @media screen and (min-width: $medium) {
+        @media screen and (min-width: $large) {
           position: absolute;
           left: 0;
           top: 50%;
@@ -68,7 +72,7 @@
       border-radius: 1.5rem;
       display: flex;
       align-items: center;
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         width: calc((100% - 3rem) / 10 * 4);
       }
     }
@@ -82,7 +86,7 @@
     justify-content: space-between;
     flex-direction: column;
     gap: 3rem;
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $large) {
       flex-direction: row;
     }
     .text-content {
@@ -90,13 +94,13 @@
       padding: 2rem;
       border-radius: 2rem;
       flex-shrink: 0;
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         width: calc((100% - 3rem) / 10 * 6);
         padding: 3rem;
       }
     }
     .slider-content {
-      @media screen and (min-width: $medium) {
+      @media screen and (min-width: $large) {
         width: calc((100% - 3rem) / 10 * 4);
       }
       .slider {

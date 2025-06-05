@@ -10,12 +10,12 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="../scripts/main.js" defer></script>
-    <title>Keynavo - Rennes</title>
+    <title>Keynavo - Localisation</title>
   </head>
   <body>
     <nav class="navigation">
       <div class="top">
-        <a href="../">
+        <a href="/">
           <figure class="logo-container fit-contain">
             <img
               loading="lazy"
@@ -32,22 +32,22 @@
             <p class="menu-item select">Nos services</p>
             <ul class="sub-items">
               <li class="sub-item pointer">
-                <a class="item-link" href="../pages/auto-gestion.html"
-                  >Kopilote auto-gestion</a
+                <a class="item-link" href="/kopilote-autogestion"
+                  >Kopilote autogestion</a
                 >
               </li>
               <li class="sub-item house">
-                <a class="item-link" href="../pages/gestion.html"
+                <a class="item-link" href="/localisation?redirect=gestion"
                   >Gestion locative</a
                 >
               </li>
               <li class="sub-item keynavo">
-                <a class="item-link" href="../pages/location.html"
+                <a class="item-link" href="/localisation?redirect=location"
                   >Mise en location</a
                 >
               </li>
               <li class="sub-item tool">
-                <a class="item-link" href="../pages/intervention.html"
+                <a class="item-link" href="/localisation?redirect=intervention"
                   >Interventions à la demande</a
                 >
               </li>
@@ -57,17 +57,19 @@
             <p class="menu-item select">Trouvez votre ville</p>
             <ul class="sub-items">
               <li class="sub-item pointer">
-                <a href="../pages/rennes.html" class="item-link">Rennes</a>
+                <a href="/rennes" class="item-link">Rennes</a>
               </li>
               <li class="sub-item france">
-                <a href="../pages/localisation.html" class="item-link"
+                <a href="/localisation-ville" class="item-link"
                   >Autres villes</a
                 >
               </li>
             </ul>
           </div>
-          <a href="#identity" class="menu-item link">Qui sommes-nous ?</a>
-          <a href="#" class="cta-primary sm contact">Nous contacter</a>
+          <a href="/#identity" class="menu-item link">Qui sommes-nous ?</a>
+          <a href="../pages/contact.html" class="cta-primary sm contact"
+            >Nous contacter</a
+          >
         </div>
         <div class="socials">
           <a
@@ -89,33 +91,58 @@
       </div>
     </nav>
 
-    <div class="container">
-      <div class="rich-text before-footer">
-        <h1 class="h2">
-          Ce service n’est pas encore disponible dans votre ville
-        </h1>
-        <p class="p">
-          Nous sommes actuellement en cours de déploiement dans plusieurs
-          nouvelles zones, dont :
-        </p>
-        <ul class="p">
-          <li><strong>Nantes</strong></li>
-          <li><strong>Angers</strong></li>
-          <li><strong>Tours</strong></li>
-        </ul>
-        <p class="p">(et bientôt d'autres !)</p>
-        <p class="p">
-          Envie d’être tenu(e) au courant ? <br />Laissez-nous vos coordonnées
-          et soyez informé(e) en avant-première du lancement de nos services
-          dans votre ville.
-        </p>
-        <p class="p">
-          En attendant, découvrez nos services accessibles partout en France,
-          comme :
-          <a href="../pages/auto-gestion.html"
-            ><br />Le Kopilote bailleur en autogestion (100 % gratuit)"</a
-          >
-        </p>
+    <div class="choice-form background before-footer">
+      <div class="container">
+        <div class="choice-container">
+          <div class="swiper-wrapper">
+            <div class="content swiper-slide loc-first">
+              <h2 class="h3 center">
+                Pour continuer, précisez où se trouve votre logement :
+              </h2>
+              <div class="cards-container">
+                <div data-next="redirect" class="card button">
+                  <p class="text-content h4 position center">
+                    Rennes, Ville et Métropole
+                  </p>
+                </div>
+                <div data-next="client" class="card button">
+                  <p class="text-content h4 france center">Autre ville</p>
+                </div>
+              </div>
+            </div>
+            <div class="content swiper-slide loc-second">
+              <div class="text-content">
+                <h2 class="h3 center">
+                  Bénéficiez du service Kopilote bailleur autogestion partout en
+                  France... 100% gratuit.
+                </h2>
+                <a href="/kopilote" class="cta-secondary"
+                  >Découvrez le service ici !</a
+                >
+                <p class="p">
+                  Les services de gestion locative, mise en location et
+                  interventions à la demande (travaux, photos, diagnostics,
+                  rénovation...) sont en cours de déploiement dans plusieurs
+                  nouvelles villes, dont :
+                </p>
+                <ul class="p">
+                  <li><strong>Nantes</strong></li>
+                  <li><strong>Angers</strong></li>
+                  <li><strong>Tours</strong></li>
+                </ul>
+                <p class="p">(et d'autres à venir !)</p>
+                <p class="p">
+                  Envie d’être tenu(e) au courant ? <br />Laissez-nous vos
+                  coordonnées pour être informé(e) en avant-première du
+                  lancement de nos services dans votre ville.
+                </p>
+                <a href="../pages/contact.html" class="cta-primary"
+                  >Je veux être informé(e) !</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -123,10 +150,9 @@
       <div class="container">
         <div class="top-container">
           <div class="description">
-            <a href="#">
+            <a href="../">
               <figure class="logo fit-contain">
                 <img
-                  loading="lazy"
                   src="../assets/img/logos/logo-blanc.webp"
                   alt="Logo Keynavo"
                 />
@@ -144,16 +170,16 @@
               <li class="item">
                 <h5 class="white h5">Nos services</h5>
                 <ul class="sub-menu">
-                  <a href="../pages/auto-gestion.html" class="p-sm white"
+                  <a href="/kopilote-autogestion" class="p-sm white"
                     >Kopilote bailleur autogestion</a
                   >
-                  <a href="../pages/gestion.html" class="p-sm white"
+                  <a href="/gestion-locative" class="p-sm white"
                     >Gestion locative</a
                   >
-                  <a href="../pages/location.html" class="p-sm white"
+                  <a href="/mise-en-location" class="p-sm white"
                     >Mise en location</a
                   >
-                  <a href="../pages/intervention.html" class="p-sm white"
+                  <a href="/interventions-a-la-demande" class="p-sm white"
                     >Interventions à la demande</a
                   >
                 </ul>
@@ -161,11 +187,13 @@
             </div>
             <div class="col">
               <li class="item">
-                <h5 class="h5 white">Qui sommes - nous ?</h5>
+                <a href="../#identity" class="h5 white">Qui sommes - nous ?</a>
               </li>
               <li class="item">
                 <h5 class="h5 white">Trouvez votre ville</h5>
-                <p class="p-sm white">Rennes, Ville et Métropole</p>
+                <a href="/rennes" class="p-sm white"
+                  >Rennes, Ville et Métropole</a
+                >
               </li>
               <li class="item">
                 <h5 class="h5 white">Nous contacter</h5>
@@ -181,14 +209,12 @@
             <div class="partners-container">
               <figure class="logo-partner fit-contain">
                 <img
-                  loading="lazy"
                   src="../assets/img/logos/logo-french-tech-blanc.webp"
                   alt="Logo la French Tech"
                 />
               </figure>
               <figure class="logo-partner fit-contain">
                 <img
-                  loading="lazy"
                   src="../assets/img/logos/logo-pool-blanc.webp"
                   alt="Logo le Poool"
                 />
@@ -199,10 +225,15 @@
         <ul class="sub-infos">
           <li class="sub-item white p-sm">© Keynavo</li>
           <li class="sub-item white p-sm">
-            <a href="#" class="white">Politique de confidentialité</a>
+            <a href="/confidentialite" class="white"
+              >Politique de confidentialité</a
+            >
           </li>
           <li class="sub-item p-sm">
-            <a href="#" class="white">Mentions légales</a>
+            <a href="/mentions-legales" class="white">Mentions légales</a>
+          </li>
+          <li class="sub-item p-sm">
+            <a href="/cgu" class="white">Conditions d'utilisation</a>
           </li>
           <li class="sub-item white p-sm">
             <a href="#" class="white">Paramètres de cookies</a>
