@@ -164,14 +164,34 @@ a {
 }
 
 .dots-container {
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+  padding: 1px;
   margin-bottom: 2rem;
   font-weight: 700;
   font-size: 2rem;
   height: 4.7rem;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  overflow-x: scroll;
+  gap: 6rem;
+  position: relative;
+  // height: 7rem;
+
+  @media screen and (min-width: 576px) {
+    gap: unset;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .line {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: inline-block;
+    min-width: 100%;
+  }
   &.big::before {
     width: calc(100% - 46px);
   }
@@ -180,28 +200,32 @@ a {
       background-color: #fff;
     }
   }
-  &.dots-full {
-    @media screen and (max-width: 500px) {
-      gap: 6rem;
-      overflow: scroll;
-      min-width: 0;
-      min-height: 0;
-      &::before {
-        display: none;
-      }
-    }
-  }
+  // &.dots-full {
+  //   @media screen and (max-width: 500px) {
+  //     gap: 6rem;
+  //     overflow: scroll;
+  //     min-width: 0;
+  //     min-height: 0;
+  //     &::before {
+  //       display: none;
+  //     }
+  //   }
+  // }
   // Barre derrière
   &::before {
     content: "";
-    width: 100%;
-    width: calc(100% - 46.6px / 2);
     height: 1px;
+    width: 100%;
+    min-width: min-content;
     background-color: $color4;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
+    @media screen and (min-width: 576px) {
+      overflow: hidden;
+      width: calc(100% - 46.6px / 2);
+    }
   }
   .step {
     margin: 0;

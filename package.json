@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "sass": "sass --watch .\\styles\\style.scss .\\styles\\style.css",
+    "sass": "sass --watch .\\styles\\style.scss .\\styles\\style.css --style compressed",
     "deploy": "vercel --prod",
     "build": "esbuild scripts/main.js --bundle --outfile=scripts/out.js"
   },
@@ -12,7 +12,6 @@
   "description": "",
   "dependencies": {
     "gsap": "^3.13.0",
-    "swiper": "^11.2.8",
-    "vercel": "^41.6.2"
+    "swiper": "^11.2.8"
   }
 }

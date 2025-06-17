@@ -38,6 +38,7 @@
           border-radius: 0.5rem;
           background-repeat: no-repeat;
           background-position: center;
+          flex-shrink: 0;
         }
         .text {
           color: $color1;

@@ -73,17 +73,23 @@
       flex-direction: column;
       gap: 1.5rem;
     }
-    .item a {
-      @media screen and (min-width: $extra-large) {
-        margin: 0;
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      a {
+        @media screen and (min-width: $extra-large) {
+          margin: 0;
+        }
+      }
+      h5 {
+        margin-bottom: 0.5rem;
+      }
+      .p-sm {
+        margin-bottom: 0;
       }
     }
-    .item h5 {
-      margin-bottom: 0.5rem;
-    }
-    .item .p-sm {
-      margin-bottom: 0;
-    }
+
     .sub-menu {
       padding: 0;
       display: flex;
